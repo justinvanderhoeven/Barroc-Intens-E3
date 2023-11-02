@@ -18,5 +18,7 @@ namespace BarrocIntens.Data
         public ProductsCatergory ProductsCatergory { get; set; }
         public ICollection<CustomInvoice> CustomInvoices { get; set; }
         public ICollection<CustomInvoiceProduct> CustomInvoiceProducts { get; set; }
+        public ICollection<Contract> Contracts { get; set; }
+        public ICollection<ContractProduct> ContractProducts { get; set; }
     }
 }
