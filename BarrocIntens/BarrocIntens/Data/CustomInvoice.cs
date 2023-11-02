@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BarrocIntens.Data
+{
+    internal class CustomInvoice
+    {
+        public int Id { get; set; }
+        public DateTime Date { get; set; }
+        public DateTime PaidAt { get; set; }
+        public int CompanyId {  get; set; }
+        public Company Company { get; set; }
+        public int ContractId { get; set; }
+        public Contract Contract { get; set; }
+        public ICollection<Product> Products{ get; set; }
+        public ICollection<CustomInvoiceProduct> CustomInvoiceProducts { get; set; }
+    }
+}
