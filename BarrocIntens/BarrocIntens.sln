@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarrocIntens", "BarrocIntens\BarrocIntens.csproj", "{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Debug|ARM64.Build.0 = Debug|ARM64
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Debug|x64.ActiveCfg = Debug|x64
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Debug|x64.Build.0 = Debug|x64
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Debug|x64.Deploy.0 = Debug|x64
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Debug|x86.ActiveCfg = Debug|x86
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Debug|x86.Build.0 = Debug|x86
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Debug|x86.Deploy.0 = Debug|x86
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Release|ARM64.ActiveCfg = Release|ARM64
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Release|ARM64.Build.0 = Release|ARM64
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Release|ARM64.Deploy.0 = Release|ARM64
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Release|x64.ActiveCfg = Release|x64
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Release|x64.Build.0 = Release|x64
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Release|x64.Deploy.0 = Release|x64
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Release|x86.ActiveCfg = Release|x86
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Release|x86.Build.0 = Release|x86
+		{CCAD57EB-4503-4F10-9926-17CF3FFDBDE8}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91E2931E-4B2F-40FB-8F0F-DD7E2DAC790B}
+	EndGlobalSection
+EndGlobal
