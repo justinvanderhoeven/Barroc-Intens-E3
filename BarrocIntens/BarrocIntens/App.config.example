@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<configuration>
+
+	<connectionStrings>
+		<add name="BarrocIntens"
+			 connectionString="server=localhost;port=3306;user=root;password=admin123;database=BarrocIntens" />
+	</connectionStrings>
+</configuration>

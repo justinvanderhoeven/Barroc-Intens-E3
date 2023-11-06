@@ -13,6 +13,6 @@ namespace BarrocIntens.Data
         public string Content {  get; set; }
         public DateTime Date { get; set; }
         public int CompanyId {  get; set; }
-        public int AuthorId {  get; set; }
+        public int UserId {  get; set; }
     }
 }
