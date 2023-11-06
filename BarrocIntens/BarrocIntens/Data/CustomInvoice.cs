@@ -14,8 +14,6 @@ namespace BarrocIntens.Data
         public DateTime PaidAt { get; set; }
         public int CompanyId {  get; set; }
         public Company Company { get; set; }
-        public int ContractId { get; set; }
-        public Contract Contract { get; set; }
         public ICollection<Product> Products{ get; set; }
         public ICollection<CustomInvoiceProduct> CustomInvoiceProducts { get; set; }
     }

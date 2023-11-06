@@ -14,11 +14,11 @@ namespace BarrocIntens.Data
         public string ImagePath {  get; set; }
         public decimal Price { get; set; }
         public int Stock {  get; set; }
-        public int ProductCategoryId {  get; set; }
-        public ProductsCatergory ProductsCatergory { get; set; }
         public ICollection<CustomInvoice> CustomInvoices { get; set; }
         public ICollection<CustomInvoiceProduct> CustomInvoiceProducts { get; set; }
         public ICollection<Contract> Contracts { get; set; }
         public ICollection<ContractProduct> ContractProducts { get; set; }
+        public int ProductsCategoryId { get; set; }
+        public ProductsCategory ProductsCategory { get; set; }
     }
 }

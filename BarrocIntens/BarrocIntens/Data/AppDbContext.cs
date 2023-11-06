@@ -24,6 +24,21 @@ namespace BarrocIntens.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<User>()
+               .HasMany(u => u.Companies)
+               .WithMany(c => c.Users)
+               .UsingEntity<Note>();
+
+            modelBuilder.Entity<Contract>()
+                .HasMany(c => c.Products)
+                .WithMany(p => p.Contracts)
+                .UsingEntity<ContractProduct>();
+
+            modelBuilder.Entity<CustomInvoice>()
+                .HasMany(c => c.Products)
+                .WithMany(p => p.CustomInvoices)
+                .UsingEntity<CustomInvoiceProduct>();
+
             modelBuilder.Entity<User>().HasData(
                 new User
                 {
@@ -78,14 +93,14 @@ namespace BarrocIntens.Data
                 }
             );
 
-            modelBuilder.Entity<ProductsCatergory>().HasData(
-                new ProductsCatergory
+            modelBuilder.Entity<ProductsCategory>().HasData(
+                new ProductsCategory
                 {
                     Id = 1,
                     Name = "Automaten",
                     IsEmployeeOnly = 1,
                 },
-                new ProductsCatergory
+                new ProductsCategory
                 {
                     Id = 2,
                     Name = "Koffiebonen",
@@ -102,8 +117,7 @@ namespace BarrocIntens.Data
                     ImagePath = "",
                     Price = 499,
                     Stock = 50,
-                    ProductCategoryId = 1,
-
+                    ProductsCategoryId = 1
                 },
                 new Product
                 {
@@ -113,8 +127,7 @@ namespace BarrocIntens.Data
                     ImagePath = "",
                     Price = 21,
                     Stock = 50,
-                    ProductCategoryId = 2,
-
+                    ProductsCategoryId = 2
                 }
             );
 
@@ -145,7 +158,6 @@ namespace BarrocIntens.Data
                    Date = DateTime.Now,
                    PaidAt = DateTime.Now,
                    CompanyId = 1,
-                   ContractId = 1,
                }
            );
 
@@ -169,11 +181,6 @@ namespace BarrocIntens.Data
                     ContractId = 1,
                 }
             );
-
-            modelBuilder.Entity<User>()
-                .HasMany(u => u.Companies)
-                .WithMany(c => c.Users)
-                .UsingEntity<Note>();
         }
     }
 }
