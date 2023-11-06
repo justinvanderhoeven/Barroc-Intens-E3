@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using BarrocIntens.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,22 +7,23 @@ using System.Threading.Tasks;
 using Windows.Graphics.Display;
 using System.Configuration;
 
-namespace BarrocIntens
+namespace BarrocIntens.Data
 {
     internal class AppDbContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql(
-                ConfigurationManager.ConnectionStrings["BarrocIntens"].ConnectionString, 
-                ServerVersion.Parse("5.7.33-winx64"));
+                "server=localhost;port=3306;user=root;password=;database=BarrocIntens",
+                ServerVersion.Parse("8.0.30")
+            );
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            
+
 
             modelBuilder.Entity<User>().HasData(
                 new User
@@ -46,7 +46,7 @@ namespace BarrocIntens
                     City = "CompanyCity",
                     CountryCode = "34",
                     BkrCheckedAt = DateTime.Now,
-                    //UserId = 1,
+                    ContactId = 1,
                 }
             );
 
@@ -55,5 +55,5 @@ namespace BarrocIntens
                 .WithMany(c => c.Users)
                 .UsingEntity<Note>();
         }
-    } 
+    }
 }
