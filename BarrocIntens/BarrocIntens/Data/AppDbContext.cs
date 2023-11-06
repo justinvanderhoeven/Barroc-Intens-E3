@@ -13,25 +13,24 @@ namespace BarrocIntens.Data
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            //Go to the App.config.example file and then follow Instructions
+
             optionsBuilder.UseMySql(
-                "server=localhost;port=3306;user=root;password=;database=BarrocIntens",
-                ServerVersion.Parse("8.0.30")
-            );
+                ConfigurationManager.ConnectionStrings["BarrocIntens"].ConnectionString,
+                ServerVersion.Parse("5.7.33-winx64"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-
-
             modelBuilder.Entity<User>().HasData(
                 new User
                 {
                     Id = 1,
-                    Name = "Test",
+                    Name = "Admin",
                     Username = "Bob",
-                    Password = "1234"
+                    Password = "Admin123",
                 }
             );
 
@@ -47,6 +46,127 @@ namespace BarrocIntens.Data
                     CountryCode = "34",
                     BkrCheckedAt = DateTime.Now,
                     ContactId = 1,
+                }
+            );
+
+            modelBuilder.Entity<MaintenanceAppointment>().HasData(
+                new MaintenanceAppointment
+                {
+                    Id = 1,
+                    Remark = "Test",
+                    DateAdded = DateTime.Now,
+                    CompanyId = 1,
+                }
+            );
+
+            modelBuilder.Entity<Department>().HasData(
+                new Department
+                {
+                    Id = 1,
+                    Type = "Klachten"
+                }
+            );
+
+            modelBuilder.Entity<Note>().HasData(
+                new Note
+                {
+                    Id = 1,
+                    Content = "Test",
+                    Date = DateTime.Now,
+                    CompanyId = 1,
+                    UserId = 1,
+                }
+            );
+
+            modelBuilder.Entity<ProductsCatergory>().HasData(
+                new ProductsCatergory
+                {
+                    Id = 1,
+                    Name = "Automaten",
+                    IsEmployeeOnly = 1,
+                },
+                new ProductsCatergory
+                {
+                    Id = 2,
+                    Name = "Koffiebonen",
+                    IsEmployeeOnly = 1,
+                }
+            );
+
+            modelBuilder.Entity<Product>().HasData(
+                new Product
+                {
+                    Id = 1,
+                    Name = "Barroc Intens Italian Light",
+                    Description = "Een Koffie machine",
+                    ImagePath = "",
+                    Price = 499,
+                    Stock = 50,
+                    ProductCategoryId = 1,
+
+                },
+                new Product
+                {
+                    Id = 2,
+                    Name = "Espresso Beneficio",
+                    Description = "Een toegankelijke en zachte koffie. Hij is afkomstig van de Finca El Limoncillo, een weelderige plantage aan de rand van het regenwoud in de Matagalpa regio in Nicaragua",
+                    ImagePath = "",
+                    Price = 21,
+                    Stock = 50,
+                    ProductCategoryId = 2,
+
+                }
+            );
+
+            modelBuilder.Entity<Contract>().HasData(
+                new Contract
+                {
+                    Id = 1,
+                    CompanyId = 1,
+                    ActiveUntil = DateOnly.FromDateTime( DateTime.UtcNow ),
+                }
+            );
+
+            modelBuilder.Entity<ContractProduct>().HasData(
+                new ContractProduct
+                {
+                    Id = 1,
+                    ContractId = 1,
+                    ProductId = 1,
+                    Amount = 5,
+                    PricePerProduct = 5,
+                }
+            );
+
+            modelBuilder.Entity<CustomInvoice>().HasData(
+               new CustomInvoice
+               {
+                   Id = 1,
+                   Date = DateTime.Now,
+                   PaidAt = DateTime.Now,
+                   CompanyId = 1,
+                   ContractId = 1,
+               }
+           );
+
+            modelBuilder.Entity<CustomInvoiceProduct>().HasData(
+                new CustomInvoiceProduct
+                {
+                    Id = 1,
+                    ProductId = 1,
+                    CustomInvoiceId = 1,
+                    Amount = 50,
+                    PricePerProduct = 5,
+                }
+            );
+
+            modelBuilder.Entity<Invoice>().HasData(
+                new Invoice
+                {
+                    Id = 1,
+                    Date = DateOnly.FromDateTime( DateTime.UtcNow ),
+                    PaidAt = DateOnly.FromDateTime( DateTime.UtcNow ),
+                    ContractId = 1,
                 }
             );
 

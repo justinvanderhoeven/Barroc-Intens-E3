@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
+<!-- Copy this file and change the name to App.config -->
+<!-- After that change the username and password to your own -->
 
 <configuration>
 
