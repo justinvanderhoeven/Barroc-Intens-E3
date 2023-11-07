@@ -43,9 +43,50 @@ namespace BarrocIntens.Data
                 new User
                 {
                     Id = 1,
-                    Name = "Admin",
-                    Username = "Bob",
-                    Password = "Admin123",
+                    Name = "Admin1",
+                    Username = "Admin1",
+                    Password = "Admin1",
+                    DepartmentId = 1,
+                },
+                new User
+                {
+                    Id = 2,
+                    Name = "Justin",
+                    Username = "Admin2",
+                    Password = "Admin2",
+                    DepartmentId = 1,
+                },
+                new User
+                {
+                    Id = 3,
+                    Name = "Remon",
+                    Username = "Admin3",
+                    Password = "Admin3",
+                    DepartmentId = 1,
+                },
+                new User
+                {
+                    Id = 4,
+                    Name = "Dani",
+                    Username = "Admin4",
+                    Password = "Admin4",
+                    DepartmentId = 1,
+                },
+                new User
+                {
+                    Id = 5,
+                    Name = "Nathan",
+                    Username = "Admin5",
+                    Password = "Admin5",
+                    DepartmentId = 1,
+                },
+                new User
+                {
+                    Id = 6,
+                    Name = "User1",
+                    Username = "User1",
+                    Password = "User1",
+                    DepartmentId = 2,
                 }
             );
 
@@ -78,7 +119,12 @@ namespace BarrocIntens.Data
                 new Department
                 {
                     Id = 1,
-                    Type = "Klachten"
+                    Type = "Admins"
+                },
+                new Department
+                {
+                    Id = 2,
+                    Type = "Users"
                 }
             );
 
