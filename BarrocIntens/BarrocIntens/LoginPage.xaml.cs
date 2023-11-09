@@ -5,7 +5,8 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
-using System;
+using System; 
+using BarrocIntens.Data;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,6 +15,9 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using static System.Net.Mime.MediaTypeNames;
 using Windows.Security.Cryptography.Core;
+using Windows.UI.Popups;
+using static System.Net.WebRequestMethods;
+using System.Net;
 
 
 // To learn more about WinUI, the WinUI project structure,
@@ -31,30 +35,30 @@ namespace BarrocIntens
             this.InitializeComponent();
         }
 
-        private void Login_Click(object sender, RoutedEventArgs e)
+        internal void Login_Click(object sender, RoutedEventArgs e)
         {
             string username = Username.Text;
-            string password = Password.Password;
+            string inputPassword = Password.Password;
 
             using (var db = new AppDbContext())
             {
                 var user = db.Users.FirstOrDefault(u => u.Username == username);
 
-                if (user != null && VerifyPassword(password, user.Password))
+                if (user != null && VerifyPassword(inputPassword, user.Password))
                 {
-                    MessageBox.Show("Login successful!");
-                    // You can navigate to another page or perform other actions upon successful login.
                     Frame.Navigate(typeof(FinancePage));
                 }
                 else
                 {
-                    MessageBox.Show("Login failed. Please check your credentials.");
+                    Console.WriteLine("Login failed. Please check your credentials.");
                 }
             }
         }
-        private  VerifyPassword()
+        
+
+        private bool VerifyPassword(string inputPassword, string hashedPassword)
         {
-            bool isPasswordCorrect = SecureHasher.
+            return SecureHasher.Verify(inputPassword, hashedPassword); 
         }
 
     }

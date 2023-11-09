@@ -58,7 +58,7 @@ namespace BarrocIntens.Data
                     Id = 1,
                     Name = "Admin1",
                     Username = "Admin1",
-                    Password = "Admin1",
+                    Password = SecureHasher.Hash("Admin1"),
                     DepartmentId = 1,
                 },
                 new User
@@ -66,7 +66,7 @@ namespace BarrocIntens.Data
                     Id = 2,
                     Name = "Justin",
                     Username = "Admin2",
-                    Password = "Admin2",
+                    Password = SecureHasher.Hash("Admin2"),
                     DepartmentId = 1,
                 },
                 new User
@@ -74,7 +74,7 @@ namespace BarrocIntens.Data
                     Id = 3,
                     Name = "Remon",
                     Username = "Admin3",
-                    Password = "Admin3",
+                    Password = SecureHasher.Hash("Admin3"),
                     DepartmentId = 1,
                 },
                 new User
@@ -82,7 +82,7 @@ namespace BarrocIntens.Data
                     Id = 4,
                     Name = "Dani",
                     Username = "Admin4",
-                    Password = "Admin4",
+                    Password = SecureHasher.Hash("Admin4"),
                     DepartmentId = 1,
                 },
                 new User
@@ -90,7 +90,7 @@ namespace BarrocIntens.Data
                     Id = 5,
                     Name = "Nathan",
                     Username = "Admin5",
-                    Password = "Admin5",
+                    Password = SecureHasher.Hash("Admin5"),
                     DepartmentId = 1,
                 },
                 new User
@@ -98,7 +98,7 @@ namespace BarrocIntens.Data
                     Id = 6,
                     Name = "User1",
                     Username = "User1",
-                    Password = "User1",
+                    Password = SecureHasher.Hash("User1"),
                     DepartmentId = 2,
                 }
             );
