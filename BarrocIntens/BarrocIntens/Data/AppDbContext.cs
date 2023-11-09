@@ -11,6 +11,19 @@ namespace BarrocIntens.Data
 {
     internal class AppDbContext : DbContext
     {
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Contract> Contracts { get; set; }
+        public DbSet<ContractProduct> ContractProducts { get; set; }
+        public DbSet<CustomInvoice> CustomInvoices { get; set; }
+        public DbSet<CustomInvoiceProduct> CustomInvoiceProducts { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<MaintenanceAppointment> MaintenanceAppointments { get; set; }
+        public DbSet<Note> Notes { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductsCategory> ProductsCategories { get; set; }
+        public DbSet<User> Users { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //Go to the App.config.example file and then follow Instructions
