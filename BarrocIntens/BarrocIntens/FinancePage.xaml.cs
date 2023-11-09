@@ -1,4 +1,3 @@
-using BarrocIntens.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -20,18 +19,13 @@ using Windows.Foundation.Collections;
 namespace BarrocIntens
 {
     /// <summary>
-    /// An empty window that can be used on its own or navigated to within a Frame.
+    /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainWindow : Window
+    public sealed partial class FinancePage : Page
     {
-        public MainWindow()
+        public FinancePage()
         {
             this.InitializeComponent();
-
-            using var db = new AppDbContext();
-            db.Database.EnsureDeleted();
-            db.Database.EnsureCreated();
         }
-
     }
 }
