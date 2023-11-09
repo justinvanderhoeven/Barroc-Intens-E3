@@ -9,7 +9,57 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock FontSize="30" FontWeight="Bold" Text="Formulier Company"/>
+        <StackPanel Orientation="Vertical" Margin="0,25,0,25">
 
-    </Grid>
+            <TextBox x:Name="nameInput"
+                 Header="Name:" PlaceholderText="Name"
+                 Width="300" HorizontalAlignment="Left"/>
+
+            <TextBox x:Name="PhoneInput"
+                 Header="PhoneNumber:" PlaceholderText="PhoneNumber"
+                 Width="300" HorizontalAlignment="Left"/>
+
+            <TextBox x:Name="StreetInput"
+                 Header="Street:" PlaceholderText="Street"
+                 Width="300" HorizontalAlignment="Left"/>
+
+            <TextBox x:Name="HouseInput"
+                 Header="House:" PlaceholderText="House"
+                 Width="300" HorizontalAlignment="Left"/>
+
+            <TextBox x:Name="CityInput"
+                 Header="City:" PlaceholderText="City"
+                 Width="300" HorizontalAlignment="Left"/>
+
+            <ComboBox Header="Countries" PlaceholderText="Select a Country" Width="200">
+                <x:String>The Netherlands</x:String>
+                <x:String>Belgium</x:String>
+                <x:String>Luxembourg</x:String>
+                <x:String>France</x:String>
+                <x:String>Spain</x:String>
+                <x:String>Italy</x:String>
+                <x:String>Norway</x:String>
+                <x:String>Sweden</x:String>
+                <x:String>Finland</x:String>
+                <x:String>Denmark</x:String>
+                <x:String>Austria</x:String>
+                <x:String>Poland</x:String>
+                <x:String>United Kingdom</x:String>
+                <x:String>Ireland</x:String>
+                <x:String>Iceland</x:String>
+                <x:String>Belarus</x:String>
+                <x:String>Armenia</x:String>
+                <x:String>United States</x:String>
+                <x:String>Canada</x:String>
+                <x:String>Mexico</x:String>
+                <x:String>China</x:String>
+                <x:String>Russia</x:String>
+                <x:String>India</x:String>
+                <x:String>Japan</x:String>
+            </ComboBox>
+            <Button Content="Submit"/>
+        </StackPanel>
+    </StackPanel>
 </Page>
