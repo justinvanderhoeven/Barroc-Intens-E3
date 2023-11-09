@@ -132,12 +132,27 @@ namespace BarrocIntens.Data
                 new Department
                 {
                     Id = 1,
-                    Type = "Admins"
+                    Type = "Customer"
                 },
                 new Department
                 {
                     Id = 2,
-                    Type = "Users"
+                    Type = "Finance"
+                },
+                new Department
+                {
+                    Id = 3,
+                    Type = "Maintenance"
+                },
+                new Department
+                {
+                    Id = 4,
+                    Type = "Sales"
+                },
+                new Department
+                {
+                    Id = 5,
+                    Type = "Marketing"
                 }
             );
 
