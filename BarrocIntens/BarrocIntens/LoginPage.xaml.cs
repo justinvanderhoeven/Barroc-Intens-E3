@@ -17,6 +17,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using static System.Net.Mime.MediaTypeNames;
+using Windows.Security.Cryptography.Core;
 
 
 // To learn more about WinUI, the WinUI project structure,
@@ -33,13 +34,6 @@ namespace BarrocIntens
         {
             this.InitializeComponent();
 
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(FinancePage));
-            // ALS LOGIN SUCCESVOL 
-            // Frame.Navigate(typeof(FinancePage));
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)
@@ -62,7 +56,11 @@ namespace BarrocIntens
                     MessageBox.Show("Login failed. Please check your credentials.");
                 }
             }
-
         }
+        private  VerifyPassword()
+        {
+            bool isPasswordCorrect = SecureHasher.
+        }
+
     }
 }
