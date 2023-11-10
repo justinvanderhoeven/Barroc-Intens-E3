@@ -4,11 +4,13 @@ using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Media.Animation;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -23,9 +25,32 @@ namespace BarrocIntens
     /// </summary>
     public sealed partial class SalesPage : Page
     {
+        private NavigationViewItem _lastItem;
         public SalesPage()
         {
             this.InitializeComponent();
+        }
+
+        private void salesNavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        {
+            var item = args.InvokedItemContainer as NavigationViewItem;
+            if (item == null || item == _lastItem)
+                return;
+
+            var clickedView = item.Tag.ToString();
+            if (!navigateToView(clickedView)) return;
+            _lastItem = item;
+        }
+
+        private bool navigateToView(string clickedView)
+        {
+            var view = Assembly.GetExecutingAssembly().GetType($"BarrocIntens.SalesViews.{clickedView}");
+
+            if (string.IsNullOrWhiteSpace(clickedView) || view == null)
+                return false;
+
+            ContentFrame.Navigate(view, null, new EntranceNavigationTransitionInfo());
+            return true;
         }
     }
 }
