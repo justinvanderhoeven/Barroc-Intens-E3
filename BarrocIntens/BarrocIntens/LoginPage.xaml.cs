@@ -46,7 +46,7 @@ namespace BarrocIntens
 
                 if (user != null && VerifyPassword(inputPassword, user.Password))
                 {
-                    Frame.Navigate(typeof(FinancePage));
+                    NavigateToPage(user.DepartmentId);
                 }
                 else
                 {
@@ -61,5 +61,26 @@ namespace BarrocIntens
             return SecureHasher.Verify(inputPassword, hashedPassword); 
         }
 
+        private void NavigateToPage(int departmentId)
+        {
+            switch (departmentId)
+            {
+                case 1:
+                    Frame.Navigate(typeof(CustomerPage));
+                    break;
+                case 2:
+                    Frame.Navigate(typeof(FinancePage));
+                    break;
+                case 3:
+                    Frame.Navigate(typeof(MaintenancePage));
+                    break;
+                case 4:
+                    Frame.Navigate(typeof(SalesPage));
+                    break;
+                case 5:
+                    Frame.Navigate(typeof(PurchasePage));
+                    break;
+            }
+        }
     }
 }

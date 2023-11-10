@@ -67,7 +67,7 @@ namespace BarrocIntens.Data
                     Name = "Justin",
                     Username = "Admin2",
                     Password = SecureHasher.Hash("Admin2"),
-                    DepartmentId = 1,
+                    DepartmentId = 2,
                 },
                 new User
                 {
@@ -75,7 +75,7 @@ namespace BarrocIntens.Data
                     Name = "Remon",
                     Username = "Admin3",
                     Password = SecureHasher.Hash("Admin3"),
-                    DepartmentId = 1,
+                    DepartmentId = 4,
                 },
                 new User
                 {
@@ -152,7 +152,7 @@ namespace BarrocIntens.Data
                 new Department
                 {
                     Id = 5,
-                    Type = "Marketing"
+                    Type = "Purchase"
                 }
             );
 
