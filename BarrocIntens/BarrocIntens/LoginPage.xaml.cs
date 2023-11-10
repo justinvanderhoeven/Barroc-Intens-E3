@@ -35,8 +35,11 @@ namespace BarrocIntens
             this.InitializeComponent();
         }
 
-        internal void Login_Click(object sender, RoutedEventArgs e)
+        //Login Event.
+        internal async void Login_Click(object sender, RoutedEventArgs e)
         {
+
+            //Put input in variable . 
             string username = Username.Text;
             string inputPassword = Password.Password;
 
@@ -44,18 +47,31 @@ namespace BarrocIntens
             {
                 var user = db.Users.FirstOrDefault(u => u.Username == username);
 
+                //Check if password is correct. 
                 if (user != null && VerifyPassword(inputPassword, user.Password))
                 {
                     Frame.Navigate(typeof(FinancePage));
                 }
                 else
                 {
-                    Console.WriteLine("Login failed. Please check your credentials.");
+                    //Removes in put from input boxes.
+                    Username.Text = null; 
+                    Password.Password = null;
+
+                    //Error message
+                    ContentDialog wrongCredentialsDialog = new ContentDialog
+                    {
+                        Title = "Login Failed",
+                        Content = "Please check your credentials.",
+                        CloseButtonText = "Ok",
+                        XamlRoot= this.XamlRoot,
+                    };
+
+                    ContentDialogResult result = await wrongCredentialsDialog.ShowAsync();
                 }
             }
         }
-        
-
+        //Password verifyer uses SecureHasher class. 
         private bool VerifyPassword(string inputPassword, string hashedPassword)
         {
             return SecureHasher.Verify(inputPassword, hashedPassword); 
