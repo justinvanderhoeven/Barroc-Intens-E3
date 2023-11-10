@@ -11,6 +11,19 @@ namespace BarrocIntens.Data
 {
     internal class AppDbContext : DbContext
     {
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Contract> Contracts { get; set; }
+        public DbSet<ContractProduct> ContractProducts { get; set; }
+        public DbSet<CustomInvoice> CustomInvoices { get; set; }
+        public DbSet<CustomInvoiceProduct> CustomInvoiceProducts { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<MaintenanceAppointment> MaintenanceAppointments { get; set; }
+        public DbSet<Note> Notes { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductsCategory> ProductsCategories { get; set; }
+        public DbSet<User> Users { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //Go to the App.config.example file and then follow Instructions
@@ -45,7 +58,7 @@ namespace BarrocIntens.Data
                     Id = 1,
                     Name = "Admin1",
                     Username = "Admin1",
-                    Password = "Admin1",
+                    Password = SecureHasher.Hash("Admin1"),
                     DepartmentId = 1,
                 },
                 new User
@@ -53,7 +66,7 @@ namespace BarrocIntens.Data
                     Id = 2,
                     Name = "Justin",
                     Username = "Admin2",
-                    Password = "Admin2",
+                    Password = SecureHasher.Hash("Admin2"),
                     DepartmentId = 1,
                 },
                 new User
@@ -61,7 +74,7 @@ namespace BarrocIntens.Data
                     Id = 3,
                     Name = "Remon",
                     Username = "Admin3",
-                    Password = "Admin3",
+                    Password = SecureHasher.Hash("Admin3"),
                     DepartmentId = 1,
                 },
                 new User
@@ -69,7 +82,7 @@ namespace BarrocIntens.Data
                     Id = 4,
                     Name = "Dani",
                     Username = "Admin4",
-                    Password = "Admin4",
+                    Password = SecureHasher.Hash("Admin4"),
                     DepartmentId = 1,
                 },
                 new User
@@ -77,7 +90,7 @@ namespace BarrocIntens.Data
                     Id = 5,
                     Name = "Nathan",
                     Username = "Admin5",
-                    Password = "Admin5",
+                    Password = SecureHasher.Hash("Admin5"),
                     DepartmentId = 1,
                 },
                 new User
@@ -85,7 +98,7 @@ namespace BarrocIntens.Data
                     Id = 6,
                     Name = "User1",
                     Username = "User1",
-                    Password = "User1",
+                    Password = SecureHasher.Hash("User1"),
                     DepartmentId = 2,
                 }
             );

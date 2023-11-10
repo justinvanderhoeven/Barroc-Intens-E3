@@ -5,13 +5,20 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
-using System;
+using System; 
+using BarrocIntens.Data;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using static System.Net.Mime.MediaTypeNames;
+using Windows.Security.Cryptography.Core;
+using Windows.UI.Popups;
+using static System.Net.WebRequestMethods;
+using System.Net;
+
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -28,9 +35,31 @@ namespace BarrocIntens
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        internal void Login_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(SalesPage));
+            string username = Username.Text;
+            string inputPassword = Password.Password;
+
+            using (var db = new AppDbContext())
+            {
+                var user = db.Users.FirstOrDefault(u => u.Username == username);
+
+                if (user != null && VerifyPassword(inputPassword, user.Password))
+                {
+                    Frame.Navigate(typeof(FinancePage));
+                }
+                else
+                {
+                    Console.WriteLine("Login failed. Please check your credentials.");
+                }
+            }
         }
+        
+
+        private bool VerifyPassword(string inputPassword, string hashedPassword)
+        {
+            return SecureHasher.Verify(inputPassword, hashedPassword); 
+        }
+
     }
 }
