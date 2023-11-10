@@ -10,30 +10,30 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-        <TextBlock FontSize="30" FontWeight="Bold" Text="Formulier Company"/>
+        <TextBlock FontSize="30" FontWeight="Bold" Foreground="#212121" FontFamily="Big Shoulders Display" Text="Formulier Company"/>
         <StackPanel Orientation="Vertical" Margin="0,25,0,25">
 
-            <TextBox x:Name="nameInput"
+            <TextBox Foreground="#ffd700" FontFamily="Roboto" x:Name="nameInput"
                  Header="Name:" PlaceholderText="Name"
                  Width="300" HorizontalAlignment="Left"/>
 
-            <TextBox x:Name="PhoneInput"
+            <TextBox Foreground="#ffd700" FontFamily="Roboto" x:Name="PhoneInput"
                  Header="PhoneNumber:" PlaceholderText="PhoneNumber"
                  Width="300" HorizontalAlignment="Left"/>
 
-            <TextBox x:Name="StreetInput"
+            <TextBox Foreground="#ffd700" FontFamily="Roboto" x:Name="StreetInput"
                  Header="Street:" PlaceholderText="Street"
                  Width="300" HorizontalAlignment="Left"/>
 
-            <TextBox x:Name="HouseInput"
+            <TextBox Foreground="#ffd700" FontFamily="Roboto" x:Name="HouseInput"
                  Header="House:" PlaceholderText="House"
                  Width="300" HorizontalAlignment="Left"/>
 
-            <TextBox x:Name="CityInput"
+            <TextBox Foreground="#ffd700" FontFamily="Roboto" x:Name="CityInput"
                  Header="City:" PlaceholderText="City"
                  Width="300" HorizontalAlignment="Left"/>
 
-            <ComboBox Header="Countries" PlaceholderText="Select a Country" Width="200">
+            <ComboBox Foreground="#ffd700" FontFamily="Roboto" Header="Countries" PlaceholderText="Select a Country" Width="200">
                 <x:String>The Netherlands</x:String>
                 <x:String>Belgium</x:String>
                 <x:String>Luxembourg</x:String>
@@ -59,7 +59,7 @@
                 <x:String>India</x:String>
                 <x:String>Japan</x:String>
             </ComboBox>
-            <Button Content="Submit"/>
+            <Button Foreground="#ffd700" FontFamily="Roboto" Content="Submit"/>
         </StackPanel>
     </StackPanel>
 </Page>
