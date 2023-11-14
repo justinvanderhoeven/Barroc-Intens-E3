@@ -92,9 +92,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MaintenanceViews\" />
-  </ItemGroup>
-  <ItemGroup>
     <Page Update="PurchaseViews\StockView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -123,4 +120,7 @@
   <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="MaintenanceViews\" />
+  </ItemGroup>
 </Project>
