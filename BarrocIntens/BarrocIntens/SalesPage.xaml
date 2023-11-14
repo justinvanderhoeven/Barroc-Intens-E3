@@ -10,30 +10,35 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-        <TextBlock FontSize="30" FontWeight="Bold" Foreground="#212121" FontFamily="Big Shoulders Display" Text="Formulier Company"/>
+        <TextBlock FontFamily="Big Shoulders Display" FontSize="30" FontWeight="Bold" Foreground="#212121" Text="Formulier Company"/>
         <StackPanel Orientation="Vertical" Margin="0,25,0,25">
+            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="nameInput"
+                 Header="Name:" PlaceholderText="Name" 
+                 Width="300" HorizontalAlignment="Left">
+            </TextBox>
 
-            <TextBox Foreground="#ffd700" FontFamily="Roboto" x:Name="nameInput"
-                 Header="Name:" PlaceholderText="Name"
-                 Width="300" HorizontalAlignment="Left"/>
-
-            <TextBox Foreground="#ffd700" FontFamily="Roboto" x:Name="PhoneInput"
+            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="PhoneInput"
                  Header="PhoneNumber:" PlaceholderText="PhoneNumber"
                  Width="300" HorizontalAlignment="Left"/>
 
-            <TextBox Foreground="#ffd700" FontFamily="Roboto" x:Name="StreetInput"
+            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="StreetInput"
                  Header="Street:" PlaceholderText="Street"
                  Width="300" HorizontalAlignment="Left"/>
 
-            <TextBox Foreground="#ffd700" FontFamily="Roboto" x:Name="HouseInput"
+            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="HouseInput"
                  Header="House:" PlaceholderText="House"
                  Width="300" HorizontalAlignment="Left"/>
 
-            <TextBox Foreground="#ffd700" FontFamily="Roboto" x:Name="CityInput"
+            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="CityInput"
                  Header="City:" PlaceholderText="City"
                  Width="300" HorizontalAlignment="Left"/>
 
-            <ComboBox Foreground="#ffd700" FontFamily="Roboto" Header="Countries" PlaceholderText="Select a Country" Width="200">
+            <ComboBox FontFamily="Roboto" Margin="0, 10" Header="Countries" PlaceholderText="Select a Country" Width="300">
+                <ComboBox.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Foreground="#212121" />
+                    </DataTemplate>
+                </ComboBox.HeaderTemplate>
                 <x:String>The Netherlands</x:String>
                 <x:String>Belgium</x:String>
                 <x:String>Luxembourg</x:String>
@@ -59,7 +64,7 @@
                 <x:String>India</x:String>
                 <x:String>Japan</x:String>
             </ComboBox>
-            <Button Foreground="#ffd700" FontFamily="Roboto" Content="Submit"/>
+            <Button FontFamily="Roboto" Margin="0, 10" Content="Submit"/>
         </StackPanel>
     </StackPanel>
 </Page>

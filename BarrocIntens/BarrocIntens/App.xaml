@@ -6,6 +6,12 @@
     xmlns:local="using:BarrocIntens">
     <Application.Resources>
         <ResourceDictionary>
+            <!--Color everything the same in this case every text or button gets ffd700-->
+            <SolidColorBrush x:Key="TextControlHeaderForeground" Color="#212121" />
+            <SolidColorBrush x:Key="TextControlPlaceholderForeground" Color="#d9d9d9" />
+            <SolidColorBrush x:Key="ButtonForeground" Color="#212121" />
+            <SolidColorBrush x:Key="ButtonBackground" Color="#ffd700" />
+            <SolidColorBrush x:Key="ComboBoxForeground" Color="#212121" />
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
                 <!-- Other merged dictionaries here -->
