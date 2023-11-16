@@ -38,8 +38,9 @@ namespace BarrocIntens
         }
 
         //Login Event.
-        internal async void Login_Click(object sender, RoutedEventArgs e)
+        internal async void loginButton_Click(object sender, RoutedEventArgs e)
         {
+            loginButton.Background = new SolidColorBrush(Colors.Gold);
 
             //Put input in variable . 
             string username = Username.Text;
@@ -99,11 +100,6 @@ namespace BarrocIntens
                     Frame.Navigate(typeof(PurchasePage));
                     break;
             }
-        }
-
-        private void loginButton_Click(object sender, RoutedEventArgs e)
-        {
-            loginButton.Background = new SolidColorBrush(Colors.Gold);
         }
     }
 }
