@@ -100,6 +100,14 @@ namespace BarrocIntens.Data
                     Username = "User1",
                     Password = SecureHasher.Hash("User1"),
                     DepartmentId = 2,
+                },
+                new User
+                {
+                    Id = 7,
+                    Name = "HeadMaintenance",
+                    Username = "HeadMaintenance",
+                    Password = SecureHasher.Hash("HeadMaintenance"),
+                    DepartmentId = 6,
                 }
             );
 
@@ -153,6 +161,11 @@ namespace BarrocIntens.Data
                 {
                     Id = 5,
                     Type = "Purchase"
+                },
+                new Department
+                {
+                    Id = 6,
+                    Type = "HeadMaintenance"
                 }
             );
 

@@ -18,7 +18,9 @@
     <None Remove="FinanceViews\CustomerOverviewView.xaml" />
     <None Remove="FinanceViews\IncomeStatementView.xaml" />
     <None Remove="LoginPage.xaml" />
-    <None Remove="MaintenancePage.xaml" />
+    <None Remove="MaintenanceViews\MaintenancePage.xaml" />
+    <None Remove="MaintenanceViews\MalfunctionMessagePage.xaml" />
+    <None Remove="NavBarUserControl.xaml" />
     <None Remove="PurchasePage.xaml" />
     <None Remove="PurchaseViews\StockView.xaml" />
     <None Remove="SalesPage.xaml" />
@@ -58,17 +60,22 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
+    <Page Update="MaintenanceViews\MalfunctionMessagePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="NavBarUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="SalesViews\AddCustomerView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="SalesPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="MaintenancePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -91,9 +98,6 @@
     <Page Update="SalesViews\AddCompanyView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MaintenanceViews\" />
   </ItemGroup>
   <ItemGroup>
     <Page Update="PurchaseViews\StockView.xaml">
@@ -124,4 +128,9 @@
   <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
   </PropertyGroup>
+  <ItemGroup>
+    <Page Update="MaintenanceViews\MaintenancePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
 </Project>
