@@ -10,9 +10,41 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     NavigationCacheMode="Enabled">
 
+    <Page.Resources>
+        <Style x:Key="BasicStyle" TargetType="ContentControl">
+            <Setter Property="Width" Value="130" />
+            <Setter Property="Height" Value="50" />
+        </Style>
+
+        <Style x:Key="ButtonStyle" TargetType="Button"
+           BasedOn="{StaticResource BasicStyle}">
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Foreground" Value="Black" />
+        </Style>
+
+        <Style x:Key="CheckBoxStyle" TargetType="CheckBox"
+           BasedOn="{StaticResource BasicStyle}">
+            <Setter Property="BorderBrush" Value="Blue" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Foreground" Value="Green" />
+        </Style>
+    </Page.Resources>
+
     <Grid>
-        <StackPanel>
-            <Button Click="Button_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="0 50 0 0" Grid.Row="0">
+            <Image Source="\Assets\Logo6_groot.png" Name="ImageViewer1" Height="200" Width="200" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <Button Margin="0 20 0 0" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Center" Click="loginButton_Click" ClickMode="Hover" Content="Login" x:Name="loginButton"/>
+            <!--<TextBlock HorizontalAlignment="Center" x:Name="text1" Padding="20" />-->
+            <TextBox HorizontalAlignment="Center" x:Name="username" Padding="10 5 55 5" Margin="0 20 0 20" PlaceholderText="Username" />
+            <TextBox HorizontalAlignment="Center" x:Name="password" Padding="10 5 60 5" PlaceholderText="Password" />
         </StackPanel>
     </Grid>
 </Page>

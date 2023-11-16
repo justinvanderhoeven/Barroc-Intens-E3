@@ -12,6 +12,7 @@
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Assets\Logo6_groot.png" />
     <None Remove="CustomerPage.xaml" />
     <None Remove="FinancePage.xaml" />
     <None Remove="LoginPage.xaml" />
