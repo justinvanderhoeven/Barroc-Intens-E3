@@ -57,7 +57,7 @@ namespace BarrocIntens
                 }
                 else
                 {
-                    //Removes in put from input boxes.
+                    //Removes input from input boxes.
                     Username.Text = null; 
                     Password.Password = null;
 

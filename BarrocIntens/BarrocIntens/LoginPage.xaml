@@ -23,13 +23,6 @@
             <Setter Property="BorderThickness" Value="2" />
             <Setter Property="Foreground" Value="Black" />
         </Style>
-
-        <Style x:Key="CheckBoxStyle" TargetType="CheckBox"
-           BasedOn="{StaticResource BasicStyle}">
-            <Setter Property="BorderBrush" Value="Blue" />
-            <Setter Property="BorderThickness" Value="2" />
-            <Setter Property="Foreground" Value="Green" />
-        </Style>
     </Page.Resources>
 
     <Grid>
@@ -42,10 +35,9 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1">
-            <Button Margin="0 20 0 0" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Center" Click="loginButton_Click" ClickMode="Hover" Content="Login" x:Name="loginButton"/>
-            <!--<TextBlock HorizontalAlignment="Center" x:Name="text1" Padding="20" />-->
-            <TextBox HorizontalAlignment="Center" x:Name="username" Padding="10 5 55 5" Margin="0 20 0 20" PlaceholderText="Username" />
-            <TextBox HorizontalAlignment="Center" x:Name="password" Padding="10 5 60 5" PlaceholderText="Password" />
+            <Button HorizontalAlignment="Center" x:Name="loginButton" Margin="0 20 0 0" Style="{StaticResource ButtonStyle}" Click="loginButton_Click" Content="Login"/>
+            <TextBox HorizontalAlignment="Center" x:Name="Username" Padding="10 5 55 5" Margin="0 20 0 20" PlaceholderText="Username" />
+            <PasswordBox HorizontalAlignment="Center" x:Name="Password" Padding="10 5 60 5" PlaceholderText="Password" />
         </StackPanel>
     </Grid>
 </Page>
