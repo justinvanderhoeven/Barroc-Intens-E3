@@ -96,6 +96,9 @@ namespace BarrocIntens
                 case 5:
                     Frame.Navigate(typeof(PurchasePage));
                     break;
+                case 6:
+                    Frame.Navigate(typeof(MaintenancePage));
+                    break;
             }
         }
     }
