@@ -18,6 +18,7 @@
     <None Remove="FinanceViews\IncomeStatementView.xaml" />
     <None Remove="LoginPage.xaml" />
     <None Remove="MaintenancePage.xaml" />
+    <None Remove="NavBarUserControl.xaml" />
     <None Remove="PurchasePage.xaml" />
     <None Remove="PurchaseViews\StockView.xaml" />
     <None Remove="SalesPage.xaml" />
@@ -92,6 +93,17 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
+=======
+    <Folder Include="MaintenanceViews\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="NavBarUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+>>>>>>> Stashed changes
     <Page Update="PurchaseViews\StockView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
