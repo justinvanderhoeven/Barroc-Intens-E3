@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) Microsoft Corporation and Contributors. -->
+<!-- Licensed under the MIT License. -->
+    
 <Page
     x:Class="BarrocIntens.LoginPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -34,13 +36,9 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1">
-<<<<<<< Updated upstream
-            <Button HorizontalAlignment="Center" x:Name="loginButton" Margin="0 20 0 0" Style="{StaticResource ButtonStyle}" PointerEntered="loginButton_PointerEntered" Click="loginButton_Click" Content="Login"/>
-=======
->>>>>>> Stashed changes
             <TextBox HorizontalAlignment="Center" x:Name="Username" Padding="10 5 55 5" Margin="0 20 0 20" PlaceholderText="Username" />
             <PasswordBox HorizontalAlignment="Center" x:Name="Password" Padding="10 5 60 5" PlaceholderText="Password" />
-            <Button HorizontalAlignment="Center" x:Name="loginButton" Margin="0 20 0 0" Style="{StaticResource ButtonStyle}" Click="loginButton_Click" Content="Login"/>
+            <Button HorizontalAlignment="Center" x:Name="loginButton" Margin="0 20 0 0" Style="{StaticResource ButtonStyle}" PointerEntered="loginButton_PointerEntered" Click="loginButton_Click" Content="Login"/>
         </StackPanel>
     </Grid>
 </Page>
