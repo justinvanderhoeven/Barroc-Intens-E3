@@ -59,7 +59,7 @@ namespace BarrocIntens.Data
                     Name = "Admin1",
                     Username = "Admin1",
                     Password = SecureHasher.Hash("Admin1"),
-                    DepartmentId = 1,
+                    DepartmentId = 6,
                 },
                 new User
                 {
@@ -67,7 +67,7 @@ namespace BarrocIntens.Data
                     Name = "Justin",
                     Username = "Admin2",
                     Password = SecureHasher.Hash("Admin2"),
-                    DepartmentId = 2,
+                    DepartmentId = 6,
                 },
                 new User
                 {
@@ -83,7 +83,7 @@ namespace BarrocIntens.Data
                     Name = "Dani",
                     Username = "Admin4",
                     Password = SecureHasher.Hash("Admin4"),
-                    DepartmentId = 1,
+                    DepartmentId = 6,
                 },
                 new User
                 {
@@ -91,7 +91,7 @@ namespace BarrocIntens.Data
                     Name = "Nathan",
                     Username = "Admin5",
                     Password = SecureHasher.Hash("Admin5"),
-                    DepartmentId = 1,
+                    DepartmentId = 6,
                 },
                 new User
                 {
@@ -100,7 +100,23 @@ namespace BarrocIntens.Data
                     Username = "User1",
                     Password = SecureHasher.Hash("User1"),
                     DepartmentId = 2,
-                }
+                },
+                new User
+                {
+                    Id = 7,
+                    Name = "Customer1",
+                    Username = "Customer1",
+                    Password = SecureHasher.Hash("Customer1"),
+                    DepartmentId = 1,
+                },
+                 new User
+                 {
+                     Id = 8,
+                     Name = "HeadMaintenance",
+                     Username = "HeadMaintenance",
+                     Password = SecureHasher.Hash("HeadMaintenance"),
+                     DepartmentId = 6,
+                 }
             );
 
             modelBuilder.Entity<Company>().HasData(
@@ -153,7 +169,12 @@ namespace BarrocIntens.Data
                 {
                     Id = 5,
                     Type = "Purchase"
-                }
+                },
+                 new Department
+                 {
+                     Id = 6,
+                     Type = "Head Maintenance"
+                 }
             );
 
             modelBuilder.Entity<Note>().HasData(
