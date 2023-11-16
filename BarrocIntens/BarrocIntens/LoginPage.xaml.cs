@@ -1,3 +1,5 @@
+using ABI.Windows.UI;
+using Microsoft.UI;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -97,6 +99,11 @@ namespace BarrocIntens
                     Frame.Navigate(typeof(PurchasePage));
                     break;
             }
+        }
+
+        private void loginButton_Click(object sender, RoutedEventArgs e)
+        {
+            loginButton.Background = new SolidColorBrush(Colors.Gold);
         }
     }
 }
