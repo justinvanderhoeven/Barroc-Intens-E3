@@ -17,23 +17,23 @@
                  Width="300" HorizontalAlignment="Left">
             </TextBox>
 
-            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="PhoneInput"
+            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="phoneInput"
                  Header="PhoneNumber:" PlaceholderText="PhoneNumber"
                  Width="300" HorizontalAlignment="Left"/>
 
-            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="StreetInput"
+            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="streetInput"
                  Header="Street:" PlaceholderText="Street"
                  Width="300" HorizontalAlignment="Left"/>
 
-            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="HouseInput"
+            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="houseInput"
                  Header="House:" PlaceholderText="House"
                  Width="300" HorizontalAlignment="Left"/>
 
-            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="CityInput"
+            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="cityInput"
                  Header="City:" PlaceholderText="City"
                  Width="300" HorizontalAlignment="Left"/>
 
-            <ComboBox FontFamily="Roboto" Margin="0, 10" Header="Countries" PlaceholderText="Select a Country" Width="300">
+            <ComboBox FontFamily="Roboto" Margin="0, 10" Header="Countries" PlaceholderText="Select a Country" Width="300" x:Name="countryInput">
                 <ComboBox.HeaderTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding}" Foreground="#212121" />
@@ -64,7 +64,7 @@
                 <x:String>India</x:String>
                 <x:String>Japan</x:String>
             </ComboBox>
-            <Button FontFamily="Roboto" Margin="0, 10" Content="Submit"/>
+            <Button FontFamily="Roboto" Margin="0, 10" Content="Submit" Click="Button_Click"/>
         </StackPanel>
     </StackPanel>
 </Page>

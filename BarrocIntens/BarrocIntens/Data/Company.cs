@@ -17,7 +17,7 @@ namespace BarrocIntens.Data
         public string City { get; set; }
         public string CountryCode {  get; set; }
         public DateTime BkrCheckedAt { get; set; }
-        public int ContactId { get; set; }
+        public int? ContactId { get; set; } = null;
         public User Contact { get; set; }
         public ICollection<User> Users { get; set; }
         public ICollection<Note> Notes { get; set; }
