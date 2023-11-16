@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
@@ -15,10 +15,15 @@
     <None Remove="Assets\Logo6_groot.png" />
     <None Remove="CustomerPage.xaml" />
     <None Remove="FinancePage.xaml" />
+    <None Remove="FinanceViews\CustomerOverviewView.xaml" />
+    <None Remove="FinanceViews\IncomeStatementView.xaml" />
     <None Remove="LoginPage.xaml" />
     <None Remove="MaintenancePage.xaml" />
-    <None Remove="MarketingPage.xaml" />
+    <None Remove="PurchasePage.xaml" />
+    <None Remove="PurchaseViews\StockView.xaml" />
     <None Remove="SalesPage.xaml" />
+    <None Remove="SalesViews\AddCompanyView.xaml" />
+    <None Remove="SalesViews\AddCustomerView.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,7 +58,7 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MarketingPage.xaml">
+    <Page Update="SalesViews\AddCustomerView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -79,6 +84,34 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="LoginPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="SalesViews\AddCompanyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MaintenanceViews\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="PurchaseViews\StockView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="PurchasePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="FinanceViews\IncomeStatementView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="FinanceViews\CustomerOverviewView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

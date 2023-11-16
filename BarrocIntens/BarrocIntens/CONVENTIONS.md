@@ -3,9 +3,9 @@
 These are the Coventions for BarrocIntens.
 
 **GitHub Rules**
-- **Rule 1:** Do not push errors, or code that isn't finished!
+- **Rule 1:** Do not push errors, or code that isn't finished unless Everyone needs the code!
 - **Rule 2:** Show your code to the Scrum Master before pushing it.
-- **Rule 3:** Do not push to the main brainch, unless it is needed.
+- **Rule 3:** Do not push to the main branch, unless it is needed.
 
 **Code Rules**
 - **Rule 1:** All code must be written in English.
