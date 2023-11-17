@@ -41,8 +41,6 @@ namespace BarrocIntens
         //Login Event.
         internal async void loginButton_Click(object sender, RoutedEventArgs e)
         {
-            loginButton.Background = new SolidColorBrush(Colors.Gold);
-
             //Put input in variable . 
             string username = Username.Text;
             string inputPassword = Password.Password;
