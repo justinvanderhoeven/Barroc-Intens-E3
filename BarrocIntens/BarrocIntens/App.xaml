@@ -3,6 +3,7 @@
     x:Class="BarrocIntens.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    RequestedTheme="Light"
     xmlns:local="using:BarrocIntens">
     <Application.Resources>
         <ResourceDictionary>
@@ -11,10 +12,9 @@
                 <!-- Other merged dictionaries here -->
             </ResourceDictionary.MergedDictionaries>
             <!-- Other app resources here -->
-            <FontFamily x:Key="CustomFont">ms-appx:///Assets/Fonts/BigShouldersDisplay/BigShouldersDisplay.ttf#Big Shoulders Display Bold</FontFamily>
-            <Style TargetType="Button">
-                <Setter Property="FontFamily" Value="{StaticResource CustomFont}" />
-            </Style>
+            <SolidColorBrush x:Key="ButtonBorderBrush" Color="Black" />
+            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="Gold" />
+            <Thickness x:Key="ButtonBorderThemeThickness">2</Thickness>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

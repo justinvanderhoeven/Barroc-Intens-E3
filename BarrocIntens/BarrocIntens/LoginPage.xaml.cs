@@ -1,3 +1,5 @@
+using ABI.Windows.UI;
+using Microsoft.UI;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -36,7 +38,7 @@ namespace BarrocIntens
         }
 
         //Login Event.
-        internal async void Login_Click(object sender, RoutedEventArgs e)
+        internal async void loginButton_Click(object sender, RoutedEventArgs e)
         {
 
             //Put input in variable . 
@@ -56,6 +58,7 @@ namespace BarrocIntens
                 {
                     //Removes in put from input boxes.
                     Email.Text = null; 
+
                     Password.Password = null;
 
                     //Error message
@@ -96,7 +99,16 @@ namespace BarrocIntens
                 case 5:
                     Frame.Navigate(typeof(PurchasePage));
                     break;
+                //case 6:
+                //    Frame.Navigate(typeof(MalfunctionMessagePage));
+                //    break;
+
             }
+        }
+
+        private void loginButton_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+           // loginButton.Background = new SolidColorBrush(Colors.Gold);
         }
     }
 }
