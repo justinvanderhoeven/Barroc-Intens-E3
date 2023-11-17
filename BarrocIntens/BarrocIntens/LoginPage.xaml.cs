@@ -101,11 +101,7 @@ namespace BarrocIntens
                     Frame.Navigate(typeof(PurchasePage));
                     break;
                 case 6:
-<<<<<<< Updated upstream
-                    Frame.Navigate(typeof(MalfunctionMessagePage));
-=======
                     Frame.Navigate(typeof(MaintenancePage));
->>>>>>> Stashed changes
                     break;
             }
         }

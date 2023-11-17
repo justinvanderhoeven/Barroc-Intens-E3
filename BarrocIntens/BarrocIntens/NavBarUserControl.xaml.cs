@@ -33,20 +33,6 @@ namespace BarrocIntens
         {
             this.InitializeComponent();
         }
-
-        private void UpdateNavigationVisibility()
-        {
-            using (var db = new AppDbContext())
-            {
-
-               if (department.Id("Id"))
-                {
-                    MalfunctionMessagePage.Visibility = Visibility.Visible;
-                }
-            }
-        }
-
-
         private void NavigateToHome(object sender = null, RoutedEventArgs e = null)
         {
             ContentFrame.Navigate(typeof(MaintenancePage));
