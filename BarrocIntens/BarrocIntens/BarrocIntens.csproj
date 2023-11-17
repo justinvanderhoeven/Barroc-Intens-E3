@@ -20,7 +20,6 @@
     <None Remove="LoginPage.xaml" />
     <None Remove="MaintenanceViews\MaintenancePage.xaml" />
     <None Remove="MaintenanceViews\MalfunctionMessagePage.xaml" />
-    <None Remove="NavBarUserControl.xaml" />
     <None Remove="PurchasePage.xaml" />
     <None Remove="PurchaseViews\StockView.xaml" />
     <None Remove="SalesPage.xaml" />

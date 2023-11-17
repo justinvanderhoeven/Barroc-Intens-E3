@@ -65,9 +65,9 @@ namespace BarrocIntens.Data
                 {
                     Id = 2,
                     Name = "Justin",
-                    Username = "Admin2",
-                    Password = SecureHasher.Hash("Admin2"),
-                    DepartmentId = 2,
+                    Username = "Justin",
+                    Password = SecureHasher.Hash("Justin"),
+                    DepartmentId = 3,
                 },
                 new User
                 {
