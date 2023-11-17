@@ -13,15 +13,22 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>-->
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="0" x:Name="MalfunctionListView">
+        <ListView HorizontalAlignment="Center" Grid.Row="0" x:Name="MalfunctionListView">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="localData:MaintenanceAppointment">
-                    <StackPanel>
-                        <TextBlock Margin="0 10 0 0" Text="{x:Bind Id}"/>
+                    <StackPanel BorderThickness="1" BorderBrush="Black" Padding="10 0 10 0" Margin="0 10 0 0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="0 5 10 0" Text="Malfunction Id:"/>
+                            <TextBlock Margin="0 5 0 0" Text="{x:Bind Id}"/>
+                        </StackPanel>
                         <StackPanel>
                             <TextBlock Margin="15 5 0 0" Text="{x:Bind Remark}"/>
                             <TextBlock Margin="15 0 0 10" Text="{x:Bind DateAdded}"/>
@@ -30,7 +37,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <StackPanel  Grid.Row="1" >
+        <StackPanel Padding="0 0 0 10" HorizontalAlignment="Center" Grid.Row="1" >
             <Button x:Name="myButton" Click="myButton_Click">Search Malfunction</Button>
             <!--<TextBox x:Name="SearchTextBox" PlaceholderText="Search by" />-->
         </StackPanel>

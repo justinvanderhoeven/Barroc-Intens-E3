@@ -130,14 +130,28 @@ namespace BarrocIntens.Data
                 new MaintenanceAppointment
                 {
                     Id = 1,
-                    Remark = "Test",
+                    Remark = "Test Message",
                     DateAdded = DateTime.Now,
                     CompanyId = 1,
                 },
                 new MaintenanceAppointment
                 {
                     Id = 2,
-                    Remark = "Test 2 yay",
+                    Remark = "Lorem Ipsum",
+                    DateAdded = DateTime.Now,
+                    CompanyId = 1,
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 3,
+                    Remark = "The machine needs to be fixed",
+                    DateAdded = DateTime.Now,
+                    CompanyId = 1,
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 4,
+                    Remark = "Another Lorem Ipsum",
                     DateAdded = DateTime.Now,
                     CompanyId = 1,
                 }
