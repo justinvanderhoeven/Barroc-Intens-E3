@@ -57,7 +57,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 1,
                     Name = "Admin1",
-                    Username = "Admin1",
+                    Email = "Admin1@gmail.com",
                     Password = SecureHasher.Hash("Admin1"),
                     DepartmentId = 1,
                 },
@@ -65,7 +65,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 2,
                     Name = "Justin",
-                    Username = "Admin2",
+                    Email = "Admin2@gmail.com",
                     Password = SecureHasher.Hash("Admin2"),
                     DepartmentId = 2,
                 },
@@ -73,7 +73,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 3,
                     Name = "Remon",
-                    Username = "Admin3",
+                    Email = "Admin3@gmail.com",
                     Password = SecureHasher.Hash("Admin3"),
                     DepartmentId = 4,
                 },
@@ -81,7 +81,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 4,
                     Name = "Dani",
-                    Username = "Admin4",
+                    Email = "Admin4@gmail.com",
                     Password = SecureHasher.Hash("Admin4"),
                     DepartmentId = 1,
                 },
@@ -89,7 +89,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 5,
                     Name = "Nathan",
-                    Username = "Admin5",
+                    Email = "Admin5@gmail.com",
                     Password = SecureHasher.Hash("Admin5"),
                     DepartmentId = 1,
                 },
@@ -97,7 +97,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 6,
                     Name = "User1",
-                    Username = "User1",
+                    Email = "User1@gmail.com",
                     Password = SecureHasher.Hash("User1"),
                     DepartmentId = 2,
                 }
