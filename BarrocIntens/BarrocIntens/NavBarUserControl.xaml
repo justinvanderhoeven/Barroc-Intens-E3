@@ -15,7 +15,7 @@
         <!-- Navigation Bar -->
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Background="LightGray">
             <Button Content="Home" Click="NavigateToHome"/>
-            <Button x:Name="MalfunctionMessagePage" Content="Storingsaanvragen" Click="NavigateToMalfunctionMessagePage" Visibility="Collapsed"/>
+            <Button x:Name="MalfunctionMessagePage" Content="Storingsaanvragen" Click="NavigateToMalfunctionMessagePage" Visibility="Visible"/>
         </StackPanel>
 
         <!-- Content Frame -->
