@@ -25,24 +25,24 @@ namespace BarrocIntens
     /// </summary>
     public sealed partial class SalesPage : Page
     {
-        private NavigationViewItem _lastItem;
+        private NavigationViewItem lastItem;
         public SalesPage()
         {
             this.InitializeComponent();
         }
 
-        private void salesNavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        private void SalesNavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
             var item = args.InvokedItemContainer as NavigationViewItem;
-            if (item == null || item == _lastItem)
+            if (item == null || item == lastItem)
                 return;
 
             var clickedView = item.Tag.ToString();
-            if (!navigateToView(clickedView)) return;
-            _lastItem = item;
+            if (!NavigateToView(clickedView)) return;
+            lastItem = item;
         }
 
-        private bool navigateToView(string clickedView)
+        private bool NavigateToView(string clickedView)
         {
             var view = Assembly.GetExecutingAssembly().GetType($"BarrocIntens.SalesViews.{clickedView}");
 
