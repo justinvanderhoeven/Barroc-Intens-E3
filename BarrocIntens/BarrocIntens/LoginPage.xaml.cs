@@ -99,7 +99,7 @@ namespace BarrocIntens
                     Frame.Navigate(typeof(PurchasePage));
                     break;
                 case 6:
-                    Frame.Navigate(typeof(MalfunctionMessagePage));
+                    Frame.Navigate(typeof(MaintenancePage));
                     break;
             }
         }
