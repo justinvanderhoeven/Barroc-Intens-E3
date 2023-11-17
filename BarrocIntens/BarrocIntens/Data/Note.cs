@@ -10,6 +10,7 @@ namespace BarrocIntens.Data
     internal class Note
     {
         public int Id { get; set; }
+        public string Email { get; set; }
         public string Content {  get; set; }
         public DateTime Date { get; set; }
         public int CompanyId {  get; set; }

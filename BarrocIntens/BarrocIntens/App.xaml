@@ -11,6 +11,10 @@
                 <!-- Other merged dictionaries here -->
             </ResourceDictionary.MergedDictionaries>
             <!-- Other app resources here -->
+            <FontFamily x:Key="CustomFont">ms-appx:///Assets/Fonts/BigShouldersDisplay/BigShouldersDisplay.ttf#Big Shoulders Display Bold</FontFamily>
+            <Style TargetType="Button">
+                <Setter Property="FontFamily" Value="{StaticResource CustomFont}" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

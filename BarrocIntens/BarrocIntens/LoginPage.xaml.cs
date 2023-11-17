@@ -40,12 +40,12 @@ namespace BarrocIntens
         {
 
             //Put input in variable . 
-            string username = Username.Text;
+            string email = Email.Text;
             string inputPassword = Password.Password;
 
             using (var db = new AppDbContext())
             {
-                var user = db.Users.FirstOrDefault(u => u.Username == username);
+                var user = db.Users.FirstOrDefault(u => u.Email == email);
 
                 //Check if password is correct. 
                 if (user != null && VerifyPassword(inputPassword, user.Password))
@@ -55,7 +55,7 @@ namespace BarrocIntens
                 else
                 {
                     //Removes in put from input boxes.
-                    Username.Text = null; 
+                    Email.Text = null; 
                     Password.Password = null;
 
                     //Error message

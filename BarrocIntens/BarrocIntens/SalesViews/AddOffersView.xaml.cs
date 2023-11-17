@@ -25,7 +25,16 @@ namespace BarrocIntens.SalesViews
     {
         public AddOffersView()
         {
+
+            List<string> list = new List<string>{
+                "bedrijf1",
+                "bedrijf2",
+                "bedrijf3"
+            };
+
             this.InitializeComponent();
+            CompanySuggestBox.ItemsSource = list;
+            ProductsListView.ItemsSource = list;
         }
     }
 }
