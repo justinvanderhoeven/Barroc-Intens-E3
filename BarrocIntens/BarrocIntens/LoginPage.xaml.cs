@@ -9,6 +9,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System; 
 using BarrocIntens.Data;
+using BarrocIntens.UserViews;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -99,9 +100,9 @@ namespace BarrocIntens
                 case 5:
                     Frame.Navigate(typeof(PurchasePage));
                     break;
-                //case 6:
-                //    Frame.Navigate(typeof(MalfunctionMessagePage));
-                //    break;
+                case 6:
+                    Frame.Navigate(typeof(CreateMalfunctionMessagePage));
+                    break;
 
             }
         }
