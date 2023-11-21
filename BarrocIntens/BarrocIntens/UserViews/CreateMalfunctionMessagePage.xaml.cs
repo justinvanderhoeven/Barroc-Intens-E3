@@ -14,6 +14,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using BarrocIntens.Data;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -32,14 +33,15 @@ namespace BarrocIntens.UserViews
             this.InitializeComponent();
         }
 
-        private void OnSubmitClicked(object sender, RoutedEventArgs e)
+        private async void OnSubmitClicked(object sender, RoutedEventArgs e)
         {
-            
             using var db = new AppDbContext();
+
             if (coffeeMachineComboBox.SelectedItem != null)
             {
                 string selectedCoffeeMachine = coffeeMachineComboBox.SelectedItem.ToString();
-                int productId = -1;
+                int productId = 0;
+
                 if (selectedCoffeeMachine == "Barroc Intens Italian Light")
                 {
                     productId = 1;
@@ -58,60 +60,52 @@ namespace BarrocIntens.UserViews
                 }
                 else
                 {
-                    ShowMessageDialog("Er is iets fout gegeaan.", "Geen invoer gegeven.", false);
+                    ShowMessageDialog("Er is iets fout gegaan.", "Geen invoer gegeven.", false);
+                    return;
                 }
 
                 string problemDescription = txtProblemDescription.Text;
                 // Call the CheckInputs method with the appropriate parameters
-                CheckInputs(txtProblemDescription.Text, productId);
+                CheckInputs(problemDescription, productId);
 
-
-                void CheckInputs(string problemDescription, int productId)
-                {
-                    if (string.IsNullOrEmpty(problemDescription))
-                    {
-                        ShowMessageDialog("Er is iets fout gegaan.", "Geen invoer gegeven.", false);
-                    }
-                    else if  (productId == -1)
-                    {
-                        ShowMessageDialog("Er is iets fout gegaan.", "Geen invoer gegeven.", false);
-                    }
-                    else
-                    {
-                        ShowMessageDialog("Storingsmelding", "De storing is gemeld.", true);
-                    }
-                }
                 db.MaintenanceAppointments.Add(new MaintenanceAppointment
                 {
                     ProductId = productId,
-                    Description = txtProblemDescription.Text
+                    Description = problemDescription
                 });
                 db.SaveChanges();
-                
 
-                async void ShowMessageDialog(string title, string content, bool isMalfunction, string additionalContent = null)
+                // Reset input fields
+                txtProblemDescription.Text = string.Empty;
+                coffeeMachineComboBox.SelectedItem = null;
+            }
+
+            async Task ShowMessageDialog(string title, string content, bool isMalfunction, string additionalContent = null)
+            {
+                ContentDialog dialog = new ContentDialog
                 {
-                    ContentDialog dialog = new ContentDialog
-                    {
-                        Title = title,
-                        XamlRoot = this.XamlRoot,
-                        CloseButtonText = "OK",
-                        Background = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 33, 33, 33)), // Background color #212121
-                        Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 215, 0)), // Foreground color #ffd700
-                    };
+                    Title = title,
+                    XamlRoot = this.XamlRoot,
+                    CloseButtonText = "OK",
+                    Background = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 33, 33, 33)), // Background color #212121
+                    Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 215, 0)), // Foreground color #ffd700
+                };
 
-                    if (isMalfunction)
-                    {
-                        dialog.Content = isMalfunction ? content : additionalContent;
-                    }
-                    else
-                    {
-                        dialog.Content = content;
-                    }
+                dialog.Content = isMalfunction ? content : additionalContent ?? content;
 
-                    await dialog.ShowAsync();
+                await dialog.ShowAsync();
+            }
+
+            void CheckInputs(string problemDescription, int productId)
+            {
+                if (string.IsNullOrEmpty(problemDescription) || productId == 0)
+                {
+                    ShowMessageDialog("Er is iets fout gegaan.", "Geen invoer gegeven.", false);
                 }
-
+                else
+                {
+                    ShowMessageDialog("Storingsmelding", "De storing is gemeld.", true);
+                }
             }
         }
     }
