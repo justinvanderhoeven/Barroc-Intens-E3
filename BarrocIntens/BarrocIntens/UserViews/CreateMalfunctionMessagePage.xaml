@@ -9,12 +9,12 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Tag="CreateMalfunctionMessage">
 
-    <Grid>
-        <StackPanel>
+    <Grid Background="#212121">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <ComboBox FontFamily="Roboto" Margin="0,10" Header="Koffiemachine" PlaceholderText="Selecteer Koffiemachine" Width="300" x:Name="coffeeMachineComboBox">
                 <ComboBox.HeaderTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding}" Foreground="#212121" />
+                        <TextBlock Text="{Binding}" Foreground="#ffd700" />
                     </DataTemplate>
                 </ComboBox.HeaderTemplate>
                 <x:String>Barroc Intens Italian Light</x:String>
