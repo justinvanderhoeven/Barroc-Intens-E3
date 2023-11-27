@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="BarrocIntens.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BarrocIntens"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <NavigationView x:Name="SalesNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Klantjee Toevoegen" Tag="AddCustomerView"/>
+                <NavigationViewItem Content="Bedrijf Toevoegen" Tag="AddCompanyView"/>
+                <NavigationViewItem Content="Offerte Aanmaken" Tag="AddOffersView"/>
+            </NavigationView.MenuItems>
+            <Frame x:Name="SalesFrame"></Frame>
+        </NavigationView>
+
+        <NavigationView x:Name="FinanceNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Overzicht" Tag="CustomerOverviewView"/>
+                <NavigationViewItem Content="Geldzaken" Tag="IncomeStatementView"/>
+            </NavigationView.MenuItems>
+            <Frame x:Name="FinanceFrame"></Frame>
+        </NavigationView>
+
+        <NavigationView x:Name="MaintenanceNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
+            <NavigationView.MenuItems>
+                
+            </NavigationView.MenuItems>
+            <Frame x:Name="MaintenanceFrame"></Frame>
+        </NavigationView>
+
+        <NavigationView x:Name="PurchaseNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
+            <NavigationView.MenuItems>
+                
+            </NavigationView.MenuItems>
+            <Frame x:Name="PurchaseFrame"></Frame>
+        </NavigationView>
+
+        <NavigationView x:Name="CustomerNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
+            <NavigationView.MenuItems>
+                
+            </NavigationView.MenuItems>
+            <Frame x:Name="CustomerFrame"></Frame>
+        </NavigationView>
+    </Grid>
+</Page>
