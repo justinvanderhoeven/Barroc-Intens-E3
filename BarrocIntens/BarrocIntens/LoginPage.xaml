@@ -35,7 +35,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1">
-            <TextBox HorizontalAlignment="Center" x:Name="Username" Padding="10 5 55 5" Margin="0 20 0 20" PlaceholderText="Username" />
+            <TextBox HorizontalAlignment="Center" x:Name="Email" Padding="10 5 55 5" Margin="0 20 0 20" PlaceholderText="Email" />
             <PasswordBox HorizontalAlignment="Center" x:Name="Password" Padding="10 5 60 5" PlaceholderText="Password" />
             <Button HorizontalAlignment="Center" x:Name="loginButton" Margin="0 20 0 0" Style="{StaticResource ButtonStyle}" Click="loginButton_Click" Content="Login"/>
         </StackPanel>

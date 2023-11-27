@@ -42,22 +42,22 @@ namespace BarrocIntens
         internal async void loginButton_Click(object sender, RoutedEventArgs e)
         {
             //Put input in variable . 
-            string username = Username.Text;
+            string email = Email.Text;
             string inputPassword = Password.Password;
 
             using (var db = new AppDbContext())
             {
-                var user = db.Users.FirstOrDefault(u => u.Username == username);
+                var user = db.Users.FirstOrDefault(e => e.Email == email);
 
                 //Check if password is correct. 
-                if (user != null && VerifyPassword(inputPassword, user.Password))
+                if (user != null && VerifyPassword (inputPassword, user.Password))
                 {
                     NavigateToPage(user.DepartmentId);
                 }
                 else
                 {
                     //Removes input from input boxes.
-                    Username.Text = null; 
+                    Email.Text = null; 
                     Password.Password = null;
 
                     //Error message
@@ -74,9 +74,23 @@ namespace BarrocIntens
             }
         }
         //Password verifyer uses SecureHasher class. 
-        private bool VerifyPassword(string inputPassword, string hashedPassword)
+        private bool VerifyPassword(string inputPassword, string hashedPassword, string email)
         {
-            return SecureHasher.Verify(inputPassword, hashedPassword); 
+            return SecureHasher.Verify(inputPassword, hashedPassword);
+        }
+
+        //Email Checker
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private void NavigateToPage(int departmentId)
