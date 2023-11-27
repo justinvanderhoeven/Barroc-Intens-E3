@@ -9,6 +9,17 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Grid>
+        <NavigationView PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" x:Name="SalesNavView" ItemInvoked="salesNavView_ItemInvoked">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Klant Toevoegen" Tag="AddCustomerView"/>
+                <NavigationViewItem Content="Bedrijf Toevoegen" Tag="AddCompanyView"/>
+                <NavigationViewItem Content="Offerte Aanmaken" Tag="AddOffersView"/>
+                <NavigationViewItem Content="Item3"/>
+            </NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame"></Frame>
+        </NavigationView>
+    </Grid>
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
         <TextBlock FontFamily="Big Shoulders Display" FontSize="30" FontWeight="Bold" Foreground="#212121" Text="Formulier Company"/>
         <StackPanel Orientation="Vertical" Margin="0,25,0,25">
