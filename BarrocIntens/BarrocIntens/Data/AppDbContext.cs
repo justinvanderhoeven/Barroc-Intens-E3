@@ -100,6 +100,14 @@ namespace BarrocIntens.Data
                     Name = "User1",
                     Email = "User1@gmail.com",
                     Password = SecureHasher.Hash("User1"),
+                    DepartmentId = 2,
+                },
+                new User
+                {
+                    Id = 7,
+                    Name = "head",
+                    Username = "head",
+                    Password = SecureHasher.Hash("head"),
                     DepartmentId = 6,
                 }
             );
@@ -125,6 +133,14 @@ namespace BarrocIntens.Data
                     Id = 1,
                     Description = "Test",
                     DateAdded = DateTime.Now,
+                    CompanyId = 1,
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 2,
+                    Remark = "Test 2 yay",
+                    DateAdded = DateTime.Now,
+                    CompanyId = 1,
                     ProductId = 1,
                 }
             );
@@ -158,7 +174,7 @@ namespace BarrocIntens.Data
                 new Department
                 {
                     Id = 6,
-                    Type = "User"
+                    Type = "HeadMaintenance"
                 }
             );
 

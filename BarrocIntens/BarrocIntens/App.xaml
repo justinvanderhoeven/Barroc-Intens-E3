@@ -14,7 +14,7 @@
             <!-- Other app resources here -->
             <SolidColorBrush x:Key="ButtonBorderBrush" Color="Black" />
             <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="Gold" />
-            <Thickness x:Key="ButtonBorderThemeThickness">2</Thickness>
+            <Thickness x:Key="ButtonBorderThemeThickness">1</Thickness>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

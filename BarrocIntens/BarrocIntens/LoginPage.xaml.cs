@@ -9,6 +9,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System; 
 using BarrocIntens.Data;
+using BarrocIntens.MaintenanceViews;
 using BarrocIntens.UserViews;
 using System.Collections.Generic;
 using System.IO;
@@ -41,25 +42,22 @@ namespace BarrocIntens
         //Login Event.
         internal async void loginButton_Click(object sender, RoutedEventArgs e)
         {
-
             //Put input in variable . 
             string email = Email.Text;
             string inputPassword = Password.Password;
 
             using (var db = new AppDbContext())
             {
-                var user = db.Users.FirstOrDefault(u => u.Email == email);
-
+                var user = db.Users.FirstOrDefault(e => e.Email == email);
                 //Check if password is correct. 
-                if (user != null && VerifyPassword(inputPassword, user.Password))
+                if (user != null && VerifyPassword (inputPassword, user.Password))
                 {
                     NavigateToPage(user.DepartmentId);
                 }
                 else
                 {
-                    //Removes in put from input boxes.
+                    //Removes input from input boxes.
                     Email.Text = null; 
-
                     Password.Password = null;
 
                     //Error message
@@ -76,9 +74,23 @@ namespace BarrocIntens
             }
         }
         //Password verifyer uses SecureHasher class. 
-        private bool VerifyPassword(string inputPassword, string hashedPassword)
+        private bool VerifyPassword(string inputPassword, string hashedPassword, string email)
         {
-            return SecureHasher.Verify(inputPassword, hashedPassword); 
+            return SecureHasher.Verify(inputPassword, hashedPassword);
+        }
+
+        //Email Checker
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private void NavigateToPage(int departmentId)
@@ -101,9 +113,8 @@ namespace BarrocIntens
                     Frame.Navigate(typeof(PurchasePage));
                     break;
                 case 6:
-                    Frame.Navigate(typeof(CreateMalfunctionMessagePage));
+                    Frame.Navigate(typeof(MaintenancePage));
                     break;
-
             }
         }
 

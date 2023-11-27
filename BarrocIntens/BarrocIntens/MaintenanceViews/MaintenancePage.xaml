@@ -1,6 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) Microsoft Corporation and Contributors. -->
+<!-- Licensed under the MIT License. -->
+
 <Page
-    x:Class="BarrocIntens.MaintenancePage"
+    x:Class="BarrocIntens.MaintenanceViews.MaintenancePage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:BarrocIntens"
@@ -10,6 +12,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <local:NavBarUserControl></local:NavBarUserControl>
+        <Frame x:Name="ContentFrame" Margin="0,40,0,0"/>
     </Grid>
 </Page>
