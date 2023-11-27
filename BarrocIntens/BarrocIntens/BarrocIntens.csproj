@@ -25,6 +25,7 @@
     <None Remove="SalesPage.xaml" />
     <None Remove="SalesViews\AddCompanyView.xaml" />
     <None Remove="SalesViews\AddCustomerView.xaml" />
+    <None Remove="UserViews\CreateMalfunctionMessagePage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -95,6 +96,14 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="SalesViews\AddCompanyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MaintenanceViews\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="UserViews\CreateMalfunctionMessagePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

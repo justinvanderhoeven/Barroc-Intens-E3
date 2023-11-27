@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Graphics.Display;
 using System.Configuration;
+using Microsoft.WindowsAppSDK.Runtime.Packages;
 
 namespace BarrocIntens.Data
 {
@@ -57,7 +58,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 1,
                     Name = "Admin1",
-                    Username = "Admin1",
+                    Email = "Admin1@gmail.com",
                     Password = SecureHasher.Hash("Admin1"),
                     DepartmentId = 1,
                 },
@@ -65,15 +66,15 @@ namespace BarrocIntens.Data
                 {
                     Id = 2,
                     Name = "Justin",
-                    Username = "Justin",
-                    Password = SecureHasher.Hash("Justin"),
-                    DepartmentId = 3,
+                    Email = "Admin2@gmail.com",
+                    Password = SecureHasher.Hash("Admin2"),
+                    DepartmentId = 2,
                 },
                 new User
                 {
                     Id = 3,
                     Name = "Remon",
-                    Username = "Admin3",
+                    Email = "Admin3@gmail.com",
                     Password = SecureHasher.Hash("Admin3"),
                     DepartmentId = 4,
                 },
@@ -81,7 +82,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 4,
                     Name = "Dani",
-                    Username = "Admin4",
+                    Email = "Admin4@gmail.com",
                     Password = SecureHasher.Hash("Admin4"),
                     DepartmentId = 1,
                 },
@@ -89,7 +90,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 5,
                     Name = "Nathan",
-                    Username = "Admin5",
+                    Email = "Admin5@gmail.com",
                     Password = SecureHasher.Hash("Admin5"),
                     DepartmentId = 1,
                 },
@@ -97,7 +98,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 6,
                     Name = "User1",
-                    Username = "User1",
+                    Email = "User1@gmail.com",
                     Password = SecureHasher.Hash("User1"),
                     DepartmentId = 2,
                 },
@@ -117,8 +118,8 @@ namespace BarrocIntens.Data
                     Id = 1,
                     Name = "TestCompany",
                     Phone = "1234",
-                    Street = "CompanyStreet",
-                    HouseNumber = "23",
+                    Address = "CompanyStreet",
+                    Zipcode = "23",
                     City = "CompanyCity",
                     CountryCode = "34",
                     BkrCheckedAt = DateTime.Now,
@@ -130,7 +131,7 @@ namespace BarrocIntens.Data
                 new MaintenanceAppointment
                 {
                     Id = 1,
-                    Remark = "Test",
+                    Description = "Test",
                     DateAdded = DateTime.Now,
                     CompanyId = 1,
                 },
@@ -140,6 +141,7 @@ namespace BarrocIntens.Data
                     Remark = "Test 2 yay",
                     DateAdded = DateTime.Now,
                     CompanyId = 1,
+                    ProductId = 1,
                 }
             );
 
@@ -216,6 +218,36 @@ namespace BarrocIntens.Data
                 new Product
                 {
                     Id = 2,
+                    Name = "Barroc Intens Italian",
+                    Description = "Een Koffie machine",
+                    ImagePath = "",
+                    Price = 499,
+                    Stock = 50,
+                    ProductsCategoryId = 1
+                },
+                new Product
+                {
+                    Id = 3,
+                    Name = "Barroc Intens Italian Deluxe",
+                    Description = "Een Koffie machine",
+                    ImagePath = "",
+                    Price = 499,
+                    Stock = 50,
+                    ProductsCategoryId = 1
+                },
+                new Product
+                {
+                    Id = 4,
+                    Name = "Barroc Intens Italian Deluxe Special",
+                    Description = "Een Koffie machine",
+                    ImagePath = "",
+                    Price = 499,
+                    Stock = 50,
+                    ProductsCategoryId = 1
+                },
+                new Product
+                {
+                    Id = 5,
                     Name = "Espresso Beneficio",
                     Description = "Een toegankelijke en zachte koffie. Hij is afkomstig van de Finca El Limoncillo, een weelderige plantage aan de rand van het regenwoud in de Matagalpa regio in Nicaragua",
                     ImagePath = "",

@@ -1,3 +1,4 @@
+using BarrocIntens.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -26,6 +27,28 @@ namespace BarrocIntens.SalesViews
         public AddCompanyView()
         {
             this.InitializeComponent();
+        }
+
+        private void AddCompanyButton_Click(object sender, RoutedEventArgs e)
+        {
+            using var db = new AppDbContext();
+            db.Companies.Add(new Company
+            {
+                Name = nameInput.Text,
+                Phone = phoneInput.Text,
+                Address = addressInput.Text,
+                Zipcode = zipcodeInput.Text,
+                City = cityInput.Text,
+                CountryCode = countryInput.SelectedValue.ToString(),
+            });
+            db.SaveChanges();
+            nameInput.Text = string.Empty;
+            phoneInput.Text = string.Empty;
+            addressInput.Text = string.Empty;
+            zipcodeInput.Text = string.Empty;
+            cityInput.Text = string.Empty;
+            countryInput.SelectedItem = -1;
+            
         }
     }
 }

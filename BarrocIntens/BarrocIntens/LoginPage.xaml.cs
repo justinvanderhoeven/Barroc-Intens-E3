@@ -10,6 +10,7 @@ using Microsoft.UI.Xaml.Navigation;
 using System; 
 using BarrocIntens.Data;
 using BarrocIntens.MaintenanceViews;
+using BarrocIntens.UserViews;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -48,7 +49,6 @@ namespace BarrocIntens
             using (var db = new AppDbContext())
             {
                 var user = db.Users.FirstOrDefault(e => e.Email == email);
-
                 //Check if password is correct. 
                 if (user != null && VerifyPassword (inputPassword, user.Password))
                 {
@@ -116,6 +116,11 @@ namespace BarrocIntens
                     Frame.Navigate(typeof(MaintenancePage));
                     break;
             }
+        }
+
+        private void loginButton_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+           // loginButton.Background = new SolidColorBrush(Colors.Gold);
         }
     }
 }
