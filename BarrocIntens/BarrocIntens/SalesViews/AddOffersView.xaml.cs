@@ -1,3 +1,4 @@
+using BarrocIntens.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -26,6 +27,12 @@ namespace BarrocIntens.SalesViews
         public AddOffersView()
         {
 
+            InitializeComponent();
+            using (var db = new AppDbContext())
+            {
+                ProductsCategoryComboBox.ItemsSource = db.ProductsCategories;
+            }
+
             List<string> list = new List<string>{
                 "bedrijf1",
                 "bedrijf2",
@@ -34,7 +41,6 @@ namespace BarrocIntens.SalesViews
 
             this.InitializeComponent();
             CompanySuggestBox.ItemsSource = list;
-            ProductsListView.ItemsSource = list;
         }
     }
 }

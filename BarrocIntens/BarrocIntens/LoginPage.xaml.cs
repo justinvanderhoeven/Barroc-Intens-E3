@@ -52,7 +52,8 @@ namespace BarrocIntens
                 //Check if password is correct. 
                 if (user != null && VerifyPassword (inputPassword, user.Password))
                 {
-                    NavigateToPage(user.DepartmentId);
+                    //MainPage.CurrentUser = user;
+                    Frame.Navigate(typeof(MainPage), user);
                 }
                 else
                 {
@@ -93,30 +94,7 @@ namespace BarrocIntens
             }
         }
 
-        private void NavigateToPage(int departmentId)
-        {
-            switch (departmentId)
-            {
-                case 1:
-                    Frame.Navigate(typeof(CustomerPage));
-                    break;
-                case 2:
-                    Frame.Navigate(typeof(FinancePage));
-                    break;
-                case 3:
-                    Frame.Navigate(typeof(MaintenancePage));
-                    break;
-                case 4:
-                    Frame.Navigate(typeof(SalesPage));
-                    break;
-                case 5:
-                    Frame.Navigate(typeof(PurchasePage));
-                    break;
-                case 6:
-                    Frame.Navigate(typeof(MaintenancePage));
-                    break;
-            }
-        }
+        
 
         private void loginButton_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
