@@ -106,7 +106,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 7,
                     Name = "head",
-                    Username = "head",
+                    Email = "head",
                     Password = SecureHasher.Hash("head"),
                     DepartmentId = 6,
                 }
@@ -134,11 +134,12 @@ namespace BarrocIntens.Data
                     Description = "Test",
                     DateAdded = DateTime.Now,
                     CompanyId = 1,
+                    ProductId = 1,
                 },
                 new MaintenanceAppointment
                 {
                     Id = 2,
-                    Remark = "Test 2 yay",
+                    Description = "Test 2 yay",
                     DateAdded = DateTime.Now,
                     CompanyId = 1,
                     ProductId = 1,

@@ -54,20 +54,7 @@ namespace BarrocIntens
 
             ContentFrame.Navigate(view, null, new EntranceNavigationTransitionInfo());
             return true;
-            
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            using var db = new AppDbContext();
-            db.Companies.Add(new Company
-            {
-                Name = nameInput.Text,
-                Phone = phoneInput.Text,
-                Street = streetInput.Text,
-                HouseNumber = houseInput.Text,
-                City = cityInput.Text,
-                CountryCode = countryInput.Text,
-            });
-            db.SaveChanges();
+
         }
     }
 }

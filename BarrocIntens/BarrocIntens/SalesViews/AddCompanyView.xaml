@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Page
-    x:Class="BarrocIntens.SalesViews.AddCompanyView"
+    x:Class="BarrocIntens.SalesViews.AddComapnyView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:BarrocIntens.SalesViews"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Tag="AddCompanyView">
-
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <StackPanel HorizontalAlignment="Center">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock FontFamily="Big Shoulders Display" FontSize="30" FontWeight="Bold" Foreground="#212121" Text="Formulier Company"/>
             <StackPanel Orientation="Vertical" Margin="0,25,0,25">
                 <TextBox FontFamily="Roboto" Margin="0,5" x:Name="nameInput"
@@ -22,12 +21,12 @@
                  Header="PhoneNumber:" PlaceholderText="PhoneNumber"
                  Width="300" HorizontalAlignment="Left"/>
 
-                <TextBox FontFamily="Roboto" Margin="0,5" x:Name="addressInput"
-                 Header="Address:" PlaceholderText="Address"
+                <TextBox FontFamily="Roboto" Margin="0,5" x:Name="streetInput"
+                 Header="Street:" PlaceholderText="Street"
                  Width="300" HorizontalAlignment="Left"/>
 
-                <TextBox FontFamily="Roboto" Margin="0,5" x:Name="zipcodeInput"
-                 Header="Zipcode:" PlaceholderText="Zipcode"
+                <TextBox FontFamily="Roboto" Margin="0,5" x:Name="houseInput"
+                 Header="House:" PlaceholderText="House"
                  Width="300" HorizontalAlignment="Left"/>
 
                 <TextBox FontFamily="Roboto" Margin="0,5" x:Name="cityInput"
@@ -65,8 +64,8 @@
                     <x:String>India</x:String>
                     <x:String>Japan</x:String>
                 </ComboBox>
-                <Button x:Name="AddCompanyButton" FontFamily="Roboto" Margin="0, 10" Content="Submit" Click="AddCompanyButton_Click"/>
+                <Button FontFamily="Roboto" Margin="0, 10" Content="Submit" Click="Button_Click"/>
             </StackPanel>
         </StackPanel>
-    </ScrollViewer>
+    </Grid>
 </Page>

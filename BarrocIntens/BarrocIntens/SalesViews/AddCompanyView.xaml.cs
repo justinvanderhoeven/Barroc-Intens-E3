@@ -48,7 +48,7 @@ namespace BarrocIntens.SalesViews
             zipcodeInput.Text = string.Empty;
             cityInput.Text = string.Empty;
             countryInput.SelectedItem = -1;
-            
+
         }
     }
 }
