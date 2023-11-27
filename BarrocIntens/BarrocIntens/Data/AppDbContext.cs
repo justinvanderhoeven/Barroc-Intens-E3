@@ -100,7 +100,7 @@ namespace BarrocIntens.Data
                     Name = "User1",
                     Email = "User1@gmail.com",
                     Password = SecureHasher.Hash("User1"),
-                    DepartmentId = 2,
+                    DepartmentId = 1,
                 },
                 new User
                 {
