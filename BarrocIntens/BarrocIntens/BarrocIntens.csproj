@@ -24,6 +24,7 @@
     <None Remove="SalesPage.xaml" />
     <None Remove="SalesViews\AddCompanyView.xaml" />
     <None Remove="SalesViews\AddCustomerView.xaml" />
+    <None Remove="UserViews\LeaseContractOverview.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -94,6 +95,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MaintenanceViews\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="UserViews\LeaseContractOverview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="PurchaseViews\StockView.xaml">
