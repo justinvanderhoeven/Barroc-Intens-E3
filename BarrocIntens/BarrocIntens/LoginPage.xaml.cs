@@ -50,7 +50,7 @@ namespace BarrocIntens
             {
                 var user = db.Users.FirstOrDefault(e => e.Email == email);
                 //Check if password is correct. 
-                if (user != null && VerifyPassword (inputPassword, user.Password))
+                if (user != null && VerifyPassword (inputPassword, user.Password, email))
                 {
                     //MainPage.CurrentUser = user;
                     Frame.Navigate(typeof(MainPage), user);
