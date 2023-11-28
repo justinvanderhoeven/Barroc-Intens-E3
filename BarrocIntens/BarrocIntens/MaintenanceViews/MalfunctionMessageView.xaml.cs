@@ -25,9 +25,9 @@ namespace BarrocIntens.MaintenanceViews
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MalfunctionMessagePage : Page
+    public sealed partial class MalfunctionMessageView : Page
     {
-        public MalfunctionMessagePage()
+        public MalfunctionMessageView()
         {
             this.InitializeComponent();
         }

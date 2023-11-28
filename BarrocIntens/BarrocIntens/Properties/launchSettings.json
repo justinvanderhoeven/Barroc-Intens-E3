@@ -1,7 +1,8 @@
 {
   "profiles": {
     "BarrocIntens (Package)": {
-      "commandName": "MsixPackage"
+      "commandName": "MsixPackage",
+      "nativeDebugging": false
     },
     "BarrocIntens (Unpackaged)": {
       "commandName": "Project"

@@ -55,7 +55,7 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MaintenanceViews\MalfunctionMessagePage.xaml">
+    <Page Update="MaintenanceViews\MalfunctionMessageView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -75,7 +75,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MaintenanceViews\" />
     <Folder Include="CustomerViews\" />
   </ItemGroup>
   <ItemGroup>

@@ -29,7 +29,7 @@
 
         <NavigationView x:Name="MaintenanceNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
             <NavigationView.MenuItems>
-                
+                <NavigationViewItem Content="Storing meldingen" Tag="MalfunctionMessageView"/>
             </NavigationView.MenuItems>
             <Frame x:Name="MaintenanceFrame"></Frame>
         </NavigationView>
