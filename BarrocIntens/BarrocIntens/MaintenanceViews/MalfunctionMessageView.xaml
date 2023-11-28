@@ -17,10 +17,10 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="0" x:Name="MalfunctionListView">
+        <ListView MaxWidth="500" Grid.Row="0" x:Name="MalfunctionListView" >
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="localData:MaintenanceAppointment">
-                    <StackPanel>
+                    <StackPanel Margin="0 10 0 0" Padding="10 0 0 0" BorderBrush="Black" BorderThickness="2" CornerRadius="10">
                         <TextBlock Margin="0 10 0 0" Text="{x:Bind Id}"/>
                         <StackPanel>
                             <TextBlock Margin="15 5 0 0" Text="{x:Bind Description}"/>
@@ -30,7 +30,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <StackPanel  Grid.Row="1" >
+        <StackPanel Margin="0 0 0 10" HorizontalAlignment="Center"  Grid.Row="1" >
             <Button x:Name="myButton" Click="myButton_Click">Search Malfunction</Button>
             <!--<TextBox x:Name="SearchTextBox" PlaceholderText="Search by" />-->
         </StackPanel>

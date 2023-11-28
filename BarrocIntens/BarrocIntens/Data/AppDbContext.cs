@@ -84,7 +84,7 @@ namespace BarrocIntens.Data
                     Name = "Dani",
                     Email = "Admin4@gmail.com",
                     Password = SecureHasher.Hash("Admin4"),
-                    DepartmentId = 1,
+                    DepartmentId = 3,
                 },
                 new User
                 {
@@ -131,16 +131,16 @@ namespace BarrocIntens.Data
                 new MaintenanceAppointment
                 {
                     Id = 1,
-                    Description = "Test",
-                    DateAdded = DateTime.Now,
+                    Description = "Cleaning machine not working",
+                    DateAdded = new DateTime(2023, 07, 02, 10, 0, 0),
                     CompanyId = 1,
                     ProductId = 1,
                 },
                 new MaintenanceAppointment
                 {
                     Id = 2,
-                    Description = "Test 2 yay",
-                    DateAdded = DateTime.Now,
+                    Description = "Broken coffee machine",
+                    DateAdded = new DateTime(2022, 05, 09, 9, 15, 0),
                     CompanyId = 1,
                     ProductId = 1,
                 }

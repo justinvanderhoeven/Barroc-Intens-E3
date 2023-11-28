@@ -77,7 +77,7 @@ namespace BarrocIntens
                 return false;
 
             var contentFrame = GetCorrectNavBar(CurrentUser.DepartmentId);
-            contentFrame.Navigate(view, CurrentUser, new EntranceNavigationTransitionInfo());
+            contentFrame.Navigate(view, null, new EntranceNavigationTransitionInfo());
             return true;
         }
 
