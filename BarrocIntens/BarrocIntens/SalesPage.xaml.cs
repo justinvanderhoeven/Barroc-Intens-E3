@@ -40,7 +40,7 @@ namespace BarrocIntens
                 Street = streetInput.Text,
                 HouseNumber = houseInput.Text,
                 City = cityInput.Text,
-                CountryCode = countryInput.Text,
+                CountryCode = (string)countryInput.SelectedItem,
             });
             db.SaveChanges();
         }
