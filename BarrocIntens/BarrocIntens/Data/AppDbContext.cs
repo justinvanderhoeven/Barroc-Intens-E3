@@ -143,6 +143,38 @@ namespace BarrocIntens.Data
                     DateAdded = new DateTime(2022, 05, 09, 9, 15, 0),
                     CompanyId = 1,
                     ProductId = 1,
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 3,
+                    Description = "Clean inside of coffee machine",
+                    DateAdded = new DateTime(2023, 08, 02, 13, 23, 0),
+                    CompanyId = 1,
+                    ProductId = 1,
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 4,
+                    Description = "Button not working",
+                    DateAdded = new DateTime(2023, 05, 04, 9, 34, 0),
+                    CompanyId = 1,
+                    ProductId = 1,
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 5,
+                    Description = "Milk spilled on floor",
+                    DateAdded = new DateTime(2023, 07, 09, 13, 2, 0),
+                    CompanyId = 1,
+                    ProductId = 1,
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 6,
+                    Description = "Cleaning machine not working again",
+                    DateAdded = new DateTime(2023, 08, 02, 11, 22, 0),
+                    CompanyId = 1,
+                    ProductId = 1,
                 }
             );
 
