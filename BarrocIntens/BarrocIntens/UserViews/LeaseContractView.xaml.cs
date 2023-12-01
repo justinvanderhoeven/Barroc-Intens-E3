@@ -1,3 +1,4 @@
+using BarrocIntens.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -23,9 +24,18 @@ namespace BarrocIntens.UserViews
     /// </summary>
     public sealed partial class LeaseContractView : Page
     {
-        public LeaseContractView()
+        public partial class LeaseContractOverview : Page
         {
-            this.InitializeComponent();
+            internal ICollection<Contract> Contracts { get; }
+
+            public LeaseContractOverview()
+            {
+                this.InitializeComponent();
+                using (var db = new AppDbContext())
+                {
+                    contractListView.ItemsSource = db.Contracts;
+                }
+            }
         }
     }
 }
