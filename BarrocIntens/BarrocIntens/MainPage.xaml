@@ -36,7 +36,7 @@
 
         <NavigationView x:Name="PurchaseNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
             <NavigationView.MenuItems>
-                
+                <NavigationViewItem Content="Product voorraad" Tag="ProductStock"/>
             </NavigationView.MenuItems>
             <Frame x:Name="PurchaseFrame"></Frame>
         </NavigationView>

@@ -22,6 +22,7 @@ using Windows.Security.Cryptography.Core;
 using Windows.UI.Popups;
 using static System.Net.WebRequestMethods;
 using System.Net;
+using BarrocIntens.PurchaseViews;
 
 
 // To learn more about WinUI, the WinUI project structure,
@@ -42,57 +43,60 @@ namespace BarrocIntens
         //Login Event.
         internal async void loginButton_Click(object sender, RoutedEventArgs e)
         {
-            //Put input in variable . 
-            string email = Email.Text;
-            string inputPassword = Password.Password;
+            Frame.Navigate(typeof(StockView));
 
-            using (var db = new AppDbContext())
-            {
-                var user = db.Users.FirstOrDefault(e => e.Email == email);
-                //Check if password is correct. 
-                if (user != null && VerifyPassword (inputPassword, user.Password, email))
-                {
-                    //MainPage.CurrentUser = user;
-                    Frame.Navigate(typeof(MainPage), user);
-                }
-                else
-                {
-                    //Removes input from input boxes.
-                    Email.Text = null; 
-                    Password.Password = null;
+            ////Put input in variable . 
+            //string email = Email.Text;
+            //string inputPassword = Password.Password;
 
-                    //Error message
-                    ContentDialog wrongCredentialsDialog = new ContentDialog
-                    {
-                        Title = "Login Failed",
-                        Content = "Please check your credentials.",
-                        CloseButtonText = "Ok",
-                        XamlRoot= this.XamlRoot,
-                    };
+            //using (var db = new AppDbContext())
+            //{
+            //    var user = db.Users.FirstOrDefault(e => e.Email == email);
+            //    //Check if password is correct. 
+            //    if (user != null && VerifyPassword (inputPassword, user.Password, email))
+            //    {
+            //        //MainPage.CurrentUser = user;
+            //        //Frame.Navigate(typeof(MainPage), user);
+                    
+            //    }
+            //    else
+            //    {
+            //        //Removes input from input boxes.
+            //        Email.Text = null; 
+            //        Password.Password = null;
 
-                    ContentDialogResult result = await wrongCredentialsDialog.ShowAsync();
-                }
-            }
+            //        //Error message
+            //        ContentDialog wrongCredentialsDialog = new ContentDialog
+            //        {
+            //            Title = "Login Failed",
+            //            Content = "Please check your credentials.",
+            //            CloseButtonText = "Ok",
+            //            XamlRoot= this.XamlRoot,
+            //        };
+
+            //        ContentDialogResult result = await wrongCredentialsDialog.ShowAsync();
+            //    }
+            //}
         }
         //Password verifyer uses SecureHasher class. 
-        private bool VerifyPassword(string inputPassword, string hashedPassword, string email)
-        {
-            return SecureHasher.Verify(inputPassword, hashedPassword);
-        }
+        //private bool VerifyPassword(string inputPassword, string hashedPassword, string email)
+        //{
+        //    return SecureHasher.Verify(inputPassword, hashedPassword);
+        //}
 
-        //Email Checker
-        bool IsValidEmail(string email)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
-        }
+        ////Email Checker
+        //bool IsValidEmail(string email)
+        //{
+        //    try
+        //    {
+        //        var addr = new System.Net.Mail.MailAddress(email);
+        //        return addr.Address == email;
+        //    }
+        //    catch
+        //    {
+        //        return false;
+        //    }
+        //}
 
         private void loginButton_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
