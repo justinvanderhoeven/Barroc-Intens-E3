@@ -24,11 +24,9 @@ namespace BarrocIntens.UserViews
     /// </summary>
     public sealed partial class LeaseContractView : Page
     {
-        public partial class LeaseContractOverview : Page
-        {
             internal ICollection<Contract> Contracts { get; }
 
-            public LeaseContractOverview()
+            public LeaseContractView()
             {
                 this.InitializeComponent();
                 using (var db = new AppDbContext())
@@ -36,6 +34,6 @@ namespace BarrocIntens.UserViews
                     contractListView.ItemsSource = db.Contracts;
                 }
             }
-        }
     }
 }
+
