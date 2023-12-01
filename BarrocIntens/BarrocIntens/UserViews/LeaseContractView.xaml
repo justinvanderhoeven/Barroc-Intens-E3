@@ -13,7 +13,7 @@
     <Grid Background="#212121" Margin="20">
         <ListView x:Name="contractListView" ItemsSource="{Binding Contracts}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="Model:Contract">
+                <DataTemplate x:DataType="model:Contract">
                     <Border Background="#ffd700" BorderThickness="1" BorderBrush="#555555" Margin="0,0,0,10" Padding="10">
                         <Grid>
                             <Grid.RowDefinitions>
