@@ -26,7 +26,7 @@ namespace BarrocIntens
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public User CurrentUser { get; set; }
+        public static User CurrentUser { get; set; }
         private NavigationViewItem lastItem;
         public MainPage()
         {
