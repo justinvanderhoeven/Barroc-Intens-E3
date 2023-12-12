@@ -9,22 +9,41 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Tag="CreateMalfunctionMessage">
 
-    <Grid Background="#212121">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <ComboBox FontFamily="Roboto" Margin="0,10" Header="Koffiemachine" PlaceholderText="Selecteer Koffiemachine" Width="300" x:Name="coffeeMachineComboBox">
-                <ComboBox.HeaderTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding}" Foreground="#ffd700" />
-                    </DataTemplate>
-                </ComboBox.HeaderTemplate>
-                <x:String>Barroc Intens Italian Light</x:String>
-                <x:String>Barroc Intens Italian</x:String>
-                <x:String>Barroc Intens Italian Deluxe</x:String>
-                <x:String>Barroc Intens Italian Deluxe Special</x:String>
-            </ComboBox>
+    <Grid  Background="#FFD700">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
 
-            <TextBox x:Name="txtProblemDescription" PlaceholderText="Omschrijf uw Proleem." Margin="0,10,0,0" Width="300" HorizontalAlignment="Center"/>
-            <Button Content="Submit" Click="OnSubmitClicked" HorizontalAlignment="Center" Margin="0,10,0,0"/>
-        </StackPanel>
+        <StackPanel Grid.Column="3" Grid.RowSpan="1" Background="#212121"/>
+
+        <Grid Grid.Row="2" Grid.Column="2">
+            <StackPanel  HorizontalAlignment="Right" VerticalAlignment="Center">
+                <ComboBox FontFamily="Roboto" Margin="0,10" FontWeight="Bold" Header="Koffiemachine" PlaceholderText="Selecteer Koffiemachine" Width="300" x:Name="coffeeMachineComboBox">
+                    <ComboBox.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}"/>
+                        </DataTemplate>
+                    </ComboBox.HeaderTemplate>
+                    <x:String>Barroc Intens Italian Light</x:String>
+                    <x:String>Barroc Intens Italian</x:String>
+                    <x:String>Barroc Intens Italian Deluxe</x:String>
+                    <x:String>Barroc Intens Italian Deluxe Special</x:String>
+                </ComboBox>
+
+                <TextBox x:Name="txtProblemDescription" PlaceholderText="Omschrijf uw Proleem." Margin="0,10,0,0" Width="300" HorizontalAlignment="Center"/>
+                <Button Content="Submit" Click="OnSubmitClicked" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>
