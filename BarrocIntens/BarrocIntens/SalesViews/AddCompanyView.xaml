@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="BarrocIntens.SalesViews.AddCompanyView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BarrocIntens.SalesViews"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Tag="AddCompanyView">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock FontFamily="Big Shoulders Display" FontSize="30" FontWeight="Bold" Foreground="#212121" Text="Formulier Company"/>
+            <StackPanel Orientation="Vertical" Margin="0,25,0,25">
+                <TextBox FontFamily="Roboto" Margin="0,5" x:Name="nameInput"
+                 Header="Name:" PlaceholderText="Name" 
+                 Width="300" HorizontalAlignment="Left">
+                </TextBox>
+
+                <TextBox FontFamily="Roboto" Margin="0,5" x:Name="phoneInput"
+                 Header="PhoneNumber:" PlaceholderText="PhoneNumber"
+                 Width="300" HorizontalAlignment="Left"/>
+
+                <TextBox FontFamily="Roboto" Margin="0,5" x:Name="addressInput"
+                 Header="Address:" PlaceholderText="Address"
+                 Width="300" HorizontalAlignment="Left"/>
+
+                <TextBox FontFamily="Roboto" Margin="0,5" x:Name="zipcodeInput"
+                 Header="Zipcode:" PlaceholderText="Zipcode"
+                 Width="300" HorizontalAlignment="Left"/>
+
+                <TextBox FontFamily="Roboto" Margin="0,5" x:Name="cityInput"
+                 Header="City:" PlaceholderText="City"
+                 Width="300" HorizontalAlignment="Left"/>
+
+                <ComboBox FontFamily="Roboto" Margin="0, 10" Header="Countries" PlaceholderText="Select a Country" Width="300" x:Name="countryInput">
+                    <ComboBox.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" Foreground="#212121" />
+                        </DataTemplate>
+                    </ComboBox.HeaderTemplate>
+                    <x:String>The Netherlands</x:String>
+                    <x:String>Belgium</x:String>
+                    <x:String>Luxembourg</x:String>
+                    <x:String>France</x:String>
+                    <x:String>Spain</x:String>
+                    <x:String>Italy</x:String>
+                    <x:String>Norway</x:String>
+                    <x:String>Sweden</x:String>
+                    <x:String>Finland</x:String>
+                    <x:String>Denmark</x:String>
+                    <x:String>Austria</x:String>
+                    <x:String>Poland</x:String>
+                    <x:String>United Kingdom</x:String>
+                    <x:String>Ireland</x:String>
+                    <x:String>Iceland</x:String>
+                    <x:String>Belarus</x:String>
+                    <x:String>Armenia</x:String>
+                    <x:String>United States</x:String>
+                    <x:String>Canada</x:String>
+                    <x:String>Mexico</x:String>
+                    <x:String>China</x:String>
+                    <x:String>Russia</x:String>
+                    <x:String>India</x:String>
+                    <x:String>Japan</x:String>
+                </ComboBox>
+                <Button x:Name="AddCompanyButton" FontFamily="Roboto" Margin="0, 10" Content="Submit" Click="AddCompanyButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

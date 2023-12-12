@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="BarrocIntens.UserViews.AddMalfunctionMessageView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BarrocIntens.UserViews"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Tag="AddMalfunctionMessageView">
+
+    <Grid Background="#212121">
+        <TextBlock Text="hii" x:Name="test" />
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <ComboBox FontFamily="Roboto" Margin="0,10" Header="Koffiemachine" PlaceholderText="Selecteer Koffiemachine" Width="300" x:Name="coffeeMachineComboBox">
+                <ComboBox.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Foreground="#ffd700" />
+                    </DataTemplate>
+                </ComboBox.HeaderTemplate>
+                <x:String>Barroc Intens Italian Light</x:String>
+                <x:String>Barroc Intens Italian</x:String>
+                <x:String>Barroc Intens Italian Deluxe</x:String>
+                <x:String>Barroc Intens Italian Deluxe Special</x:String>
+            </ComboBox>
+
+            <TextBox x:Name="txtProblemDescription" PlaceholderText="Omschrijf uw Proleem." Margin="0,10,0,0" Width="300" HorizontalAlignment="Center"/>
+            <Button Content="Submit" Click="OnSubmitClicked" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>

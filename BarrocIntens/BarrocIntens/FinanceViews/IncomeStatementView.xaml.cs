@@ -16,14 +16,14 @@ using Windows.Foundation.Collections;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace BarrocIntens
+namespace BarrocIntens.FinanceViews
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MarketingPage : Page
+    public sealed partial class IncomeStatementView : Page
     {
-        public MarketingPage()
+        public IncomeStatementView()
         {
             this.InitializeComponent();
         }

@@ -6,23 +6,24 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Graphics.Display;
 using System.Configuration;
+using Microsoft.WindowsAppSDK.Runtime.Packages;
 
 namespace BarrocIntens.Data
 {
     internal class AppDbContext : DbContext
     {
         public DbSet<Company> Companies { get; set; }
-        public DbSet<Contract> Contracts {  get; set; }
-        public DbSet<ContractProduct> ContractProducts {  get; set; }  
-        public DbSet<CustomInvoice> CustomInvoices {  get; set; }  
-        public DbSet<CustomInvoiceProduct> CustomInvoiceProducts {  get; set; }    
+        public DbSet<Contract> Contracts { get; set; }
+        public DbSet<ContractProduct> ContractProducts { get; set; }
+        public DbSet<CustomInvoice> CustomInvoices { get; set; }
+        public DbSet<CustomInvoiceProduct> CustomInvoiceProducts { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
-        public DbSet<MaintenanceAppointment> MaintenanceAppointments {get; set;}
-        public DbSet<Note> Notes {  get; set; }
+        public DbSet<MaintenanceAppointment> MaintenanceAppointments { get; set; }
+        public DbSet<Note> Notes { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<ProductsCategory> ProductsCategories {  get; set; }
-        public DbSet<User> Users { get; set;}
+        public DbSet<ProductsCategory> ProductsCategories { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -57,49 +58,65 @@ namespace BarrocIntens.Data
                 {
                     Id = 1,
                     Name = "Admin1",
-                    Username = "Admin1",
-                    Password = "Admin1",
+                    Email = "Admin1@gmail.com",
+                    Password = SecureHasher.Hash("Admin1"),
                     DepartmentId = 1,
                 },
                 new User
                 {
                     Id = 2,
                     Name = "Justin",
-                    Username = "Admin2",
-                    Password = "Admin2",
-                    DepartmentId = 1,
+                    Email = "Admin2@gmail.com",
+                    Password = SecureHasher.Hash("Admin2"),
+                    DepartmentId = 2,
                 },
                 new User
                 {
                     Id = 3,
                     Name = "Remon",
-                    Username = "Admin3",
-                    Password = "Admin3",
-                    DepartmentId = 1,
+                    Email = "Admin3@gmail.com",
+                    Password = SecureHasher.Hash("Admin3"),
+                    DepartmentId = 4,
                 },
                 new User
                 {
                     Id = 4,
                     Name = "Dani",
-                    Username = "Admin4",
-                    Password = "Admin4",
-                    DepartmentId = 1,
+                    Email = "Admin4@gmail.com",
+                    Password = SecureHasher.Hash("Admin4"),
+                    DepartmentId = 3,
                 },
                 new User
                 {
                     Id = 5,
                     Name = "Nathan",
-                    Username = "Admin5",
-                    Password = "Admin5",
+                    Email = "Admin5@gmail.com",
+                    Password = SecureHasher.Hash("Admin5"),
                     DepartmentId = 1,
                 },
                 new User
                 {
                     Id = 6,
                     Name = "User1",
-                    Username = "User1",
-                    Password = "User1",
-                    DepartmentId = 2,
+                    Email = "User1@gmail.com",
+                    Password = SecureHasher.Hash("User1"),
+                    DepartmentId = 1,
+                },
+                new User
+                {
+                    Id = 7,
+                    Name = "head",
+                    Email = "head1@gmail.com",
+                    Password = SecureHasher.Hash("head"),
+                    DepartmentId = 6,
+                },
+                new User
+                {
+                    Id = 8,
+                    Name = "Maintenance",
+                    Email = "Maint@gmail.com",
+                    Password = SecureHasher.Hash("Maintenance"),
+                    DepartmentId = 3,
                 }
             );
 
@@ -109,8 +126,8 @@ namespace BarrocIntens.Data
                     Id = 1,
                     Name = "TestCompany",
                     Phone = "1234",
-                    Street = "CompanyStreet",
-                    HouseNumber = "23",
+                    Address = "CompanyStreet",
+                    Zipcode = "23",
                     City = "CompanyCity",
                     CountryCode = "34",
                     BkrCheckedAt = DateTime.Now,
@@ -122,9 +139,68 @@ namespace BarrocIntens.Data
                 new MaintenanceAppointment
                 {
                     Id = 1,
-                    Remark = "Test",
-                    DateAdded = DateTime.Now,
+                    Description = "Cleaning machine not working",
+                    DateAdded = new DateTime(2023, 07, 02, 10, 0, 0),
+                    StartTime = new DateTime(2023, 07, 02, 10, 0, 0),
+                    EndTime = new DateTime(2023, 08, 02, 13, 23, 0),
                     CompanyId = 1,
+                    ProductId = 1,
+                    UserId = 8
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 2,
+                    Description = "Broken coffee machine",
+                    DateAdded = new DateTime(2022, 05, 09, 9, 15, 0),
+                    StartTime = new DateTime(2023, 07, 02, 10, 0, 0),
+                    EndTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    CompanyId = 1,
+                    ProductId = 1,
+                    UserId = 1
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 3,
+                    Description = "Clean inside of coffee machine",
+                    DateAdded = new DateTime(2023, 08, 02, 13, 23, 0),
+                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
+                    CompanyId = 1,
+                    ProductId = 1,
+                    UserId = 8
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 4,
+                    Description = "Button not working",
+                    DateAdded = new DateTime(2023, 05, 04, 9, 34, 0),
+                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
+                    CompanyId = 1,
+                    ProductId = 1,
+                    UserId = 1
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 5,
+                    Description = "Milk spilled on floor",
+                    DateAdded = new DateTime(2023, 07, 09, 13, 2, 0),
+                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
+                    CompanyId = 1,
+                    ProductId = 1,
+                    UserId = 1
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 6,
+                    Description = "Cleaning machine not working again",
+                    DateAdded = new DateTime(2023, 08, 02, 11, 22, 0),
+                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
+                    CompanyId = 1,
+                    ProductId = 1,
+                    UserId = 1
                 }
             );
 
@@ -152,7 +228,12 @@ namespace BarrocIntens.Data
                 new Department
                 {
                     Id = 5,
-                    Type = "Marketing"
+                    Type = "Purchase"
+                },
+                new Department
+                {
+                    Id = 6,
+                    Type = "HeadMaintenance"
                 }
             );
 
@@ -196,6 +277,36 @@ namespace BarrocIntens.Data
                 new Product
                 {
                     Id = 2,
+                    Name = "Barroc Intens Italian",
+                    Description = "Een Koffie machine",
+                    ImagePath = "",
+                    Price = 499,
+                    Stock = 50,
+                    ProductsCategoryId = 1
+                },
+                new Product
+                {
+                    Id = 3,
+                    Name = "Barroc Intens Italian Deluxe",
+                    Description = "Een Koffie machine",
+                    ImagePath = "",
+                    Price = 499,
+                    Stock = 50,
+                    ProductsCategoryId = 1
+                },
+                new Product
+                {
+                    Id = 4,
+                    Name = "Barroc Intens Italian Deluxe Special",
+                    Description = "Een Koffie machine",
+                    ImagePath = "",
+                    Price = 499,
+                    Stock = 50,
+                    ProductsCategoryId = 1
+                },
+                new Product
+                {
+                    Id = 5,
                     Name = "Espresso Beneficio",
                     Description = "Een toegankelijke en zachte koffie. Hij is afkomstig van de Finca El Limoncillo, een weelderige plantage aan de rand van het regenwoud in de Matagalpa regio in Nicaragua",
                     ImagePath = "",
