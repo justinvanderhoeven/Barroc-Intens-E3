@@ -10,7 +10,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Tag="AddMalfunctionMessageView">
 
     <Grid Background="#212121">
-        <TextBlock Text="hii" x:Name="test" />
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <ComboBox FontFamily="Roboto" Margin="0,10" Header="Koffiemachine" PlaceholderText="Selecteer Koffiemachine" Width="300" x:Name="coffeeMachineComboBox">
                 <ComboBox.HeaderTemplate>
