@@ -52,7 +52,6 @@ namespace BarrocIntens
                 //Check if password is correct. 
                 if (user != null && VerifyPassword (inputPassword, user.Password, email))
                 {
-                    //MainPage.CurrentUser = user;
                     Frame.Navigate(typeof(MainPage), user);
                 }
                 else
