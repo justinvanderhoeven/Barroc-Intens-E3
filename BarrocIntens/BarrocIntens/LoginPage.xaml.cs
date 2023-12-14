@@ -43,7 +43,7 @@ namespace BarrocIntens
         //Login Event.
         internal async void loginButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(StockView));
+            Frame.Navigate(typeof(StockSearchView));
 
             ////Put input in variable . 
             //string email = Email.Text;
