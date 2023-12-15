@@ -43,60 +43,60 @@ namespace BarrocIntens
         //Login Event.
         internal async void loginButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(StockSearchView));
+            //Navigate to an xaml easier
+            //Frame.Navigate(typeof(StockSearchView));
 
-            ////Put input in variable . 
-            //string email = Email.Text;
-            //string inputPassword = Password.Password;
+            //Put input in variable . 
+            string email = Email.Text;
+            string inputPassword = Password.Password;
 
-            //using (var db = new AppDbContext())
-            //{
-            //    var user = db.Users.FirstOrDefault(e => e.Email == email);
-            //    //Check if password is correct. 
-            //    if (user != null && VerifyPassword (inputPassword, user.Password, email))
-            //    {
-            //        //MainPage.CurrentUser = user;
-            //        //Frame.Navigate(typeof(MainPage), user);
-                    
-            //    }
-            //    else
-            //    {
-            //        //Removes input from input boxes.
-            //        Email.Text = null; 
-            //        Password.Password = null;
+            using (var db = new AppDbContext())
+            {
+                var user = db.Users.FirstOrDefault(e => e.Email == email);
+                //Check if password is correct. 
+                if (user != null && VerifyPassword(inputPassword, user.Password, email))
+                {
+                    //MainPage.CurrentUser = user;
+                    Frame.Navigate(typeof(MainPage), user);
+                }
+                else
+                {
+                    //Removes input from input boxes.
+                    Email.Text = null;
+                    Password.Password = null;
 
-            //        //Error message
-            //        ContentDialog wrongCredentialsDialog = new ContentDialog
-            //        {
-            //            Title = "Login Failed",
-            //            Content = "Please check your credentials.",
-            //            CloseButtonText = "Ok",
-            //            XamlRoot= this.XamlRoot,
-            //        };
+                    //Error message
+                    ContentDialog wrongCredentialsDialog = new ContentDialog
+                    {
+                        Title = "Login Failed",
+                        Content = "Please check your credentials.",
+                        CloseButtonText = "Ok",
+                        XamlRoot = this.XamlRoot,
+                    };
 
-            //        ContentDialogResult result = await wrongCredentialsDialog.ShowAsync();
-            //    }
-            //}
+                    ContentDialogResult result = await wrongCredentialsDialog.ShowAsync();
+                }
+            }
         }
         //Password verifyer uses SecureHasher class. 
-        //private bool VerifyPassword(string inputPassword, string hashedPassword, string email)
-        //{
-        //    return SecureHasher.Verify(inputPassword, hashedPassword);
-        //}
+        private bool VerifyPassword(string inputPassword, string hashedPassword, string email)
+        {
+            return SecureHasher.Verify(inputPassword, hashedPassword);
+        }
 
-        ////Email Checker
-        //bool IsValidEmail(string email)
-        //{
-        //    try
-        //    {
-        //        var addr = new System.Net.Mail.MailAddress(email);
-        //        return addr.Address == email;
-        //    }
-        //    catch
-        //    {
-        //        return false;
-        //    }
-        //}
+        //Email Checker
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         private void loginButton_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
