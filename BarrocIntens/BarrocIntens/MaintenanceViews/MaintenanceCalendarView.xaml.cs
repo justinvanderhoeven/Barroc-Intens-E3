@@ -38,10 +38,6 @@ namespace BarrocIntens.MaintenanceViews
                 var malfunctions = db.MaintenanceAppointments
                 .Where(c => c.UserId.Equals(currentUser.Id))
                 .OrderBy(d => d.DateAdded).ToList();
-                //calendarView.Itemsource = malfunctions;
-
-                calendarView.MinDate = DateTime.Now;
-                calendarView.MaxDate = DateTime.Now.AddDays(7);
             }
         }
 
@@ -74,20 +70,5 @@ namespace BarrocIntens.MaintenanceViews
 
             await dialog.ShowAsync();
         }
-
-        //private void myButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var currentUser = MainPage.CurrentUser;
-
-        //    myButton.Content = "Test";
-        //    using (var db = new AppDbContext())
-        //    {
-        //        // This code will be executed when the button is clicked
-        //        var malfunctions = db.MaintenanceAppointments
-        //        .Where(c => c.UserId.Equals(currentUser.Id))
-        //        .OrderBy(d => d.DateAdded).ToList();
-        //        MalfunctionCalendarView.ItemsSource = malfunctions;
-        //    }
-        //}
     }
 }
