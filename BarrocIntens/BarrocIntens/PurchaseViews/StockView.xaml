@@ -19,27 +19,27 @@
                 <TextBlock FontFamily="Big Shoulders Display" FontSize="30" FontWeight="Bold" Foreground="#212121" Text="Formulier Product"/>
                 <StackPanel Orientation="Vertical" Margin="0,25,0,25">
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="nameInput"
-             Header="Name:" PlaceholderText="Name"
+             Header="Naam:" PlaceholderText="Name"
              Width="300" HorizontalAlignment="Left">
                     </TextBox>
 
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="descriptionInput"
-             Header="Description:" PlaceholderText="Description"
+             Header="Beschrijving:" PlaceholderText="Description"
              Width="300" HorizontalAlignment="Left"/>
 
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="imagePathInput"
-             Header="ImagePath:" PlaceholderText="ImagePath"
+             Header="AfbeeldingPad:" PlaceholderText="ImagePath"
              Width="300" HorizontalAlignment="Left"/>
 
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="priceInput"
-             Header="Price:" PlaceholderText="Price"
+             Header="Prijs:" PlaceholderText="Price"
              Width="300" HorizontalAlignment="Left"/>
 
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="stockInput"
-             Header="Stock:" PlaceholderText="Stock"
+             Header="Hoeveelheid:" PlaceholderText="Stock"
              Width="300" HorizontalAlignment="Left"/>
 
-                    <ComboBox FontFamily="Roboto" Margin="0, 10" Header="ProductCategory" PlaceholderText="Select a Category" Width="300" x:Name="productCategoryInput">
+                    <ComboBox FontFamily="Roboto" Margin="0, 10" Header="ProductCategorie" PlaceholderText="Selecteer categorie" Width="300" x:Name="productCategoryInput">
                         <!--<ComboBox.HeaderTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding}" Foreground="#212121" />
@@ -52,7 +52,7 @@
                         <x:String>5</x:String>-->
                     </ComboBox>
 
-                    <Button x:Name="AddProductButton" FontFamily="Roboto" Margin="0, 10" Content="Submit" Click="AddProductButton_Click"/>
+                    <Button x:Name="AddProductButton" FontFamily="Roboto" Margin="0, 10" Content="Voeg product toe" Click="AddProductButton_Click"/>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

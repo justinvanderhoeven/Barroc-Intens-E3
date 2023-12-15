@@ -17,9 +17,9 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Padding="15" Background="Aqua">
-            <TextBlock Text="Search:"/>
+            <TextBlock Text="Zoeken:"/>
             <TextBox TextChanged="TextBox_TextChanged" x:Name="searchTextBox"/>
-            <Button x:Name="CreateProductButton" FontFamily="Arial" Margin="0, 30"  Background="White" Content="Add new Product" Click="CreateProductButton_Click"/>
+            <Button x:Name="CreateProductButton" FontFamily="Arial" Margin="0, 30"  Background="White" Content="Voeg nieuwe product toe" Click="CreateProductButton_Click"/>
         </StackPanel>
 
         <ListView x:Name="StockSearchingView" Grid.Row="1">
