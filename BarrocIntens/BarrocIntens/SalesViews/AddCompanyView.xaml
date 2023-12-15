@@ -11,30 +11,30 @@
 
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel HorizontalAlignment="Center">
-            <TextBlock FontFamily="Big Shoulders Display" FontSize="30" FontWeight="Bold" Foreground="#212121" Text="Formulier Company"/>
+            <TextBlock FontFamily="Big Shoulders Display" FontSize="30" FontWeight="Bold" Foreground="#212121" Text="Formulier Bedrijf"/>
             <StackPanel Orientation="Vertical" Margin="0,25,0,25">
                 <TextBox FontFamily="Roboto" Margin="0,5" x:Name="nameInput"
-                 Header="Name:" PlaceholderText="Name" 
+                 Header="Naam:" PlaceholderText="Name" 
                  Width="300" HorizontalAlignment="Left">
                 </TextBox>
 
                 <TextBox FontFamily="Roboto" Margin="0,5" x:Name="phoneInput"
-                 Header="PhoneNumber:" PlaceholderText="PhoneNumber"
+                 Header="TelefoonNummer:" PlaceholderText="PhoneNumber"
                  Width="300" HorizontalAlignment="Left"/>
 
                 <TextBox FontFamily="Roboto" Margin="0,5" x:Name="addressInput"
-                 Header="Address:" PlaceholderText="Address"
+                 Header="Adres:" PlaceholderText="Address"
                  Width="300" HorizontalAlignment="Left"/>
 
                 <TextBox FontFamily="Roboto" Margin="0,5" x:Name="zipcodeInput"
-                 Header="Zipcode:" PlaceholderText="Zipcode"
+                 Header="Postcode:" PlaceholderText="Zipcode"
                  Width="300" HorizontalAlignment="Left"/>
 
                 <TextBox FontFamily="Roboto" Margin="0,5" x:Name="cityInput"
-                 Header="City:" PlaceholderText="City"
+                 Header="Woonplaats:" PlaceholderText="City"
                  Width="300" HorizontalAlignment="Left"/>
 
-                <ComboBox FontFamily="Roboto" Margin="0, 10" Header="Countries" PlaceholderText="Select a Country" Width="300" x:Name="countryInput">
+                <ComboBox FontFamily="Roboto" Margin="0, 10" Header="Landen" PlaceholderText="Selecteer een land" Width="300" x:Name="countryInput">
                     <ComboBox.HeaderTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding}" Foreground="#212121" />
@@ -65,7 +65,7 @@
                     <x:String>India</x:String>
                     <x:String>Japan</x:String>
                 </ComboBox>
-                <Button x:Name="AddCompanyButton" FontFamily="Roboto" Margin="0, 10" Content="Submit" Click="AddCompanyButton_Click"/>
+                <Button x:Name="AddCompanyButton" FontFamily="Roboto" Margin="0, 10" Content="Maak Bedrijf" Click="AddCompanyButton_Click"/>
             </StackPanel>
         </StackPanel>
     </ScrollViewer>
