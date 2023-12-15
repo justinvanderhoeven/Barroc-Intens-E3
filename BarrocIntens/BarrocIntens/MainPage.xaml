@@ -29,8 +29,7 @@
 
         <NavigationView x:Name="MaintenanceNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="Storing meldingen" Tag="MalfunctionMessageView"/>
-                <NavigationViewItem Content="Calender" Tag="MaintenanceCalendarView"/>
+                
             </NavigationView.MenuItems>
             <Frame x:Name="MaintenanceFrame"></Frame>
         </NavigationView>
@@ -42,11 +41,11 @@
             <Frame x:Name="PurchaseFrame"></Frame>
         </NavigationView>
 
-        <NavigationView x:Name="UserNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
+        <NavigationView x:Name="CustomerNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="Storings aanvraag" Tag="AddMalfunctionMessageView"/>
+                
             </NavigationView.MenuItems>
-            <Frame x:Name="UserFrame"></Frame>
+            <Frame x:Name="CustomerFrame"></Frame>
         </NavigationView>
     </Grid>
 </Page>

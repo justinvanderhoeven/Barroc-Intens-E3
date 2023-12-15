@@ -25,9 +25,9 @@ namespace BarrocIntens.MaintenanceViews
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MalfunctionMessageView : Page
+    public sealed partial class MalfunctionMessagePage : Page
     {
-        public MalfunctionMessageView()
+        public MalfunctionMessagePage()
         {
             this.InitializeComponent();
         }
@@ -39,6 +39,7 @@ namespace BarrocIntens.MaintenanceViews
             {
                 // This code will be executed when the button is clicked
                 var malfunctions = db.MaintenanceAppointments
+                //.Where(m => m.Id.Contains(SearchTextBox.Text))
                 .OrderBy(d => d.DateAdded).ToList();
                 MalfunctionListView.ItemsSource = malfunctions;
             }

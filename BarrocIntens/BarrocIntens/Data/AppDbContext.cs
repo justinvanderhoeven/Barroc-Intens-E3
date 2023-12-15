@@ -84,7 +84,7 @@ namespace BarrocIntens.Data
                     Name = "Dani",
                     Email = "Admin4@gmail.com",
                     Password = SecureHasher.Hash("Admin4"),
-                    DepartmentId = 3,
+                    DepartmentId = 1,
                 },
                 new User
                 {
@@ -100,7 +100,7 @@ namespace BarrocIntens.Data
                     Name = "User1",
                     Email = "User1@gmail.com",
                     Password = SecureHasher.Hash("User1"),
-                    DepartmentId = 1,
+                    DepartmentId = 2,
                 },
                 new User
                 {
@@ -109,14 +109,6 @@ namespace BarrocIntens.Data
                     Email = "head1@gmail.com",
                     Password = SecureHasher.Hash("head"),
                     DepartmentId = 6,
-                },
-                new User
-                {
-                    Id = 8,
-                    Name = "Maintenance",
-                    Email = "Maint@gmail.com",
-                    Password = SecureHasher.Hash("Maintenance"),
-                    DepartmentId = 3,
                 }
             );
 
@@ -139,68 +131,18 @@ namespace BarrocIntens.Data
                 new MaintenanceAppointment
                 {
                     Id = 1,
-                    Description = "Cleaning machine not working",
-                    DateAdded = new DateTime(2023, 07, 02, 10, 0, 0),
-                    StartTime = new DateTime(2023, 07, 02, 10, 0, 0),
-                    EndTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    Description = "Test",
+                    DateAdded = DateTime.Now,
                     CompanyId = 1,
                     ProductId = 1,
-                    UserId = 8
                 },
                 new MaintenanceAppointment
                 {
                     Id = 2,
-                    Description = "Broken coffee machine",
-                    DateAdded = new DateTime(2022, 05, 09, 9, 15, 0),
-                    StartTime = new DateTime(2023, 07, 02, 10, 0, 0),
-                    EndTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    Description = "Test 2 yay",
+                    DateAdded = DateTime.Now,
                     CompanyId = 1,
                     ProductId = 1,
-                    UserId = 1
-                },
-                new MaintenanceAppointment
-                {
-                    Id = 3,
-                    Description = "Clean inside of coffee machine",
-                    DateAdded = new DateTime(2023, 08, 02, 13, 23, 0),
-                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
-                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
-                    CompanyId = 1,
-                    ProductId = 1,
-                    UserId = 8
-                },
-                new MaintenanceAppointment
-                {
-                    Id = 4,
-                    Description = "Button not working",
-                    DateAdded = new DateTime(2023, 05, 04, 9, 34, 0),
-                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
-                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
-                    CompanyId = 1,
-                    ProductId = 1,
-                    UserId = 1
-                },
-                new MaintenanceAppointment
-                {
-                    Id = 5,
-                    Description = "Milk spilled on floor",
-                    DateAdded = new DateTime(2023, 07, 09, 13, 2, 0),
-                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
-                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
-                    CompanyId = 1,
-                    ProductId = 1,
-                    UserId = 1
-                },
-                new MaintenanceAppointment
-                {
-                    Id = 6,
-                    Description = "Cleaning machine not working again",
-                    DateAdded = new DateTime(2023, 08, 02, 11, 22, 0),
-                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
-                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
-                    CompanyId = 1,
-                    ProductId = 1,
-                    UserId = 1
                 }
             );
 

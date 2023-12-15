@@ -17,11 +17,10 @@
     <None Remove="FinanceViews\IncomeStatementView.xaml" />
     <None Remove="LoginPage.xaml" />
     <None Remove="MainPage.xaml" />
-    <None Remove="MaintenanceViews\MaintenanceCalendarView.xaml" />
     <None Remove="PurchaseViews\StockView.xaml" />
     <None Remove="SalesViews\AddCompanyView.xaml" />
     <None Remove="SalesViews\AddCustomerView.xaml" />
-    <None Remove="UserViews\AddMalfunctionMessageView.xaml" />
+    <None Remove="UserViews\CreateMalfunctionMessagePage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -57,7 +56,12 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MaintenanceViews\MalfunctionMessageView.xaml">
+    <Page Update="MaintenanceViews\MalfunctionMessagePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="NavBarUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -77,12 +81,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="MaintenanceViews\" />
     <Folder Include="CustomerViews\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="MaintenanceViews\MaintenanceCalendarView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainPage.xaml">
