@@ -26,7 +26,7 @@ namespace BarrocIntens
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public User CurrentUser { get; set; }
+        public static User CurrentUser { get; set; }
         private NavigationViewItem lastItem;
         public MainPage()
         {
@@ -40,7 +40,7 @@ namespace BarrocIntens
             switch (CurrentUser.DepartmentId)
             {
                 case 1:
-                    CustomerNavView.Visibility = Visibility.Visible;
+                    UserNavView.Visibility = Visibility.Visible;
                     break;
                 case 2:
                     FinanceNavView.Visibility = Visibility.Visible;
@@ -86,7 +86,7 @@ namespace BarrocIntens
             switch (departmentId)
             {
                 case 1:
-                    return CustomerFrame;
+                    return UserFrame;
                     break;
                 case 2:
                     return FinanceFrame;
@@ -109,7 +109,7 @@ namespace BarrocIntens
             switch (departmentId)
             {
                 case 1:
-                    return "CustomerViews";
+                    return "UserViews";
                     break;
                 case 2:
                     return "FinanceViews";
@@ -125,7 +125,6 @@ namespace BarrocIntens
                     break;
 
             }
-
             return "Error";
         }
     }

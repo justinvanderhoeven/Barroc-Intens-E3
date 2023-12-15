@@ -24,12 +24,14 @@ namespace BarrocIntens.UserViews
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class CreateMalfunctionMessagePage : Page
+    public sealed partial class AddMalfunctionMessageView : Page
     {
         private ObservableCollection<MaintenanceAppointment> MaintenanceAppointments = new ObservableCollection<MaintenanceAppointment>();
-
-        public CreateMalfunctionMessagePage()
+        public User CurrentUser { get; }
+        public AddMalfunctionMessageView(User user)
         {
+            CurrentUser = user;
+            test.Text = CurrentUser.Name;
             this.InitializeComponent();
         }
 

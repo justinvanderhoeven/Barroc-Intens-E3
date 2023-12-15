@@ -93,8 +93,6 @@ namespace BarrocIntens
             }
         }
 
-        
-
         private void loginButton_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
            // loginButton.Background = new SolidColorBrush(Colors.Gold);

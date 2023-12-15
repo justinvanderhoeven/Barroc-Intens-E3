@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Page
-    x:Class="BarrocIntens.UserViews.CreateMalfunctionMessagePage"
+    x:Class="BarrocIntens.UserViews.AddMalfunctionMessageView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:BarrocIntens.UserViews"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Tag="CreateMalfunctionMessage">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Tag="AddMalfunctionMessageView">
 
     <Grid Background="#212121">
+        <TextBlock Text="hii" x:Name="test" />
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <ComboBox FontFamily="Roboto" Margin="0,10" Header="Koffiemachine" PlaceholderText="Selecteer Koffiemachine" Width="300" x:Name="coffeeMachineComboBox">
                 <ComboBox.HeaderTemplate>
