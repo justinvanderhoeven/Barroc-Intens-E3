@@ -14,6 +14,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -100,6 +101,7 @@ namespace BarrocIntens.SalesViews
 
         private void CreateOfferButton_Click(object sender, RoutedEventArgs e)
         {
+            string path = GetProjectDirectory();
             decimal totalPrice = 0;
             foreach (var shopCartItem in shopCartCollection)
             {
@@ -159,7 +161,7 @@ namespace BarrocIntens.SalesViews
                         "</div>" +
                     "</div>" +
                 "</div>");
-            doc.SaveAs(@"D:\school\JAAR3\PROJECT\BARROCINTENSC#\FirstPDFDocument.pdf");
+            doc.SaveAs(path + "\\" + CurrentCompany.Name + "Offer.pdf");
         }
 
         public string createHtmlTable()
@@ -176,6 +178,28 @@ namespace BarrocIntens.SalesViews
                             "</tr> ";
             }
             return tableRow;
+        }
+
+        static string GetProjectDirectory()
+        {
+            // Get the base directory of the application
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+            // Navigate up the directory tree until the solution or project file is found
+            while (!Directory.GetFiles(baseDirectory, "*.sln").Any() && !Directory.GetFiles(baseDirectory, "*.csproj").Any())
+            {
+                DirectoryInfo parent = Directory.GetParent(baseDirectory);
+
+                if (parent == null || parent.FullName == baseDirectory)
+                {
+                    // Unable to find solution or project file, break out of the loop
+                    break;
+                }
+
+                baseDirectory = parent.FullName;
+            }
+
+            return baseDirectory;
         }
     }
 }
