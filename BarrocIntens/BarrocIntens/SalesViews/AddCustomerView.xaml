@@ -3,13 +3,37 @@
     x:Class="BarrocIntens.SalesViews.AddCustomerView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Model="using:BarrocIntens.Data"
     xmlns:local="using:BarrocIntens.SalesViews"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Tag="AddCustomerView">
 
-    <Grid>
-        <TextBlock Text="DIT IS ADD CUSTOMER VIEW"/>
-    </Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock FontFamily="Big Shoulders Display" FontSize="30" FontWeight="Bold" Foreground="#212121" Text="Klant toevoegen"/>
+            <StackPanel Orientation="Vertical" Margin="0,25,0,25">
+                <TextBox FontFamily="Roboto" Margin="0,5" x:Name="nameInput"
+                         Header="Name:" PlaceholderText="Name" 
+                         Width="300" HorizontalAlignment="Left"
+                         TextChanged="nameInput_TextChanged"/>
+
+                <TextBox FontFamily="Roboto" Margin="0,5" x:Name="emailInput"
+                         Header="Email:" PlaceholderText="Email"
+                         Width="300" HorizontalAlignment="Left"
+                         TextChanged="emailInput_TextChanged"/>
+
+                <AutoSuggestBox Grid.Column="1" Header="Company:" PlaceholderText="Company" x:Name="CompanySuggestBox" Margin="0,5" UpdateTextOnSelect="True" SuggestionChosen="CompanySuggestBox_SuggestionChosen">
+                    <AutoSuggestBox.ItemTemplate>
+                        <DataTemplate x:DataType="Model:Company">
+                            <TextBlock Text="{x:Bind Name}" />
+                        </DataTemplate>
+                    </AutoSuggestBox.ItemTemplate>
+                </AutoSuggestBox>
+
+                <Button x:Name="AddCustomerButton" IsEnabled="False" FontFamily="Roboto" Margin="0, 10" Content="Submit" Click="AddCustomerButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
 </Page>

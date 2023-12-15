@@ -131,8 +131,19 @@ namespace BarrocIntens.Data
                     Zipcode = "23",
                     City = "CompanyCity",
                     CountryCode = "34",
+                    BkrCheckedAt = DateTime.Now
+                },
+                new Company
+                {
+                    Id = 2,
+                    Name = "TESTIEEEE",
+                    Phone = "1234",
+                    Address = "CompanyStreet",
+                    Zipcode = "23",
+                    City = "CompanyCity",
+                    CountryCode = "34",
                     BkrCheckedAt = DateTime.Now,
-                    ContactId = 1,
+                    ContactId = 1
                 }
             );
 
