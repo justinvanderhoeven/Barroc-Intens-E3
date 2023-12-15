@@ -22,6 +22,7 @@ using Windows.Security.Cryptography.Core;
 using Windows.UI.Popups;
 using static System.Net.WebRequestMethods;
 using System.Net;
+using BarrocIntens.PurchaseViews;
 
 
 // To learn more about WinUI, the WinUI project structure,
@@ -42,6 +43,9 @@ namespace BarrocIntens
         //Login Event.
         internal async void loginButton_Click(object sender, RoutedEventArgs e)
         {
+            //Navigate to an xaml easier
+            //Frame.Navigate(typeof(StockSearchView));
+
             //Put input in variable . 
             string email = Email.Text;
             string inputPassword = Password.Password;
@@ -50,14 +54,14 @@ namespace BarrocIntens
             {
                 var user = db.Users.FirstOrDefault(e => e.Email == email);
                 //Check if password is correct. 
-                if (user != null && VerifyPassword (inputPassword, user.Password, email))
+                if (user != null && VerifyPassword(inputPassword, user.Password, email))
                 {
                     Frame.Navigate(typeof(MainPage), user);
                 }
                 else
                 {
                     //Removes input from input boxes.
-                    Email.Text = null; 
+                    Email.Text = null;
                     Password.Password = null;
 
                     //Error message
@@ -66,7 +70,7 @@ namespace BarrocIntens
                         Title = "Login Failed",
                         Content = "Please check your credentials.",
                         CloseButtonText = "Ok",
-                        XamlRoot= this.XamlRoot,
+                        XamlRoot = this.XamlRoot,
                     };
 
                     ContentDialogResult result = await wrongCredentialsDialog.ShowAsync();
