@@ -12,31 +12,32 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System;
 
 namespace BarrocIntens.MaintenanceViews
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MaintenanceCalendarView : Page
+    public sealed partial class MaintenancePlannerCalendar : Page
     {
-        public MaintenanceCalendarView()
+        public MaintenancePlannerCalendar()
         {
             this.InitializeComponent();
+
             using (var db = new AppDbContext())
             {
                 var currentUser = MainPage.CurrentUser;
 
-                var malfunctions = db.MaintenanceAppointments.Include(m => m.Company)
-                .Where(c => c.UserId == currentUser.Id)
+                var malfunctionslist = db.MaintenanceAppointments.Include(m => m.Company)
+                .Where(c => c.UserId != currentUser.Id)
                 .OrderBy(d => d.DateAdded).ToList();
-                MalfunctionListView.ItemsSource = malfunctions;
+                MalfunctionListView.ItemsSource = malfunctionslist;
             }
         }
 
@@ -46,8 +47,9 @@ namespace BarrocIntens.MaintenanceViews
             var currentUser = MainPage.CurrentUser;
             var calendarItemDate = args.Item.Date;
             var relevantMaintenanceAppointments = db.MaintenanceAppointments
-                .Where(item => item.DateAdded.Date == calendarItemDate.Date && item.UserId == currentUser.Id ).ToList();
+                .Where(item => item.DateAdded.Date == calendarItemDate.Date && item.UserId != currentUser.Id).ToList();
 
+            // De DataContext is vanuit de xaml te benaderen met {Binding}
             args.Item.DataContext = relevantMaintenanceAppointments;
 
             if (relevantMaintenanceAppointments.Count() == 0)
@@ -69,6 +71,11 @@ namespace BarrocIntens.MaintenanceViews
             };
 
             await dialog.ShowAsync();
+        }
+
+        private void BindUser_Click(object sender, RoutedEventArgs e)
+        {
+            MaintenanceAppointment selectedAppointment = (MaintenanceAppointment)((Button)sender).CommandParameter;
         }
     }
 }
