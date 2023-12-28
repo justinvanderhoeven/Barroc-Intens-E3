@@ -28,7 +28,7 @@
         </NavigationView>
 
         <NavigationView x:Name="MaintenanceNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
-            <NavigationView.MenuItems>
+            <NavigationView.MenuItems>  
                 
             </NavigationView.MenuItems>
             <Frame x:Name="MaintenanceFrame"></Frame>
@@ -36,7 +36,7 @@
 
         <NavigationView x:Name="PurchaseNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="Product voorraad" Tag="ProductStock"/>
+                <NavigationViewItem Content="Product voorraad" Tag="StockSearchView"/>
             </NavigationView.MenuItems>
             <Frame x:Name="PurchaseFrame"></Frame>
         </NavigationView>

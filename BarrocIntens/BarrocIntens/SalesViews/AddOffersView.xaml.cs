@@ -102,13 +102,15 @@ namespace BarrocIntens.SalesViews
         private void CreateOfferButton_Click(object sender, RoutedEventArgs e)
         {
             string path = GetProjectDirectory();
+            string tableRows = CreateHtmlTable();
             decimal totalPrice = 0;
+            var pdf = new ChromePdfRenderer();
+
             foreach (var shopCartItem in shopCartCollection)
             {
                 totalPrice += (shopCartItem.Product.Price * shopCartItem.Amount);
             }
-            string tableRows = createHtmlTable();
-            var pdf = new ChromePdfRenderer();
+
             PdfDocument doc = pdf.RenderHtmlAsPdf(
                 "<div style='width: 100%; height: 100%;'>" +
                     "<div>" +
@@ -164,7 +166,7 @@ namespace BarrocIntens.SalesViews
             doc.SaveAs(path + "\\" + CurrentCompany.Name + "Offer.pdf");
         }
 
-        public string createHtmlTable()
+        public string CreateHtmlTable()
         {
             string tableRow = "";
             foreach (var shopCartItem in shopCartCollection)
