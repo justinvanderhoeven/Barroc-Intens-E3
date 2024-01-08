@@ -57,10 +57,9 @@ namespace BarrocIntens.SalesViews
             companyListView.ItemsSource = db.Companies.Where(m => m.Name.Contains(searchInput));
         }
 
-        private void companyListView_ItemClick(object sender, ItemClickEventArgs e)
+        private void companyListView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
-            var selectedCompany = (Company)e.ClickedItem;
-            Frame.Navigate(typeof(EditCompanyView), selectedCompany);
+
         }
     }
 }
