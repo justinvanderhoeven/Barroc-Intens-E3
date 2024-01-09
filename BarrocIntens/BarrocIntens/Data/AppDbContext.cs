@@ -159,10 +159,57 @@ namespace BarrocIntens.Data
                 new MaintenanceAppointment
                 {
                     Id = 2,
-                    Description = "Test 2 yay",
-                    DateAdded = DateTime.Now,
+                    Description = "Broken coffee machine",
+                    DateAdded = new DateTime(2024, 01, 01, 9, 15, 0),
+                    StartTime = new DateTime(2024, 01, 01, 10, 0, 0),
+                    EndTime = new DateTime(2024, 08, 01, 01, 23, 0),
                     CompanyId = 1,
                     ProductId = 1,
+                    UserId = null
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 3,
+                    Description = "Clean inside of coffee machine",
+                    DateAdded = new DateTime(2023, 08, 02, 13, 23, 0),
+                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
+                    CompanyId = 1,
+                    ProductId = 1,
+                    UserId = 8
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 4,
+                    Description = "Button not working",
+                    DateAdded = new DateTime(2023, 05, 04, 9, 34, 0),
+                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
+                    CompanyId = 1,
+                    ProductId = 1,
+                    UserId = null
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 5,
+                    Description = "Milk spilled on floor",
+                    DateAdded = new DateTime(2023, 07, 09, 13, 2, 0),
+                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
+                    CompanyId = 1,
+                    ProductId = 1,
+                    UserId = null
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 6,
+                    Description = "Cleaning machine not working again",
+                    DateAdded = new DateTime(2023, 08, 02, 11, 22, 0),
+                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
+                    CompanyId = 1,
+                    ProductId = 1,
+                    UserId = null
                 }
             );
 

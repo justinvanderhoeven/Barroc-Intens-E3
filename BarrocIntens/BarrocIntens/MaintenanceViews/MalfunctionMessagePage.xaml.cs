@@ -16,6 +16,7 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using BarrocIntens.Data;
+using Microsoft.EntityFrameworkCore;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -30,6 +31,12 @@ namespace BarrocIntens.MaintenanceViews
         public MalfunctionMessagePage()
         {
             this.InitializeComponent();
+            using (var db = new AppDbContext())
+            {
+                var malfunctions = db.MaintenanceAppointments.Include(m => m.Company)
+                .OrderBy(d => d.DateAdded).ToList();
+                MalfunctionListView.ItemsSource = malfunctions;
+            }
         }
 
         private void myButton_Click(object sender, RoutedEventArgs e)

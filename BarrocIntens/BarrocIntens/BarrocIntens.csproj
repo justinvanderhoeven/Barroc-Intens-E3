@@ -18,6 +18,7 @@
     <None Remove="LoginPage.xaml" />
     <None Remove="MainPage.xaml" />
     <None Remove="MaintenanceViews\MaintenanceCalendarView.xaml" />
+    <None Remove="MaintenanceViews\MaintenancePlannerCalendar.xaml" />
     <None Remove="PurchaseViews\StockSearchView.xaml" />
     <None Remove="PurchaseViews\StockView.xaml" />
     <None Remove="SalesViews\AddCompanyView.xaml" />
@@ -88,6 +89,11 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="PurchaseViews\StockSearchView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MaintenanceViews\MaintenancePlannerCalendar.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

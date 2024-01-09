@@ -20,8 +20,8 @@
         <ListView Grid.Row="0" x:Name="MalfunctionListView">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="localData:MaintenanceAppointment">
-                    <StackPanel>
-                        <TextBlock Margin="0 10 0 0" Text="{x:Bind Id}"/>
+                    <StackPanel Margin="0 10 0 0" Padding="10 0 0 0" BorderBrush="Black" BorderThickness="2" CornerRadius="10">
+                        <TextBlock Margin="0 10 0 0" Text="{x:Bind Company.Name}"/>
                         <StackPanel>
                             <TextBlock Margin="15 5 0 0" Text="{x:Bind Description}"/>
                             <TextBlock Margin="15 0 0 10" Text="{x:Bind DateAdded}"/>
@@ -30,8 +30,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <StackPanel  Grid.Row="1" >
-            <Button x:Name="myButton" Click="myButton_Click">Search Malfunction</Button>
+        <StackPanel Margin="0 10 0 10" HorizontalAlignment="Center"  Grid.Row="1" >
+            <Button x:Name="myButton" Click="myButton_Click">Refresh</Button>
             <!--<TextBox x:Name="SearchTextBox" PlaceholderText="Search by" />-->
         </StackPanel>
     </Grid>
