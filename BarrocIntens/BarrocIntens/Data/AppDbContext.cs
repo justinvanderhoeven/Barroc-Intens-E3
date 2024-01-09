@@ -151,11 +151,12 @@ namespace BarrocIntens.Data
                 {
                     Id = 2,
                     Description = "Broken coffee machine",
-                    DateAdded = new DateTime(2022, 05, 09, 9, 15, 0),
-                    StartTime = new DateTime(2023, 07, 02, 10, 0, 0),
-                    EndTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    DateAdded = new DateTime(2024, 01, 01, 9, 15, 0),
+                    StartTime = new DateTime(2024, 01, 01, 10, 0, 0),
+                    EndTime = new DateTime(2024, 08, 01, 01, 23, 0),
                     CompanyId = 1,
                     ProductId = 1,
+                    UserId = null
                 },
                 new MaintenanceAppointment
                 {
@@ -177,6 +178,7 @@ namespace BarrocIntens.Data
                     EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
                     CompanyId = 1,
                     ProductId = 1,
+                    UserId = null
                 },
                 new MaintenanceAppointment
                 {
@@ -187,6 +189,7 @@ namespace BarrocIntens.Data
                     EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
                     CompanyId = 1,
                     ProductId = 1,
+                    UserId = null
                 },
                 new MaintenanceAppointment
                 {
@@ -197,6 +200,7 @@ namespace BarrocIntens.Data
                     EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
                     CompanyId = 1,
                     ProductId = 1,
+                    UserId = null
                 }
             );
 

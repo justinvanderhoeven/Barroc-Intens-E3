@@ -21,11 +21,10 @@ using Windows.System;
 
 namespace BarrocIntens.MaintenanceViews
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MaintenancePlannerCalendar : Page
     {
+        private int selectedUserId = -1;
+
         public MaintenancePlannerCalendar()
         {
             this.InitializeComponent();
@@ -38,6 +37,8 @@ namespace BarrocIntens.MaintenanceViews
                 .Where(c => c.UserId != currentUser.Id)
                 .OrderBy(d => d.DateAdded).ToList();
                 MalfunctionListView.ItemsSource = malfunctionslist;
+
+                UserSuggestBox.ItemsSource = db.Users.ToList();
             }
         }
 
@@ -73,9 +74,63 @@ namespace BarrocIntens.MaintenanceViews
             await dialog.ShowAsync();
         }
 
-        private void BindUser_Click(object sender, RoutedEventArgs e)
+        private void UserSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        {
+            if (args.SelectedItem is Data.User selectedUser)
+            {
+                selectedUserId = selectedUser.Id;
+
+                UserSuggestBox.Text = selectedUser.Name;
+            }
+            else
+            {
+                UserSuggestBox.Text = "";
+            }
+        }
+
+        private async void BindUser_Click(object sender, RoutedEventArgs e)
         {
             MaintenanceAppointment selectedAppointment = (MaintenanceAppointment)((Button)sender).CommandParameter;
+
+
+            if (UserSuggestBox.Text != string.Empty && selectedUserId != -1)
+            {
+                using (var db = new AppDbContext())
+                {
+                    // Find the appointment in the database by its AppointmentId
+                    var appointmentToUpdate = db.MaintenanceAppointments
+                                                .SingleOrDefault(a => a.Id == selectedAppointment.Id);
+
+                    if (appointmentToUpdate != null)
+                    {
+                        // Update the UserId
+                        appointmentToUpdate.UserId = selectedUserId;
+
+                        // Save changes to the database
+                        db.SaveChanges();
+
+                        var currentUser = MainPage.CurrentUser;
+
+                        var malfunctionslist = db.MaintenanceAppointments.Include(m => m.Company)
+                        .Where(c => c.UserId != currentUser.Id)
+                        .OrderBy(d => d.DateAdded).ToList();
+                        MalfunctionListView.ItemsSource = malfunctionslist;
+
+                    }
+                }
+            }
+            else
+            {
+                ContentDialog wrongCredentialsDialog = new ContentDialog
+                {
+                    Title = "Bind Failed",
+                    Content = "Please check if you filled in a user",
+                    CloseButtonText = "Ok",
+                    XamlRoot = this.XamlRoot,
+                };
+
+                ContentDialogResult result = await wrongCredentialsDialog.ShowAsync();
+            }
         }
     }
 }

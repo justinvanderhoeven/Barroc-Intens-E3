@@ -17,36 +17,39 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <ListView MaxWidth="500" Grid.Column="0" x:Name="MalfunctionListView" >
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="localData:MaintenanceAppointment">
-                    <StackPanel Margin="0 10 0 0" Padding="10 0 0 0" BorderBrush="Black" BorderThickness="2" CornerRadius="10">
-                        <TextBlock Margin="0 10 0 0" Text="{x:Bind Company.Name}"/>
-                        <StackPanel>
-                            <TextBlock Margin="15 5 0 0" Text="{x:Bind Description}"/>
-                            <StackPanel Margin="0 0 0 10" Orientation="Horizontal">
-                                <TextBlock Margin="15 0 5 0" Text="Created at: "/>
-                                <TextBlock Margin="0 0 0 0" Text="{x:Bind DateAdded}"/>
-                            </StackPanel>
-                            <StackPanel Margin="15 0 0 0" Orientation="Horizontal">
-                                <TextBox Margin="0 0 5 15" x:Name="ChooseUser"/>
-                                <Button Margin="0 0 0 15" CommandParameter="{Binding}" Content="Bind User" x:Name="BindUser" Click="BindUser_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="0">
+            <ListView MaxWidth="500" Grid.Column="0" x:Name="MalfunctionListView" >
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="localData:MaintenanceAppointment">
+                        <StackPanel Margin="0 10 0 0" Padding="10 0 0 0" BorderBrush="Black" BorderThickness="2" CornerRadius="10">
+                            <TextBlock Margin="0 10 0 0" Text="{x:Bind Company.Name}"/>
+                            <StackPanel>
+                                <TextBlock Margin="15 5 0 0" Text="{x:Bind Description}"/>
+                                <StackPanel Margin="0 0 0 10" Orientation="Horizontal">
+                                    <TextBlock Margin="15 0 5 0" Text="Created at: "/>
+                                    <TextBlock Margin="0 0 0 0" Text="{x:Bind DateAdded}"/>
+                                </StackPanel>
+                                <StackPanel Margin="15 0 0 0" Orientation="Horizontal">
+                                    <Button Margin="0 0 0 15" CommandParameter="{Binding}" Content="Bind User" x:Name="BindUser" Click="BindUser_Click"/>
+                                </StackPanel>
                             </StackPanel>
                         </StackPanel>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </ListView>
-        <CalendarView x:Name="calendarView"
-                      Grid.Column="1"
-                      HorizontalAlignment="Stretch"
-                      VerticalAlignment="Stretch"
-                      CalendarItemBorderThickness="1"
-                      CalendarItemCornerRadius="0"
-                      HorizontalDayItemAlignment="Center"
-                      VerticalDayItemAlignment="Top"
-                      CalendarViewDayItemChanging="CalendarView_CalendarViewDayItemChanging"
-                      SelectionMode="Single">
+        <CalendarView x:Name="calendarView" Grid.Column="1" HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            CalendarItemBorderThickness="1"
+            CalendarItemCornerRadius="0"
+            HorizontalDayItemAlignment="Center"
+            VerticalDayItemAlignment="Top"
+            CalendarViewDayItemChanging="CalendarView_CalendarViewDayItemChanging"
+            SelectionMode="Single">
             <CalendarView.CalendarViewDayItemStyle>
                 <Style TargetType="CalendarViewDayItem">
                     <Setter Property="Template">
@@ -71,5 +74,14 @@
                 </Style>
             </CalendarView.CalendarViewDayItemStyle>
         </CalendarView>
+        <ListView Margin="0 5 0 5" Grid.Row="1">
+			<AutoSuggestBox x:Name="UserSuggestBox" Margin="5,10,0,0" UpdateTextOnSelect="True" SuggestionChosen="UserSuggestBox_SuggestionChosen">
+				<AutoSuggestBox.ItemTemplate>
+					<DataTemplate x:DataType="localData:User">
+						<TextBlock Text="{x:Bind Name}" />
+					</DataTemplate>
+				</AutoSuggestBox.ItemTemplate>
+			</AutoSuggestBox>
+        </ListView>
     </Grid>
 </Page>
