@@ -48,7 +48,14 @@ namespace BarrocIntens.SalesViews
             zipcodeInput.Text = string.Empty;
             cityInput.Text = string.Empty;
             countryInput.SelectedItem = -1;
-            
+
+            Frame.Navigate(typeof(CompanyDetailView));
+        }
+
+        // Navigate back 
+        private void navBack_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(CompanyDetailView));
         }
     }
 }
