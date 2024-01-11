@@ -10,7 +10,6 @@ namespace BarrocIntens.Data
     {
         public int Id { get; set; }
         public int Amount { get; set; }
-        public int PricePerProduct { get; set; }
         public int ContractId { get; set; }
         public int ProductId { get; set; }
     }
