@@ -32,5 +32,10 @@ namespace BarrocIntens.FinanceViews
         {
 
         }
+
+        private void companyListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }
