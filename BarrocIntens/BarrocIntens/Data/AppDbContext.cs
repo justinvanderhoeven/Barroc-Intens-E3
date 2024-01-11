@@ -105,18 +105,36 @@ namespace BarrocIntens.Data
                 new User
                 {
                     Id = 7,
-                    Name = "head",
-                    Email = "head1@gmail.com",
-                    Password = SecureHasher.Hash("head"),
+                    Name = "test",
+                    Email = "test@gmail.com",
+                    Password = SecureHasher.Hash("test"),
                     DepartmentId = 6,
                 },
                 new User
                 {
-                    Id = 8,
-                    Name = "Maintenance",
-                    Email = "Maint@gmail.com",
-                    Password = SecureHasher.Hash("Maintenance"),
-                    DepartmentId = 3,
+                    Id = 9,
+                    Name = "Test2",
+                    Email = "test2@gmail.com",
+                    Password = SecureHasher.Hash("test2"),
+                    DepartmentId = 1,
+
+                },
+                new User
+                {
+                    Id = 10,
+                    Name = "Test3",
+                    Email = "Test3@gmail.com",
+                    Password = SecureHasher.Hash("Test3"),
+                    DepartmentId = 1,
+
+                },
+                new User
+                {
+                    Id = 11,
+                    Name = "Test4",
+                    Email = "test4@gmail.com",
+                    Password = SecureHasher.Hash("test4"),
+                    DepartmentId = 1,
 
                 }
             );
