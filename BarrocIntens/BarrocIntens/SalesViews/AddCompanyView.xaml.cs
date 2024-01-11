@@ -51,11 +51,5 @@ namespace BarrocIntens.SalesViews
 
             Frame.Navigate(typeof(CompanyDetailView));
         }
-
-        // Navigate back 
-        private void navBack_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(CompanyDetailView));
-        }
     }
 }
