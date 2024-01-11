@@ -1,3 +1,4 @@
+using BarrocIntens.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -34,6 +35,19 @@ namespace BarrocIntens.FinanceViews
         }
 
         private void companyListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var searchInput = searchTextbox.Text;
+
+            using var db = new AppDbContext();
+            companyListView.ItemsSource = db.Companies.Where(m => m.Name.Contains(searchInput));
+        }
+
+        private void addCustomer_Click(object sender, RoutedEventArgs e)
         {
 
         }
