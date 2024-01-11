@@ -40,15 +40,15 @@ namespace BarrocIntens.FinanceViews
             var searchInput = searchTextbox.Text;
 
             using var db = new AppDbContext();
-            customerListView.ItemsSource = db.Companies.Where(m => m.Name.Contains(searchInput));
+            customerListView.ItemsSource = db.Users.Where(u => u.Name.Contains(searchInput) && u.Department.Id == 1);
         }
 
         private void deleteCompany_Click(object sender, RoutedEventArgs e)
         {
-            if (customerListView.SelectedItem is Company selectedCompany)
+            if (customerListView.SelectedItem is Company selectedCustomer)
             {
                 using var db = new AppDbContext();
-                db.Companies.Remove(selectedCompany);
+                db.Companies.Remove(selectedCustomer);
                 db.SaveChanges();
 
                 customerListView.ItemsSource = db.Companies.ToList();
