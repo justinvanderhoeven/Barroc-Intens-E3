@@ -12,8 +12,7 @@
         <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel HorizontalAlignment="Center">
-                <Button Name="navBack" Click="navBack_Click">Back</Button>
-                
+
                 <TextBlock FontFamily="Big Shoulders Display" FontSize="30" FontWeight="Bold" Foreground="#212121" Text="Formulier Company"/>
                 <StackPanel Orientation="Vertical" Margin="0,25,0,25">
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="nameInput"
