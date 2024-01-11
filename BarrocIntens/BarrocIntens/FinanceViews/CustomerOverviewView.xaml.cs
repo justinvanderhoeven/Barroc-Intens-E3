@@ -27,5 +27,15 @@ namespace BarrocIntens.FinanceViews
         {
             this.InitializeComponent();
         }
+
+        private void deleteCompany_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void companyListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }
