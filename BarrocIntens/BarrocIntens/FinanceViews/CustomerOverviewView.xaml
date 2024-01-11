@@ -8,7 +8,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Tag="CustomerOverviewView">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -21,6 +21,9 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        
+        <!--laat bij Via appdbd zien, De klanten "users" met een klantenId als department.--> 
+        
         <StackPanel Grid.Column="3" Grid.RowSpan="3" Background="#ffd700"/>
         <StackPanel Grid.Column="0" Grid.RowSpan="3" Background="#212121"/>
         <StackPanel Grid.Column="1" Grid.RowSpan="3" Background="#ffd700"/>
@@ -31,13 +34,12 @@
             <TextBox Name="searchTextbox" TextChanged="TextBox_TextChanged"/>
 
             <StackPanel Orientation="Horizontal" Spacing="10">
-                <Button Name="addCustomer" Click="addCustomer_Click">Voeg klant toe</Button>
                 <Button Name="deleteCustomer" Click="deleteCompany_Click">Verwijder klant</Button>
             </StackPanel>
         </StackPanel>
 
-        <ListView x:Name="companyListView" Grid.Row="1" Grid.Column="1" ItemClick="companyListView_ItemClick" IsItemClickEnabled="True"
-     AllowFocusOnInteraction="False">
+        <ListView x:Name="customerListView" Grid.Row="1" Grid.Column="1" ItemClick="customerListView_ItemClick" IsItemClickEnabled="True"
+            AllowFocusOnInteraction="False">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="localModel:Company">
                     <StackPanel Orientation="Vertical" Padding="5">

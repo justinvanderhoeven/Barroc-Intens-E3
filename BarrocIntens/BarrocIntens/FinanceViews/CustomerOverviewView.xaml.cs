@@ -1,3 +1,4 @@
+using BarrocIntens.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -10,6 +11,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Devices.Sensors.Custom;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
@@ -26,14 +28,34 @@ namespace BarrocIntens.FinanceViews
         public CustomerOverviewView()
         {
             this.InitializeComponent();
+
+            using var db = new AppDbContext();
+
+            var customers = db.Users.Where(u => u.DepartmentId == 1).ToList();
+            customerListView.ItemsSource = customers;
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var searchInput = searchTextbox.Text;
+
+            using var db = new AppDbContext();
+            customerListView.ItemsSource = db.Companies.Where(m => m.Name.Contains(searchInput));
         }
 
         private void deleteCompany_Click(object sender, RoutedEventArgs e)
         {
+            if (customerListView.SelectedItem is Company selectedCompany)
+            {
+                using var db = new AppDbContext();
+                db.Companies.Remove(selectedCompany);
+                db.SaveChanges();
 
+                customerListView.ItemsSource = db.Companies.ToList();
+            }
         }
 
-        private void companyListView_ItemClick(object sender, ItemClickEventArgs e)
+        private void customerListView_ItemClick(object sender, ItemClickEventArgs e)
         {
 
         }
