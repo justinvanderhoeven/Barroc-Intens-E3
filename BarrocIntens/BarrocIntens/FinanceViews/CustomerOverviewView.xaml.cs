@@ -8,6 +8,8 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -42,16 +44,18 @@ namespace BarrocIntens.FinanceViews
             customerListView.ItemsSource = db.Users.Where(u => u.Name.Contains(searchInput) && u.Department.Id == 1);
         }
 
-        private void deleteCompany_Click(object sender, RoutedEventArgs e)
+        private void deleteCustomer_Click(object sender, RoutedEventArgs e)
         {
-            if (customerListView.SelectedItem is Company selectedCustomer)
-            {
-                using var db = new AppDbContext();
-                db.Companies.Remove(selectedCustomer);
-                db.SaveChanges();
+            //if (customerListView.SelectedItem is User selectedCustomer)
+            //{
+            //    using var db = new AppDbContext();
+            //    db.Users.Remove(selectedCustomer);
+            //    db.SaveChanges();
 
-                customerListView.ItemsSource = db.Companies.ToList();
-            }
+
+            //    var customers = db.Users.Where(u => u.DepartmentId == 1).ToList();
+            //    customerListView.ItemsSource = customers;
+            //}
         }
 
         private void customerListView_ItemClick(object sender, ItemClickEventArgs e)
