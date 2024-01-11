@@ -12,9 +12,11 @@
     <Grid>
         <NavigationView x:Name="SalesNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="Klantjee Toevoegen" Tag="AddCustomerView"/>
+                <NavigationViewItem Content="Klant Toevoegen" Tag="AddCustomerView"/>
                 <NavigationViewItem Content="Bedrijf Toevoegen" Tag="AddCompanyView"/>
                 <NavigationViewItem Content="Offerte Aanmaken" Tag="AddOffersView"/>
+                <NavigationViewItem Content="Contract Aanmaken" Tag="AddContractView"/>
+                <NavigationViewItem Content="Contracten" Tag="ContractOverviewView"/>
             </NavigationView.MenuItems>
             <Frame x:Name="SalesFrame"></Frame>
         </NavigationView>

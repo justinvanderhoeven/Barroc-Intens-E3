@@ -283,7 +283,8 @@ namespace BarrocIntens.Data
                 {
                     Id = 1,
                     CompanyId = 1,
-                    ActiveUntil = DateOnly.FromDateTime( DateTime.UtcNow ),
+                    StartDate = DateOnly.FromDateTime( DateTime.UtcNow ),
+                    EndDate = DateOnly.FromDateTime(DateTime.UtcNow),
                 }
             );
 
@@ -294,7 +295,6 @@ namespace BarrocIntens.Data
                     ContractId = 1,
                     ProductId = 1,
                     Amount = 5,
-                    PricePerProduct = 5,
                 }
             );
 
