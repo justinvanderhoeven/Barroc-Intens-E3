@@ -14,7 +14,7 @@
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Klantjee Toevoegen" Tag="AddCustomerView"/>
                 <NavigationViewItem Content="Bedrijf Toevoegen" Tag="AddCompanyView"/>
-                <NavigationViewItem Content="Overzicht Bedrijven" Tag="CompanyDetailView"/>
+                <NavigationViewItem Content="Offerte Aanmaken" Tag="CompanyDetailView"/>
                 <NavigationViewItem Content="Offerte Aanmaken" Tag="AddOffersView"/>
             </NavigationView.MenuItems>
             <Frame x:Name="SalesFrame"></Frame>
