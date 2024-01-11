@@ -8,7 +8,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Tag="CustomerOverviewView">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -31,47 +31,32 @@
             <TextBox Name="searchTextbox" TextChanged="TextBox_TextChanged"/>
 
             <StackPanel Orientation="Horizontal" Spacing="10">
-                <Button Name="deleteCustomer" Click="deleteCompany_Click">Verwijder klant</Button>
+                <Button Name="deleteCustomer" Click="deleteCustomer_Click">Verwijder klant</Button>
             </StackPanel>
         </StackPanel>
 
         <ListView x:Name="customerListView" Grid.Row="1" Grid.Column="1" ItemClick="customerListView_ItemClick" IsItemClickEnabled="True"
          AllowFocusOnInteraction="False">
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="localModel:Company">
+                <DataTemplate x:DataType="localModel:User">
                     <StackPanel Orientation="Vertical" Padding="5">
                         <TextBlock Text="{x:Bind Name}"/>
                         <TextBlock Text=""/>
 
                         <TextBlock Foreground="#212121" FontWeight="Thin">
-      <Run>Stad:</Run>
-          <Run Text="{x:Bind City}" />
+      <Run>Naam:</Run>
+          <Run Text="{x:Bind Name}" />
                         </TextBlock>
 
                         <TextBlock Foreground="#212121" FontWeight="Thin">
-      <Run>Adres:</Run>
-           <Run Text="{x:Bind Address}" />
+      <Run>Email:</Run>
+           <Run Text="{x:Bind Email}" />
                         </TextBlock>
 
                         <TextBlock Foreground="#212121" FontWeight="Thin">
-     <Run>Postcode:</Run>
-           <Run Text="{x:Bind Zipcode}" />
+     <Run>AfdelingsNummer:</Run>
+           <Run Text="{x:Bind DepartmentId}" />
                         </TextBlock>
-
-                        <TextBlock Foreground="#212121" FontWeight="Thin">
-     <Run>Contactpersoon:</Run>
-           <Run Text="{x:Bind Contact}" />
-                        </TextBlock>
-                        <TextBlock Foreground="#212121" FontWeight="Thin">
-     <Run>Laatste BKR Check:</Run>
-           <Run Text="{x:Bind BkrCheckedAt}" />
-                        </TextBlock>
-
-                        <TextBlock Foreground="#212121" FontWeight="Thin">
-     <Run>Telefoonnummer:</Run>
-            <Run Text="{x:Bind Phone}" />
-                        </TextBlock>
-
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
