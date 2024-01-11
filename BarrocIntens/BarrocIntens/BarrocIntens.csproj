@@ -92,13 +92,13 @@
     <Folder Include="CustomerViews\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="SalesViews\EditCompanyView.xaml">
+    <Page Update="SalesViews\EditCompanyView.xaml"/>
     <Page Update="SalesViews\AddContractView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="SalesViews\CompanyDetailView.xaml">
+    <Page Update="SalesViews\CompanyDetailView.xaml"/>
     <Page Update="SalesViews\ContractOverviewView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
