@@ -24,6 +24,7 @@
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Overzicht" Tag="CustomerOverviewView"/>
                 <NavigationViewItem Content="Geldzaken" Tag="IncomeStatementView"/>
+                <NavigationViewItem Content="Geldzaken" Tag="CustomerOverviewView"/>
             </NavigationView.MenuItems>
             <Frame x:Name="FinanceFrame"></Frame>
         </NavigationView>
