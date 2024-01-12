@@ -34,8 +34,8 @@ namespace BarrocIntens.MaintenanceViews
                 var currentUser = MainPage.CurrentUser;
 
                 var malfunctionslist = db.MaintenanceAppointments.Include(m => m.Company)
-                .Where(c => c.UserId != currentUser.Id)
-                .OrderBy(d => d.DateAdded).ToList();
+                    .Where(c => c.UserId != currentUser.Id)
+                    .OrderBy(d => d.DateAdded).ToList();
                 MalfunctionListView.ItemsSource = malfunctionslist;
 
                 UserSuggestBox.ItemsSource = db.Users.ToList();
@@ -99,7 +99,7 @@ namespace BarrocIntens.MaintenanceViews
                 {
                     // Find the appointment in the database by its AppointmentId
                     var appointmentToUpdate = db.MaintenanceAppointments
-                                                .SingleOrDefault(a => a.Id == selectedAppointment.Id);
+                        .SingleOrDefault(a => a.Id == selectedAppointment.Id);
 
                     if (appointmentToUpdate != null)
                     {
@@ -112,8 +112,8 @@ namespace BarrocIntens.MaintenanceViews
                         var currentUser = MainPage.CurrentUser;
 
                         var malfunctionslist = db.MaintenanceAppointments.Include(m => m.Company)
-                        .Where(c => c.UserId != currentUser.Id)
-                        .OrderBy(d => d.DateAdded).ToList();
+                            .Where(c => c.UserId != currentUser.Id)
+                            .OrderBy(d => d.DateAdded).ToList();
                         MalfunctionListView.ItemsSource = malfunctionslist;
 
                     }
