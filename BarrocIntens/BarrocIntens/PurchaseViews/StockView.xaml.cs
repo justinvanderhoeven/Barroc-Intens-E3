@@ -37,8 +37,8 @@ namespace BarrocIntens.PurchaseViews
             {
                 Name = nameInput.Text,
                 Phone = phoneInput.Text,
-                Street = streetInput.Text,
-                HouseNumber = houseInput.Text,
+                Address = adressInput.Text,
+                Zipcode = zipcodeInput.Text,
                 City = cityInput.Text,
                 CountryCode = (string)countryInput.SelectedItem,
             });

@@ -21,12 +21,12 @@
                  Header="PhoneNumber:" PlaceholderText="PhoneNumber"
                  Width="300" HorizontalAlignment="Left"/>
 
-            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="streetInput"
-                 Header="Street:" PlaceholderText="Street"
+            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="adressInput"
+                 Header="Address:" PlaceholderText="Address"
                  Width="300" HorizontalAlignment="Left"/>
 
-            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="houseInput"
-                 Header="House:" PlaceholderText="House"
+            <TextBox FontFamily="Roboto" Margin="0,5" x:Name="zipcodeInput"
+                 Header="Zipcode:" PlaceholderText="Zipcode"
                  Width="300" HorizontalAlignment="Left"/>
 
             <TextBox FontFamily="Roboto" Margin="0,5" x:Name="cityInput"
