@@ -46,16 +46,21 @@ namespace BarrocIntens.FinanceViews
 
         private void deleteCustomer_Click(object sender, RoutedEventArgs e)
         {
-            //if (customerListView.SelectedItem is User selectedCustomer)
-            //{
-            //    using var db = new AppDbContext();
-            //    db.Users.Remove(selectedCustomer);
-            //    db.SaveChanges();
+            if (customerListView.SelectedItem is User selectedCustomer)
+            {
+                using var db = new AppDbContext();
+                var company = db.Companies.FirstOrDefault(c => c.ContactId == selectedCustomer.Id);
+                if (company != null)
+                {
+                    company.ContactId = null;
+                }
+                db.Users.Remove(selectedCustomer);
+                db.SaveChanges();
 
 
-            //    var customers = db.Users.Where(u => u.DepartmentId == 1).ToList();
-            //    customerListView.ItemsSource = customers;
-            //}
+                var customers = db.Users.Where(u => u.DepartmentId == 1).ToList();
+                customerListView.ItemsSource = customers;
+            }
         }
 
         private void customerListView_ItemClick(object sender, ItemClickEventArgs e)
