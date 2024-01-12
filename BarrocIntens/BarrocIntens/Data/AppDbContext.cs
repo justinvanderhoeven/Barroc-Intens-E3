@@ -54,70 +54,183 @@ namespace BarrocIntens.Data
                 .UsingEntity<CustomInvoiceProduct>();
 
             modelBuilder.Entity<User>().HasData(
+
+                // Users for Department 1 (Customer)
                 new User
                 {
                     Id = 1,
-                    Name = "Admin1",
-                    Email = "Admin1@gmail.com",
-                    Password = SecureHasher.Hash("Admin1"),
+                    Name = "Bob",
+                    Email = "Customer1@gmail.com",
+                    Password = SecureHasher.Hash("Customer1"),
                     DepartmentId = 1,
                 },
                 new User
                 {
                     Id = 2,
-                    Name = "Justin",
-                    Email = "Admin2@gmail.com",
-                    Password = SecureHasher.Hash("Admin2"),
-                    DepartmentId = 2,
-                },
-                new User
-                {
-                    Id = 3,
-                    Name = "Remon",
-                    Email = "Admin3@gmail.com",
-                    Password = SecureHasher.Hash("Admin3"),
-                    DepartmentId = 4,
-                },
-                new User
-                {
-                    Id = 4,
-                    Name = "Dani",
-                    Email = "Admin4@gmail.com",
-                    Password = SecureHasher.Hash("Admin4"),
-                    DepartmentId = 5,
-                },
-                new User
-                {
-                    Id = 5,
-                    Name = "Nathan",
-                    Email = "Admin5@gmail.com",
-                    Password = SecureHasher.Hash("Admin5"),
+                    Name = "Jason",
+                    Email = "Customer2@gmail.com",
+                    Password = SecureHasher.Hash("Customer2"),
                     DepartmentId = 1,
                 },
                 new User
                 {
+                    Id = 3,
+                    Name = "Mike",
+                    Email = "Customer3@gmail.com",
+                    Password = SecureHasher.Hash("Customer3"),
+                    DepartmentId = 1,
+                },
+                new User
+                {
+                    Id = 4,
+                    Name = "Leonard",
+                    Email = "Customer4@gmail.com",
+                    Password = SecureHasher.Hash("Customer4"),
+                    DepartmentId = 1,
+                },
+                new User
+                {
+                    Id = 5,
+                    Name = "Bart",
+                    Email = "Customer5@gmail.com",
+                    Password = SecureHasher.Hash("Customer5"),
+                    DepartmentId = 1,
+                },
+
+                // Users for Department 2 (Finance)
+                new User
+                {
                     Id = 6,
-                    Name = "User1",
-                    Email = "User1@gmail.com",
-                    Password = SecureHasher.Hash("User1"),
+                    Name = "FinanceAdmin",
+                    Email = "AdminFin@gmail.com",
+                    Password = SecureHasher.Hash("Finance"),
                     DepartmentId = 2,
                 },
                 new User
                 {
                     Id = 7,
-                    Name = "head",
-                    Email = "head1@gmail.com",
-                    Password = SecureHasher.Hash("head"),
-                    DepartmentId = 6,
+                    Name = "Finance1",
+                    Email = "Fin1@gmail.com",
+                    Password = SecureHasher.Hash("Finance"),
+                    DepartmentId = 2,
                 },
                 new User
                 {
                     Id = 8,
-                    Name = "Maintenance",
-                    Email = "Maint@gmail.com",
+                    Name = "Finance2",
+                    Email = "Fin2@gmail.com",
+                    Password = SecureHasher.Hash("Finance"),
+                    DepartmentId = 2,
+                },
+                new User
+                {
+                    Id = 9,
+                    Name = "Finance3",
+                    Email = "Fin3@gmail.com",
+                    Password = SecureHasher.Hash("Finance"),
+                    DepartmentId = 2,
+                },
+                new User
+                {
+                    Id = 10,
+                    Name = "Finance4",
+                    Email = "Fin4@gmail.com",
+                    Password = SecureHasher.Hash("Finance"),
+                    DepartmentId = 2,
+                },
+
+                // Users for Department 3 (Maintenance)
+                new User
+                {
+                    Id = 11,
+                    Name = "MaintenanceAdmin",
+                    Email = "AdminMaint@gmail.com",
+                    Password = SecureHasher.Hash("Maintenance"),
+                    DepartmentId = 6,
+                },
+                new User
+                {
+                    Id = 12,
+                    Name = "Maintenance1",
+                    Email = "Maint1@gmail.com",
                     Password = SecureHasher.Hash("Maintenance"),
                     DepartmentId = 3,
+                },
+                new User
+                {
+                    Id = 13,
+                    Name = "Maintenance2",
+                    Email = "Maint2@gmail.com",
+                    Password = SecureHasher.Hash("Maintenance"),
+                    DepartmentId = 3,
+                },
+                new User
+                {
+                    Id = 14,
+                    Name = "Maintenance3",
+                    Email = "Maint3@gmail.com",
+                    Password = SecureHasher.Hash("Maintenance"),
+                    DepartmentId = 3,
+                },
+                new User
+                {
+                    Id = 15,
+                    Name = "Maintenance4",
+                    Email = "Maint4@gmail.com",
+                    Password = SecureHasher.Hash("Maintenance"),
+                    DepartmentId = 3,
+                },
 
+                // Users for Department 4 (Sales)
+                new User
+                {
+                    Id = 16,
+                    Name = "SalesAdmin",
+                    Email = "AdminSales@gmail.com",
+                    Password = SecureHasher.Hash("Sales"),
+                    DepartmentId = 4,
+                },
+                new User
+                {
+                    Id = 17,
+                    Name = "Sales1",
+                    Email = "Sales1@gmail.com",
+                    Password = SecureHasher.Hash("Sales"),
+                    DepartmentId = 4,
+                },
+                new User
+                {
+                    Id = 18,
+                    Name = "Sales2",
+                    Email = "Sales2@gmail.com",
+                    Password = SecureHasher.Hash("Sales"),
+                    DepartmentId = 4,
+                },
+                new User
+                {
+                    Id = 19,
+                    Name = "Sales3",
+                    Email = "Sales3@gmail.com",
+                    Password = SecureHasher.Hash("Sales"),
+                    DepartmentId = 4,
+                },
+                new User
+                {
+                    Id = 20,
+                    Name = "Sales4",
+                    Email = "Sales4@gmail.com",
+                    Password = SecureHasher.Hash("Sales"),
+                    DepartmentId = 4,
+                },
+
+                // Users for Department 5 (Purchase)
+                new User
+                {
+                    Id = 21,
+                    Name = "PurchaseAdmin",
+                    Email = "AdminPurch@gmail.com",
+                    Password = SecureHasher.Hash("Purchase"),
+                    DepartmentId = 5,
                 }
             );
 
