@@ -62,15 +62,6 @@ namespace BarrocIntens.FinanceViews
         {
 
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            var searchInput = searchTextbox.Text;
-
-            using var db = new AppDbContext();
-            customerListView.ItemsSource = db.Companies.Where(m => m.Name.Contains(searchInput));
-        }
-
         private void addCustomer_Click(object sender, RoutedEventArgs e)
         {
 
