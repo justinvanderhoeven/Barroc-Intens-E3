@@ -32,7 +32,7 @@
 
         <NavigationView x:Name="MaintenanceNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="Storing meldingen" Tag="MalfunctionMessageView"/>
+                <NavigationViewItem Content="Storing meldingen" Tag="MalfunctionMessagePage"/>
                 <NavigationViewItem Content="Calender" Tag="MaintenanceCalendarView"/>
                 <NavigationViewItem Content="Planner Calender" Tag="MaintenancePlannerCalendar"/>
             </NavigationView.MenuItems>
