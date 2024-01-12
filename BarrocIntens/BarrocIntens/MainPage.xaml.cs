@@ -86,7 +86,7 @@ namespace BarrocIntens
             switch (departmentId)
             {
                 case 1:
-                    return CustomerFrame;
+                    return UserFrame;
                     break;
                 case 2:
                     return FinanceFrame;
@@ -109,7 +109,7 @@ namespace BarrocIntens
             switch (departmentId)
             {
                 case 1:
-                    return "CustomerViews";
+                    return "UserViews";
                     break;
                 case 2:
                     return "FinanceViews";
@@ -123,7 +123,6 @@ namespace BarrocIntens
                 case 5:
                     return "PurchaseViews";
                     break;
-
             }
 
             return "Error";

@@ -27,7 +27,7 @@
     <None Remove="SalesViews\CompanyDetailView.xaml" />
     <None Remove="SalesViews\EditCompanyView.xaml" />
     <None Remove="SalesViews\ContractOverviewView.xaml" />
-    <None Remove="UserViews\CreateMalfunctionMessagePage.xaml" />
+    <None Remove="UserViews\CreateMalfunctionMessageView.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -92,13 +92,18 @@
     <Folder Include="CustomerViews\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="SalesViews\EditCompanyView.xaml"/>
+    <Page Update="UserViews\CreateMalfunctionMessageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="SalesViews\EditCompanyView.xaml" />
     <Page Update="SalesViews\AddContractView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="SalesViews\CompanyDetailView.xaml"/>
+    <Page Update="SalesViews\CompanyDetailView.xaml" />
     <Page Update="SalesViews\ContractOverviewView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

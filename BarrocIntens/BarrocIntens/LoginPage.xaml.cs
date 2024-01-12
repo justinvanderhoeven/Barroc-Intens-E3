@@ -56,6 +56,9 @@ namespace BarrocIntens
                 //Check if password is correct. 
                 if (user != null && VerifyPassword(inputPassword, user.Password, email))
                 {
+                    User.LoggedInUser = user;
+                    Company company = db.Companies.FirstOrDefault(c => c.ContactId == user.Id);
+                    Company.LoggedInCompany = company;
                     Frame.Navigate(typeof(MainPage), user);
                 }
                 else

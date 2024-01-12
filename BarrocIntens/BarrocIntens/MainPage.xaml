@@ -48,9 +48,9 @@
 
         <NavigationView x:Name="CustomerNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
             <NavigationView.MenuItems>
-                
+                <NavigationViewItem Content="Meld een Storing" Tag="CreateMalfunctionMessageView"/>
             </NavigationView.MenuItems>
-            <Frame x:Name="CustomerFrame"></Frame>
+            <Frame x:Name="UserFrame"></Frame>
         </NavigationView>
     </Grid>
 </Page>

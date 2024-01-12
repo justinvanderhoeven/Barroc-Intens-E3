@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +10,7 @@ namespace BarrocIntens.Data
 {
     public class Company
     {
+        public static Company LoggedInCompany { get; set; }
         public int Id { get; set; }
         public string Name { get; set; }
         public string Phone {  get; set; }
