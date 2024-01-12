@@ -19,9 +19,6 @@ using Windows.Foundation.Collections;
 
 namespace BarrocIntens.SalesViews
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class AddCompanyView : Page
     {
         public AddCompanyView()
@@ -29,9 +26,30 @@ namespace BarrocIntens.SalesViews
             this.InitializeComponent();
         }
 
-        private void AddCompanyButton_Click(object sender, RoutedEventArgs e)
+        private async void AddCompanyButton_Click(object sender, RoutedEventArgs e)
         {
             using var db = new AppDbContext();
+
+            if (string.IsNullOrWhiteSpace(nameInput.Text) ||
+                string.IsNullOrWhiteSpace(phoneInput.Text) ||
+                string.IsNullOrWhiteSpace(addressInput.Text) ||
+                string.IsNullOrWhiteSpace(zipcodeInput.Text) ||
+                string.IsNullOrWhiteSpace(cityInput.Text) ||
+                countryInput.SelectedValue == null)
+            {
+                ContentDialog wrongCredentialsDialog = new ContentDialog
+                {
+                    Title = "Create Failed",
+                    Content = "Please check if you filled in all info",
+                    CloseButtonText = "Ok",
+                    XamlRoot = this.XamlRoot,
+                };
+
+                ContentDialogResult result = await wrongCredentialsDialog.ShowAsync();
+                return; 
+            }
+
+            // Add a new company to the database
             db.Companies.Add(new Company
             {
                 Name = nameInput.Text,
@@ -41,15 +59,17 @@ namespace BarrocIntens.SalesViews
                 City = cityInput.Text,
                 CountryCode = countryInput.SelectedValue.ToString(),
             });
+
+            // Save changes to the database
             db.SaveChanges();
+
+            // Clear input fields
             nameInput.Text = string.Empty;
             phoneInput.Text = string.Empty;
             addressInput.Text = string.Empty;
             zipcodeInput.Text = string.Empty;
             cityInput.Text = string.Empty;
             countryInput.SelectedItem = -1;
-
-            Frame.Navigate(typeof(CompanyDetailView));
         }
 
         // Navigate back 
