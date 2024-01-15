@@ -93,7 +93,7 @@
     <Folder Include="CustomerViews\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="UserViews\CreateMalfunctionMessageView.xaml">
+    <Page Update="UserViews\CreateMalfunctionMessageView.xaml"/>
     <Page Update="FinanceViews\EditContractWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
