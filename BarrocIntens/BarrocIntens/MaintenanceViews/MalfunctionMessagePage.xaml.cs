@@ -45,7 +45,7 @@ namespace BarrocIntens.MaintenanceViews
             using (var db = new AppDbContext())
             {
                 // This code will be executed when the button is clicked
-                var malfunctions = db.MaintenanceAppointments
+                var malfunctions = db.MaintenanceAppointments.Include(m => m.Company)
                 //.Where(m => m.Id.Contains(SearchTextBox.Text))
                 .OrderBy(d => d.DateAdded).ToList();
                 MalfunctionListView.ItemsSource = malfunctions;

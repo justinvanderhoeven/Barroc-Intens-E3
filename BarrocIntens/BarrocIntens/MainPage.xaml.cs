@@ -54,6 +54,11 @@ namespace BarrocIntens
                 case 5:
                     PurchaseNavView.Visibility = Visibility.Visible;
                     break;
+                case 6:
+                    MaintenanceNavView.Visibility = Visibility.Visible;
+                    MaintenancePlannerCalendar.Visibility = Visibility.Visible;
+                    MalfunctionMessagePage.Visibility = Visibility.Visible;
+                    break;
             }
         }
 
@@ -100,6 +105,8 @@ namespace BarrocIntens
                 case 5:
                     return PurchaseFrame;
                     break;
+                case 6:
+                    return MaintenanceFrame;
                 default: return null;
             }
         }
@@ -122,6 +129,9 @@ namespace BarrocIntens
                     break;
                 case 5:
                     return "PurchaseViews";
+                    break;
+                case 6:
+                    return "MaintenanceViews";
                     break;
             }
 
