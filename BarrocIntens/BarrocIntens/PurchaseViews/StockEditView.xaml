@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Page
-    x:Class="BarrocIntens.PurchaseViews.StockView"
+<Window
+    x:Class="BarrocIntens.PurchaseViews.StockEditView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:BarrocIntens.PurchaseViews"
@@ -11,12 +11,12 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <ScrollViewer VerticalScrollBarVisibility="auto">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel HorizontalAlignment="Center">
-                <TextBlock FontFamily="Big Shoulders Display" FontSize="30" FontWeight="Bold" Foreground="#212121" Text="Formulier Product"/>
+                <TextBlock FontFamily="Big Shoulders Display" FontSize="30" FontWeight="Bold" Foreground="#212121" Text="Formulier pas product aan"/>
                 <StackPanel Orientation="Vertical" Margin="0,25,0,25">
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="nameInput"
              Header="Naam:" PlaceholderText="Name"
@@ -39,7 +39,7 @@
              Header="Hoeveelheid:" PlaceholderText="Stock"
              Width="300" HorizontalAlignment="Left"/>
 
-                    <ComboBox FontFamily="Roboto" Margin="0, 10" Header="ProductCategorie" PlaceholderText="Selecteer categorie" Width="300" x:Name="productCategoryInput">
+                    <ComboBox FontFamily="Roboto" Margin="0, 10" Header="ProductCategorie" DisplayMemberPath="Name" PlaceholderText="Selecteer categorie" Width="300" x:Name="productCategoryInput">
                         <!--<ComboBox.HeaderTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding}" Foreground="#212121" />
@@ -52,10 +52,14 @@
                         <x:String>5</x:String>-->
                     </ComboBox>
 
-                    <Button x:Name="AddProductButton" FontFamily="Roboto" Margin="0, 10" Content="Voeg product toe" Click="AddProductButton_Click"/>
-                    <Button x:Name="BackToStockButton" FontFamily="Arial" Margin="0, 30"  Background="White" Content="Terug" Click="BackToStockButton_Click"/>
+                    <Button x:Name="EditProductButton" FontFamily="Roboto" Margin="0, 10" Content="Pas product aan" Click="EditProductButton_Click"/>
+                    <Button x:Name="DeleteProductButton" FontFamily="Roboto" Margin="0, 10" Content="Verwijder product" Click="DeleteProductButton_Click"/>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
+
     </Grid>
-</Page>
+</Window>
+
+    
+

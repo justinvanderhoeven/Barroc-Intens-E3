@@ -23,7 +23,7 @@ namespace BarrocIntens.PurchaseViews
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class StockView : Window
+    public sealed partial class StockView : Page
     {
         public StockView()
         {
@@ -32,6 +32,7 @@ namespace BarrocIntens.PurchaseViews
             using var db = new AppDbContext();
             productCategoryInput.ItemsSource = db.ProductsCategories.ToList();
             productCategoryInput.DisplayMemberPath = "Name";
+        
         }
         private void AddProductButton_Click(object sender, RoutedEventArgs e)
         {
@@ -53,6 +54,11 @@ namespace BarrocIntens.PurchaseViews
             //imagePathInput.Text = string.Empty;
             priceInput.Text = string.Empty;
             productCategoryInput.SelectedItem = -1;
+        }
+
+        private void BackToStockButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(StockSearchView));
         }
     }
 }

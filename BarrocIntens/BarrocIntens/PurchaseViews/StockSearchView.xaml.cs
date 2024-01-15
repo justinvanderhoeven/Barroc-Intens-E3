@@ -44,9 +44,7 @@ namespace BarrocIntens.PurchaseViews
 
         private void CreateProductButton_Click(object sender, RoutedEventArgs e)
         {
-            var window = new StockView();
-            window.Activate();
-            window.Closed += Window_Closed;
+            Frame.Navigate(typeof(StockView));
         }
 
         private void Window_Closed(object sender, WindowEventArgs args)
@@ -55,6 +53,12 @@ namespace BarrocIntens.PurchaseViews
             {
                 StockSearchingView.ItemsSource = db.Products.ToList();
             }
+        }
+        private void StockSearchView_ItemClick(object sender, ItemClickEventArgs p)
+        {
+            var SelectedItem = (Product)p.ClickedItem;
+            var window = new StockEditView(SelectedItem.Id);
+            window.Activate();
         }
     }
 }

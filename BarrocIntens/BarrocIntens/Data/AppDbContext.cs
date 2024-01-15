@@ -118,6 +118,15 @@ namespace BarrocIntens.Data
                     Password = SecureHasher.Hash("Maintenance"),
                     DepartmentId = 3,
 
+                },
+                new User
+                {
+                    Id = 9,
+                    Name = "Product Manager",
+                    Email = "Manager@gmail.com",
+                    Password = SecureHasher.Hash("Product"),
+                    DepartmentId = 5,
+
                 }
             );
 
