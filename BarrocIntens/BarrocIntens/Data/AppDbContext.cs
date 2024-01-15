@@ -231,7 +231,40 @@ namespace BarrocIntens.Data
                     Email = "AdminPurch@gmail.com",
                     Password = SecureHasher.Hash("Purchase"),
                     DepartmentId = 5,
+                },
+                new User
+                {
+                    Id = 22,
+                    Name = "Purchase1",
+                    Email = "Purch1@gmail1.com",
+                    Password = SecureHasher.Hash("Purchase"),
+                    DepartmentId = 5,
+                },
+                new User
+                {
+                    Id = 23,
+                    Name = "Purchase2",
+                    Email = "Purch2@gmail1.com",
+                    Password = SecureHasher.Hash("Purchase"),
+                    DepartmentId = 5,
+                },
+                new User
+                {
+                    Id = 24,
+                    Name = "Purchase3",
+                    Email = "Purch3@gmail1.com",
+                    Password = SecureHasher.Hash("Purchase"),
+                    DepartmentId = 5,
+                },
+                new User
+                {
+                    Id = 25,
+                    Name = "Purchase4",
+                    Email = "Purch4@gmail1.com",
+                    Password = SecureHasher.Hash("Purchase"),
+                    DepartmentId = 5,
                 }
+
             );
 
             modelBuilder.Entity<Company>().HasData(
