@@ -14,7 +14,7 @@
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Klant Toevoegen" Tag="AddCustomerView"/>
                 <NavigationViewItem Content="Bedrijf Toevoegen" Tag="AddCompanyView"/>
-                <NavigationViewItem Content="Offerte Aanmaken" Tag="CompanyDetailView"/>
+                <NavigationViewItem Content="Bedrijf Overzicht" Tag="CompanyDetailView"/>
                 <NavigationViewItem Content="Offerte Aanmaken" Tag="AddOffersView"/>
                 <NavigationViewItem Content="Contract Aanmaken" Tag="AddContractView"/>
                 <NavigationViewItem Content="Contracten" Tag="ContractOverviewView"/>

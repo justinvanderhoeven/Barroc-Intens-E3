@@ -40,7 +40,7 @@ namespace BarrocIntens.SalesViews
                 ContentDialog wrongCredentialsDialog = new ContentDialog
                 {
                     Title = "Create Failed",
-                    Content = "Please check if you filled in all info",
+                    Content = "Please check if you filled in all fields",
                     CloseButtonText = "Ok",
                     XamlRoot = this.XamlRoot,
                 };
