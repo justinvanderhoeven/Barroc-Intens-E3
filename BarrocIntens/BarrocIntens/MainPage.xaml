@@ -16,8 +16,6 @@
                 <NavigationViewItem Content="Bedrijf Toevoegen" Tag="AddCompanyView"/>
                 <NavigationViewItem Content="Bedrijf Overzicht" Tag="CompanyDetailView"/>
                 <NavigationViewItem Content="Offerte Aanmaken" Tag="AddOffersView"/>
-                <NavigationViewItem Content="Contract Aanmaken" Tag="AddContractView"/>
-                <NavigationViewItem Content="Contracten" Tag="ContractOverviewView"/>
             </NavigationView.MenuItems>
             <Frame x:Name="SalesFrame"></Frame>
         </NavigationView>
@@ -26,6 +24,8 @@
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Overzicht" Tag="CustomerOverviewView"/>
                 <NavigationViewItem Content="Geldzaken" Tag="IncomeStatementView"/>
+                <NavigationViewItem Content="Contract Aanmaken" Tag="AddContractView"/>
+                <NavigationViewItem Content="Contracten" Tag="ContractOverviewView"/>
             </NavigationView.MenuItems>
             <Frame x:Name="FinanceFrame"></Frame>
         </NavigationView>

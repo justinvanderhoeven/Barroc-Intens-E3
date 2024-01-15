@@ -1,11 +1,10 @@
-﻿using BarrocIntens.Data;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace BarrocIntens.SalesViews
+namespace BarrocIntens.Data
 {
     public class ShopCartItem : INotifyPropertyChanged
     {

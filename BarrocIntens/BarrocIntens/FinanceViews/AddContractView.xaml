@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Page
-    x:Class="BarrocIntens.SalesViews.AddContractView"
+    x:Class="BarrocIntens.FinanceViews.AddContractView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:BarrocIntens.SalesViews"
@@ -64,7 +64,7 @@
                     <TextBlock Grid.Row="0" Text="Winkelwagentje:" Margin="0,0,0,10" />
                     <ListView Grid.Row="1" x:Name="ShopCartListView">
                         <ListView.ItemTemplate>
-                            <DataTemplate x:DataType="local:ShopCartItem">
+                            <DataTemplate x:DataType="Model:ShopCartItem">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />

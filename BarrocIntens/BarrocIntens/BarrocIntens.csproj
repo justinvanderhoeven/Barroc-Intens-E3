@@ -14,6 +14,7 @@
   <ItemGroup>
     <None Remove="Assets\Logo6_groot.png" />
     <None Remove="FinanceViews\CustomerOverviewView.xaml" />
+    <None Remove="FinanceViews\EditContractWindow.xaml" />
     <None Remove="FinanceViews\IncomeStatementView.xaml" />
     <None Remove="LoginPage.xaml" />
     <None Remove="MainPage.xaml" />
@@ -93,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="UserViews\CreateMalfunctionMessageView.xaml">
+    <Page Update="FinanceViews\EditContractWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

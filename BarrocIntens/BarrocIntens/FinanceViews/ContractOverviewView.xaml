@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Page
-    x:Class="BarrocIntens.SalesViews.ContractOverviewView"
+    x:Class="BarrocIntens.FinanceViews.ContractOverviewView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:BarrocIntens.SalesViews"
@@ -37,7 +37,7 @@
         </StackPanel>
 
         <ListView x:Name="contractListView" Grid.Row="1" Grid.Column="1" IsDoubleTapEnabled="True"
-     AllowFocusOnInteraction="False">
+     AllowFocusOnInteraction="False" DoubleTapped="contractListView_DoubleTapped">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="Model:Contract">
                     <StackPanel Orientation="Vertical" Padding="5">
