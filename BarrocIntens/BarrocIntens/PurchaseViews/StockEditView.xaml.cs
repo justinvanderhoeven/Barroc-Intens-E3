@@ -72,5 +72,9 @@ namespace BarrocIntens.PurchaseViews
             }
         }
 
+        private void BackToStockButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
