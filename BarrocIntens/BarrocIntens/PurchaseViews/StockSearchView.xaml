@@ -16,13 +16,15 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Padding="15" Background="Aqua">
-            <TextBlock Text="Search:"/>
+        <StackPanel Grid.Row="0" Padding="15" Background="#ffd700">
+            <TextBlock Text="Zoeken:"/>
             <TextBox TextChanged="TextBox_TextChanged" x:Name="searchTextBox"/>
-            <Button x:Name="CreateProductButton" FontFamily="Arial" Margin="0, 30"  Background="White" Content="Add new Product" Click="CreateProductButton_Click"/>
+            <Button x:Name="CreateProductButton" FontFamily="Arial" Margin="0, 30"  Background="White" Content="Voeg nieuwe product toe" Click="CreateProductButton_Click"/>
         </StackPanel>
 
-        <ListView x:Name="StockSearchingView" Grid.Row="1">
+        <ListView x:Name="StockSearchingView" Grid.Row="1" 
+                  IsItemClickEnabled="True"
+                    ItemClick="StockSearchView_ItemClick">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="localData:Product">
                     <StackPanel Orientation="Vertical" Padding="5">
