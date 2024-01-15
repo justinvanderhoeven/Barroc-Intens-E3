@@ -15,8 +15,10 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Contract Aanmaken" FontWeight="Bold" FontSize="28" Margin="40,20,20,20" />
-        <Grid Grid.Row="1">
+        <StackPanel Grid.Row="0" Background="#212121" Padding="40,20,20,20">
+            <TextBlock Text="Contract Aanmaken" Foreground="White" FontWeight="Bold" FontSize="28" />
+        </StackPanel>
+        <Grid Background="#FFD700" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="3*" />
