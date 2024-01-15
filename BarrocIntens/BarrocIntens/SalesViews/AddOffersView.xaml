@@ -50,7 +50,7 @@
                     <TextBlock Grid.Row="0" Text="Winkelwagentje:" Margin="0,0,0,10" />
                     <ListView Grid.Row="1" x:Name="ShopCartListView">
                         <ListView.ItemTemplate>
-                            <DataTemplate x:DataType="local:ShopCartItem">
+                            <DataTemplate x:DataType="Model:ShopCartItem">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />

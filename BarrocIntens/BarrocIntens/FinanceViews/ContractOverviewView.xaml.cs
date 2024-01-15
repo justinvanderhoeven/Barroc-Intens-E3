@@ -18,7 +18,7 @@ using Microsoft.EntityFrameworkCore;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace BarrocIntens.SalesViews
+namespace BarrocIntens.FinanceViews
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -30,7 +30,7 @@ namespace BarrocIntens.SalesViews
         {
             this.InitializeComponent();
             using var db = new AppDbContext();
-            var contracts = db.Contracts.Include(c => c.ContractProducts).Include(c => c.Company)
+            var contracts = db.Contracts.Include(c => c.Company).Include(c => c.ContractProducts)
                .ToList();
             contractListView.ItemsSource = contracts;
         }
@@ -58,6 +58,15 @@ namespace BarrocIntens.SalesViews
 
             using var db = new AppDbContext();
             contractListView.ItemsSource = db.Companies.Where(m => m.Name.Contains(searchInput));
+        }
+
+        private void contractListView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            if (e.OriginalSource is FrameworkElement element && element.DataContext is Contract selectedContract)
+            {
+                Window window = new EditContractWindow(selectedContract);
+                window.Activate();
+            }
         }
     }
 }
