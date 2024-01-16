@@ -54,6 +54,7 @@ namespace BarrocIntens.PurchaseViews
                 StockSearchingView.ItemsSource = db.Products.ToList();
             }
         }
+
         private void StockSearchView_ItemClick(object sender, ItemClickEventArgs p)
         {
             var SelectedItem = (Product)p.ClickedItem;
