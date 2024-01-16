@@ -48,28 +48,30 @@ namespace BarrocIntens.SalesViews
                 ContentDialogResult result = await wrongCredentialsDialog.ShowAsync();
                 return; 
             }
-
-            // Add a new company to the database
-            db.Companies.Add(new Company
+            else
             {
-                Name = nameInput.Text,
-                Phone = phoneInput.Text,
-                Address = addressInput.Text,
-                Zipcode = zipcodeInput.Text,
-                City = cityInput.Text,
-                CountryCode = countryInput.SelectedValue.ToString(),
-            });
+                // Add a new company to the database
+                db.Companies.Add(new Company
+                {
+                    Name = nameInput.Text,
+                    Phone = phoneInput.Text,
+                    Address = addressInput.Text,
+                    Zipcode = zipcodeInput.Text,
+                    City = cityInput.Text,
+                    CountryCode = countryInput.SelectedValue.ToString(),
+                });
 
-            // Save changes to the database
-            db.SaveChanges();
+                // Save changes to the database
+                db.SaveChanges();
 
-            // Clear input fields
-            nameInput.Text = string.Empty;
-            phoneInput.Text = string.Empty;
-            addressInput.Text = string.Empty;
-            zipcodeInput.Text = string.Empty;
-            cityInput.Text = string.Empty;
-            countryInput.SelectedItem = -1;
+                // Clear input fields
+                nameInput.Text = string.Empty;
+                phoneInput.Text = string.Empty;
+                addressInput.Text = string.Empty;
+                zipcodeInput.Text = string.Empty;
+                cityInput.Text = string.Empty;
+                countryInput.SelectedItem = -1;
+            }
         }
 
         // Navigate back 
