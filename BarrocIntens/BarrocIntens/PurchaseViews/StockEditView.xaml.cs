@@ -61,6 +61,7 @@ namespace BarrocIntens.PurchaseViews
             //stockInput.Text = "0";
             this.Close();
         }
+
         private void DeleteProductButton_Click(object sender, RoutedEventArgs p)
         {
             using var db = new AppDbContext();
