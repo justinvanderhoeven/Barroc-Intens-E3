@@ -26,63 +26,63 @@
             
         <ScrollViewer Margin="0 10 0 0" Grid.Column="1" Grid.Row="1" VerticalScrollBarVisibility="Auto">
             <StackPanel HorizontalAlignment="Center">
-                <TextBlock FontFamily="Big Shoulders Display" FontSize="50" Foreground="#212121" Text="Formulier Company"/>
+                <TextBlock FontFamily="Big Shoulders Display" FontSize="50" Foreground="#212121" Text="Formulier Bedrijf"/>
                 <StackPanel HorizontalAlignment="Center" Orientation="Vertical" Margin="0,25,0,25">
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="nameInput"
-                     Header="Name:" PlaceholderText="Name" 
+                     Header="Naam:" PlaceholderText="Naam" 
                      Width="300" HorizontalAlignment="Left">
                     </TextBox>
 
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="phoneInput"
-                     Header="PhoneNumber:" PlaceholderText="PhoneNumber"
+                     Header="TelefoonNummer:" PlaceholderText="TelefoonNummer"
                      Width="300" HorizontalAlignment="Left"/>
 
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="addressInput"
-                     Header="Address:" PlaceholderText="Address"
+                     Header="Adres:" PlaceholderText="Adres"
                      Width="300" HorizontalAlignment="Left"/>
 
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="zipcodeInput"
-                     Header="Zipcode:" PlaceholderText="Zipcode"
+                     Header="Postcode:" PlaceholderText="Postcode"
                      Width="300" HorizontalAlignment="Left"/>
 
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="cityInput"
-                     Header="City:" PlaceholderText="City"
+                     Header="Woonplaats:" PlaceholderText="Woonplaats"
                      Width="300" HorizontalAlignment="Left"/>
 
-                    <ComboBox FontFamily="Roboto" Margin="0, 10" Header="Countries" PlaceholderText="Select a Country" Width="300" x:Name="countryInput">
+                    <ComboBox FontFamily="Roboto" Margin="0, 10" Header="Landen" PlaceholderText="Selecteer een land" Width="300" x:Name="countryInput">
                         <ComboBox.HeaderTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding}" Foreground="#212121" />
                             </DataTemplate>
                         </ComboBox.HeaderTemplate>
-                        <x:String>The Netherlands</x:String>
-                        <x:String>Belgium</x:String>
-                        <x:String>Luxembourg</x:String>
-                        <x:String>France</x:String>
-                        <x:String>Spain</x:String>
-                        <x:String>Italy</x:String>
-                        <x:String>Norway</x:String>
-                        <x:String>Sweden</x:String>
+                        <x:String>Nederland</x:String>
+                        <x:String>België</x:String>
+                        <x:String>Luxemburg</x:String>
+                        <x:String>Frankrijk</x:String>
+                        <x:String>Spanje</x:String>
+                        <x:String>Italië</x:String>
+                        <x:String>Noorwegen</x:String>
+                        <x:String>Zweden</x:String>
                         <x:String>Finland</x:String>
-                        <x:String>Denmark</x:String>
-                        <x:String>Austria</x:String>
-                        <x:String>Poland</x:String>
-                        <x:String>United Kingdom</x:String>
-                        <x:String>Ireland</x:String>
-                        <x:String>Iceland</x:String>
-                        <x:String>Belarus</x:String>
-                        <x:String>Armenia</x:String>
-                        <x:String>United States</x:String>
+                        <x:String>Denemarken</x:String>
+                        <x:String>Oostenrijk</x:String>
+                        <x:String>Polen</x:String>
+                        <x:String>Verenigd Koninkrijk</x:String>
+                        <x:String>Ierland</x:String>
+                        <x:String>IJsland</x:String>
+                        <x:String>Wit-Rusland</x:String>
+                        <x:String>Armenië</x:String>
+                        <x:String>Verenigde Staten</x:String>
                         <x:String>Canada</x:String>
                         <x:String>Mexico</x:String>
                         <x:String>China</x:String>
-                        <x:String>Russia</x:String>
+                        <x:String>Rusland</x:String>
                         <x:String>India</x:String>
                         <x:String>Japan</x:String>
                     </ComboBox>
                     <StackPanel Orientation="Horizontal">
-                        <Button Margin="0 0 10 0" Name="navBack" Click="navBack_Click">Back</Button>
-                        <Button x:Name="AddCompanyButton" FontFamily="Roboto" Margin="0, 10" Content="Submit" Click="AddCompanyButton_Click"/>
+                        <Button Margin="0 0 10 0" Name="navBack" Click="navBack_Click">Terug</Button>
+                        <Button x:Name="AddCompanyButton" FontFamily="Roboto" Margin="0, 10" Content="Voeg bedrijf toe" Click="AddCompanyButton_Click"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
