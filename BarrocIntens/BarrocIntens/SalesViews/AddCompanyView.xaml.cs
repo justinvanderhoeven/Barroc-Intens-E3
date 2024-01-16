@@ -26,21 +26,40 @@ namespace BarrocIntens.SalesViews
             this.InitializeComponent();
         }
 
+        private bool HasAlphanumeric(string input)
+        {
+            // Check if the input contains at least one alphanumeric character
+            return !string.IsNullOrWhiteSpace(input) && input.Any(char.IsLetterOrDigit);
+        }
+
+        private bool IsValidText(string input)
+        {
+            // Check if the input contains only letters
+            return !string.IsNullOrWhiteSpace(input) && input.All(char.IsLetter);
+        }
+
         private async void AddCompanyButton_Click(object sender, RoutedEventArgs e)
         {
             using var db = new AppDbContext();
 
+
+
             if (string.IsNullOrWhiteSpace(nameInput.Text) ||
+                !IsValidText(nameInput.Text) ||
                 string.IsNullOrWhiteSpace(phoneInput.Text) ||
+                !int.TryParse(phoneInput.Text, out _) ||
                 string.IsNullOrWhiteSpace(addressInput.Text) ||
+                !IsValidText(addressInput.Text) ||
                 string.IsNullOrWhiteSpace(zipcodeInput.Text) ||
+                !HasAlphanumeric(zipcodeInput.Text) ||
                 string.IsNullOrWhiteSpace(cityInput.Text) ||
+                !IsValidText(cityInput.Text) ||
                 countryInput.SelectedValue == null)
             {
                 ContentDialog wrongCredentialsDialog = new ContentDialog
                 {
                     Title = "Create Failed",
-                    Content = "Please check if you filled in all fields",
+                    Content = "Please check if you filled in all fields correctly",
                     CloseButtonText = "Ok",
                     XamlRoot = this.XamlRoot,
                 };
