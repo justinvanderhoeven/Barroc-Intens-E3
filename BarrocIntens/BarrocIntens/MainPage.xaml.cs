@@ -65,7 +65,7 @@ namespace BarrocIntens
         private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
             var item = args.InvokedItemContainer as NavigationViewItem;
-            if (item == null || item == lastItem)
+            if (item == null || item == lastItem || item.Tag == null)
                 return;
 
             var clickedView = item.Tag.ToString();
@@ -136,6 +136,13 @@ namespace BarrocIntens
             }
 
             return "Error";
+        }
+
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            User.LoggedInUser = null;
+            Company.LoggedInCompany = null;
+            Frame.Navigate(typeof(LoginPage));
         }
     }
 }

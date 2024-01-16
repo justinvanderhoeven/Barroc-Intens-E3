@@ -34,6 +34,7 @@ namespace BarrocIntens.SalesViews
         {
             this.InitializeComponent();
             ShopCartListView.ItemsSource = shopCartCollection;
+
             using (var db = new AppDbContext())
             {
                 products = db.Products.ToList();

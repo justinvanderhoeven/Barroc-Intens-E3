@@ -26,7 +26,6 @@ namespace BarrocIntens.FinanceViews
     /// </summary>
     public sealed partial class AddContractView : Page
     {
-
         public Company CurrentCompany { get; set; }
         public List<Product> products = new List<Product>();
         public ObservableCollection<ShopCartItem> shopCartCollection = new ObservableCollection<ShopCartItem>();
@@ -34,6 +33,7 @@ namespace BarrocIntens.FinanceViews
         {
             this.InitializeComponent();
             ShopCartListView.ItemsSource = shopCartCollection;
+
             using (var db = new AppDbContext())
             {
                 products = db.Products.ToList();
@@ -51,6 +51,7 @@ namespace BarrocIntens.FinanceViews
         private void AddProductButton_Click(object sender, RoutedEventArgs e)
         {
             Product selectedProduct = (Product)((Button)sender).CommandParameter;
+
             foreach (var shopCartItem in shopCartCollection)
             {
                 if (shopCartItem.Product.Id == selectedProduct.Id)
@@ -59,12 +60,14 @@ namespace BarrocIntens.FinanceViews
                     return;
                 }
             }
-            ShopCartItem item = new ShopCartItem
-            {
-                Product = selectedProduct,
-                Amount = 1
-            };
-            shopCartCollection.Add(item);
+
+            shopCartCollection.Add(
+                new ShopCartItem
+                {
+                    Product = selectedProduct,
+                    Amount = 1
+                }
+            );
         }
 
         private void RemoveProductButton_Click(object sender, RoutedEventArgs e)
@@ -101,10 +104,9 @@ namespace BarrocIntens.FinanceViews
 
         public void CheckIfButtonIsReady()
         {
-            if (CurrentCompany != null && StartDatePicker.SelectedDate != null && EndDatePicker.SelectedDate != null)
-            {
-                CreateContractButton.IsEnabled = true;
-            }
+            CreateContractButton.IsEnabled = CurrentCompany != null 
+                && StartDatePicker.SelectedDate != null 
+                && EndDatePicker.SelectedDate != null;
         }
 
         private void CreateContractButton_Click(object sender, RoutedEventArgs e)
@@ -115,14 +117,17 @@ namespace BarrocIntens.FinanceViews
                 StartDate = DateOnly.Parse(StartDatePicker.SelectedDate.ToString().Split(" ")[0]),
                 EndDate = DateOnly.Parse(EndDatePicker.SelectedDate.ToString().Split(" ")[0]),
             };
+
             using (var db = new AppDbContext())
             {
                 db.Contracts.Add(newContract);
                 db.SaveChanges();
             }
+
             using (var db = new AppDbContext())
             {
                 Contract addedContract = db.Contracts.FirstOrDefault(c => c.CompanyId == newContract.CompanyId && c.StartDate == newContract.StartDate && c.EndDate == newContract.EndDate);
+                
                 foreach (var shopCartItem in shopCartCollection)
                 {
                     ContractProduct contractProduct = new ContractProduct
@@ -133,6 +138,7 @@ namespace BarrocIntens.FinanceViews
                     };
                     db.ContractProducts.Add(contractProduct);
                 }
+
                 db.SaveChanges();
                 Frame.Navigate(typeof(ContractOverviewView));
             }
