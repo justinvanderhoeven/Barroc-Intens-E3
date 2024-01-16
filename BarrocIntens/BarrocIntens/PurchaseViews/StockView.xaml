@@ -19,24 +19,24 @@
                 <TextBlock FontFamily="Big Shoulders Display" FontSize="30" FontWeight="Bold" Foreground="#212121" Text="Formulier Product"/>
                 <StackPanel Orientation="Vertical" Margin="0,25,0,25">
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="nameInput"
-             Header="Naam:" PlaceholderText="Name"
+             Header="Naam:" PlaceholderText="Naam"
              Width="300" HorizontalAlignment="Left">
                     </TextBox>
 
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="descriptionInput"
-             Header="Beschrijving:" PlaceholderText="Description"
+             Header="Beschrijving:" PlaceholderText="Beschrijving"
              Width="300" HorizontalAlignment="Left"/>
 
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="imagePathInput"
-             Header="AfbeeldingPad:" PlaceholderText="ImagePath"
+             Header="AfbeeldingPad:" PlaceholderText="AfbeeldingPad"
              Width="300" HorizontalAlignment="Left"/>
 
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="priceInput"
-             Header="Prijs:" PlaceholderText="Price"
+             Header="Prijs:" PlaceholderText="Prijs"
              Width="300" HorizontalAlignment="Left"/>
 
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="stockInput"
-             Header="Hoeveelheid:" PlaceholderText="Stock"
+             Header="Hoeveelheid:" PlaceholderText="Hoeveelheid"
              Width="300" HorizontalAlignment="Left"/>
 
                     <ComboBox FontFamily="Roboto" Margin="0, 10" Header="ProductCategorie" PlaceholderText="Selecteer categorie" Width="300" x:Name="productCategoryInput">

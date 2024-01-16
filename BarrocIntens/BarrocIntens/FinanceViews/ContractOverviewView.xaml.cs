@@ -57,7 +57,8 @@ namespace BarrocIntens.FinanceViews
             var searchInput = searchTextbox.Text;
 
             using var db = new AppDbContext();
-            contractListView.ItemsSource = db.Companies.Where(m => m.Name.Contains(searchInput));
+            contractListView.ItemsSource = db.Contracts.Where(c => c.Company.Name.Contains(searchInput)).
+                Include(c => c.ContractProducts).Include(c => c.Company);
         }
 
         private void contractListView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)

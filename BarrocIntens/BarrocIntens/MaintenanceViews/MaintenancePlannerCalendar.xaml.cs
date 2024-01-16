@@ -112,7 +112,7 @@ namespace BarrocIntens.MaintenanceViews
                         var currentUser = MainPage.CurrentUser;
 
                         var malfunctionslist = db.MaintenanceAppointments.Include(m => m.Company)
-                            .Where(c => c.UserId != currentUser.Id)
+                            .Where(c => c.UserId != currentUser.Id && c.UserId == null)
                             .OrderBy(d => d.DateAdded).ToList();
                         MalfunctionListView.ItemsSource = malfunctionslist;
 

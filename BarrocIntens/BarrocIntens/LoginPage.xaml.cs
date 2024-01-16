@@ -59,6 +59,8 @@ namespace BarrocIntens
                     User.LoggedInUser = user;
                     Company company = db.Companies.FirstOrDefault(c => c.ContactId == user.Id);
                     Company.LoggedInCompany = company;
+                    Email.Text = "";
+                    Password.Password = "";
                     Frame.Navigate(typeof(MainPage), user);
                 }
                 else

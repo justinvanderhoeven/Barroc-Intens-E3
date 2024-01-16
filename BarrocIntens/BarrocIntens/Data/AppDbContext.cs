@@ -236,7 +236,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 22,
                     Name = "Purchase1",
-                    Email = "Purch1@gmail1.com",
+                    Email = "Purch1@gmail.com",
                     Password = SecureHasher.Hash("Purchase"),
                     DepartmentId = 5,
                 },
@@ -244,7 +244,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 23,
                     Name = "Purchase2",
-                    Email = "Purch2@gmail1.com",
+                    Email = "Purch2@gmail.com",
                     Password = SecureHasher.Hash("Purchase"),
                     DepartmentId = 5,
                 },
@@ -252,7 +252,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 24,
                     Name = "Purchase3",
-                    Email = "Purch3@gmail1.com",
+                    Email = "Purch3@gmail.com",
                     Password = SecureHasher.Hash("Purchase"),
                     DepartmentId = 5,
                 },
@@ -260,7 +260,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 25,
                     Name = "Purchase4",
-                    Email = "Purch4@gmail1.com",
+                    Email = "Purch4@gmail.com",
                     Password = SecureHasher.Hash("Purchase"),
                     DepartmentId = 5,
                 }
