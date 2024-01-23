@@ -47,6 +47,7 @@
             <NavigationView.MenuItems>
                 <Button Click="LogoutButton_Click" Content="Uitloggen" HorizontalAlignment="Right"/>
                 <NavigationViewItem Content="Producten" Tag="StockSearchView"/>
+                <NavigationViewItem x:Name="StockMessagePage" Content="Meldingen" Tag="StockMessagePage" Visibility="Collapsed"/>
             </NavigationView.MenuItems>
             <Frame x:Name="PurchaseFrame"></Frame>
         </NavigationView>

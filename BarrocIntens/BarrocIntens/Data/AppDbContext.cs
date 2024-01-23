@@ -230,7 +230,7 @@ namespace BarrocIntens.Data
                     Name = "PurchaseAdmin",
                     Email = "AdminPurch@gmail.com",
                     Password = SecureHasher.Hash("Purchase"),
-                    DepartmentId = 5,
+                    DepartmentId = 7,
                 },
                 new User
                 {
@@ -389,6 +389,11 @@ namespace BarrocIntens.Data
                 {
                     Id = 6,
                     Type = "HeadMaintenance"
+                },
+                new Department
+                {
+                    Id = 7,
+                    Type = "HeadPurchase"
                 }
             );
 

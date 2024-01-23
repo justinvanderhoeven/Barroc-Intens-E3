@@ -1,4 +1,5 @@
 using BarrocIntens.Data;
+using BarrocIntens.PurchaseViews;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -59,6 +60,10 @@ namespace BarrocIntens
                     MaintenancePlannerCalendar.Visibility = Visibility.Visible;
                     MalfunctionMessagePage.Visibility = Visibility.Visible;
                     break;
+                case 7:
+                    PurchaseNavView.Visibility = Visibility.Visible;
+                    StockMessagePage.Visibility = Visibility.Visible;
+                    break;
             }
         }
 
@@ -107,6 +112,9 @@ namespace BarrocIntens
                     break;
                 case 6:
                     return MaintenanceFrame;
+                    break;
+                case 7:
+                    return PurchaseFrame;
                 default: return null;
             }
         }
@@ -132,6 +140,9 @@ namespace BarrocIntens
                     break;
                 case 6:
                     return "MaintenanceViews";
+                    break;
+                case 7:
+                    return "PurchaseViews";
                     break;
             }
 

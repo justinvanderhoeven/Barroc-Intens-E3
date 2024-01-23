@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="BarrocIntens.PurchaseViews.StockMessagePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BarrocIntens.PurchaseViews"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:localData="using:BarrocIntens.Data"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Padding="15" Background="#ffd700">
+            <TextBlock Text="Meldingen"/>
+
+            <!--<Button Name="refreshButton" Click="refresh_Click">Refresh</Button>-->
+
+        </StackPanel>
+
+        <ListView x:Name="StockMessageView" Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="localData:Product">
+                    <StackPanel Orientation="Vertical" Padding="5">
+                        <TextBlock Text="{x:Bind Name}"/>
+                        <TextBlock Text="{x:Bind Description}"/>
+                        <TextBlock Text="{x:Bind ImagePath}"/>
+                        <TextBlock Text="{x:Bind Price}"/>
+                        <TextBlock Text="{x:Bind Stock}"
+                        Foreground="DarkGray" />
+                        <TextBlock Foreground="Black">
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
