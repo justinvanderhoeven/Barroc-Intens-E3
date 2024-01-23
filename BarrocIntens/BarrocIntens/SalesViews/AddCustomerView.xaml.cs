@@ -70,6 +70,16 @@ namespace BarrocIntens.SalesViews
                 CurrentCompany.ContactId = addedUser.Id;
                 db.SaveChanges();
             }
+
+            ContentDialog createdCredentialsDialog = new ContentDialog
+            {
+                Title = "Klant toegevoegd",
+                Content = "Continue",
+                CloseButtonText = "Ok",
+                XamlRoot = this.XamlRoot,
+            };
+
+            ContentDialogResult result = await createdCredentialsDialog.ShowAsync();
         }
 
         public void checkForInput()
