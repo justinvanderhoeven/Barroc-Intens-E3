@@ -37,6 +37,7 @@
                 <Button Click="LogoutButton_Click" Content="Uitloggen" HorizontalAlignment="Right"/>
                 <NavigationViewItem x:Name="MalfunctionMessagePage" Visibility="Collapsed" Content="Storing meldingen" Tag="MalfunctionMessagePage"/>
                 <NavigationViewItem Content="Calender" Tag="MaintenanceCalendarView"/>
+                <NavigationViewItem Content="Producten" Tag="ProductStockView"/>
                 <NavigationViewItem x:Name="MaintenancePlannerCalendar" Visibility="Collapsed" Content="Planner Calender" Tag="MaintenancePlannerCalendar"/>
             </NavigationView.MenuItems>
             <Frame x:Name="MaintenanceFrame"></Frame>
