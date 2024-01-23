@@ -19,8 +19,7 @@
         <StackPanel Grid.Row="0" Padding="15" Background="#ffd700">
             <TextBlock Text="Zoeken:"/>
             <TextBox TextChanged="TextBox_TextChanged" x:Name="searchTextBox"/>
-            <!--<TextBlock Text="Vul een getal in:"/>
-            <TextBox TextChanged="TextBox_NumberChanged" x:Name="searchNumberBox"/>-->
+   
             <CheckBox x:Name="StockCheckBox" Content="Op Voorraad"
                 Checked="Ov_Checked" />
 

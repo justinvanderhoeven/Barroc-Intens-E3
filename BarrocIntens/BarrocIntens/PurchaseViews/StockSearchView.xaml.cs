@@ -62,14 +62,6 @@ namespace BarrocIntens.PurchaseViews
             window.Activate();
         }
 
-        //private void TextBox_NumberChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    var searchInput = searchNumberBox.Text;
-
-        //    using var db = new AppDbContext();
-        //    StockSearchingView.ItemsSource = db.Products.Where(p => p.Stock == 0);
-        //}
-
         private void Ov_Checked(object sender, RoutedEventArgs e)
         {
             if (StockCheckBox.IsChecked == true)
