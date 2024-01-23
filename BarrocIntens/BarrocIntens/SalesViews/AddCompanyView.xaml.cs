@@ -58,8 +58,8 @@ namespace BarrocIntens.SalesViews
             {
                 ContentDialog wrongCredentialsDialog = new ContentDialog
                 {
-                    Title = "Create Failed",
-                    Content = "Please check if you filled in all fields correctly",
+                    Title = "Create fout",
+                    Content = "Please check of je alles goed hebt ingevuld",
                     CloseButtonText = "Ok",
                     XamlRoot = this.XamlRoot,
                 };
@@ -90,6 +90,16 @@ namespace BarrocIntens.SalesViews
                 zipcodeInput.Text = string.Empty;
                 cityInput.Text = string.Empty;
                 countryInput.SelectedItem = -1;
+
+                ContentDialog createdCredentialsDialog = new ContentDialog
+                {
+                    Title = "Bedrijf toegevoegd",
+                    Content = "Continue",
+                    CloseButtonText = "Ok",
+                    XamlRoot = this.XamlRoot,
+                };
+
+                ContentDialogResult result = await createdCredentialsDialog.ShowAsync();
             }
         }
 

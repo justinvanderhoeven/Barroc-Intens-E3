@@ -116,6 +116,16 @@ namespace BarrocIntens.MaintenanceViews
                             .OrderBy(d => d.DateAdded).ToList();
                         MalfunctionListView.ItemsSource = malfunctionslist;
 
+                        ContentDialog bindCredentialsDialog = new ContentDialog
+                        {
+                            Title = "User gekoppeld",
+                            Content = "Continue",
+                            CloseButtonText = "Ok",
+                            XamlRoot = this.XamlRoot,
+                        };
+
+                        ContentDialogResult result = await bindCredentialsDialog.ShowAsync();
+
                     }
                 }
             }
