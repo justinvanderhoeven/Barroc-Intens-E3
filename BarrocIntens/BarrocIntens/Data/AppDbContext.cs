@@ -414,6 +414,12 @@ namespace BarrocIntens.Data
                     Id = 2,
                     Name = "Koffiebonen",
                     IsEmployeeOnly = 1,
+                },
+                new ProductsCategory
+                {
+                    Id = 3,
+                    Name = "Onderdelen",
+                    IsEmployeeOnly = 1,
                 }
             );
 
@@ -467,6 +473,166 @@ namespace BarrocIntens.Data
                     Price = 21,
                     Stock = 50,
                     ProductsCategoryId = 2
+                },
+                new Product
+                {
+                    Id = 5,
+                    Name = "Rubber (10 mm)",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 6,
+                    Name = "Rubber (14 mm)",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 7,
+                    Name = "Slang",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 8,
+                    Name = "Voeding (elektra)",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 9,
+                    Name = "Ontkalker",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 10,
+                    Name = "Waterfilter",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 11,
+                    Name = "Reservoir sensor",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 12,
+                    Name = "Druppelstop",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 13,
+                    Name = "Electrische pomp",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 14,
+                    Name = "Tandwiel (110mm)",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 15,
+                    Name = "Tandwiel (70mm)",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 16,
+                    Name = "Maalmotor",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 17,
+                    Name = "Zeef",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 18,
+                    Name = "Reinigingstabletten",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 19,
+                    Name = "Reinigingsborsteltjes",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 20,
+                    Name = "Ontkalkingspijp",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
                 }
             );
 
