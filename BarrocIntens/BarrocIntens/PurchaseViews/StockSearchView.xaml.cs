@@ -81,5 +81,14 @@ namespace BarrocIntens.PurchaseViews
                 StockSearchingView.ItemsSource = db.Products.Where(p => p.Stock == 0);
             }
         }
+
+        private void refresh_Click(object sender, RoutedEventArgs e)
+        {
+            refreshButton.Content = "Refresh";
+            using (var db = new AppDbContext())
+            {
+                StockSearchingView.ItemsSource = db.Products.ToList();
+            }
+        }
     }
 }

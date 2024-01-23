@@ -27,6 +27,9 @@
                 Checked="Nov_Checked" />
 
             <Button x:Name="CreateProductButton" FontFamily="Arial" Margin="0, 30"  Background="White" Content="Voeg nieuwe product toe" Click="CreateProductButton_Click"/>
+
+            <Button Name="refreshButton" Click="refresh_Click">Refresh</Button>
+            
         </StackPanel>
 
         <ListView x:Name="StockSearchingView" Grid.Row="1" 
