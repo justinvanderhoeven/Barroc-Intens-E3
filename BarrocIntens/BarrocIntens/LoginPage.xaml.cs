@@ -43,10 +43,11 @@ namespace BarrocIntens
         //Login Event.
         internal async void loginButton_Click(object sender, RoutedEventArgs e)
         {
+
             //Navigate to an xaml easier
             //Frame.Navigate(typeof(StockSearchView));
 
-            //Put input in variable . 
+            //Put input in variable.
             string email = Email.Text;
             string inputPassword = Password.Password;
 
@@ -101,9 +102,6 @@ namespace BarrocIntens
                 return false;
             }
         }
-
-        
-
         private void loginButton_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
            // loginButton.Background = new SolidColorBrush(Colors.Gold);
