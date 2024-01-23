@@ -23,7 +23,7 @@ namespace BarrocIntens
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
-    /// </summary>
+    /// </summary> 
     public partial class App : Application
     {
         /// <summary>

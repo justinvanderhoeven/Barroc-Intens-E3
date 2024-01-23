@@ -16,9 +16,6 @@ namespace BarrocIntens.Data
         public string Password { get; set; }
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
-
-        [InverseProperty(nameof(Company.Contact))]
-        public ICollection<Company> ContactCompanies { get; set; }
         public ICollection<Company> Companies { get; set; }
         public ICollection<Note> Notes { get; set; }
     }

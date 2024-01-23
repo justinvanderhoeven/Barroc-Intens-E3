@@ -13,10 +13,11 @@
         <NavigationView Background="#212121" x:Name="SalesNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
             <NavigationView.MenuItems>
                 <Button Click="LogoutButton_Click" Content="Uitloggen" HorizontalAlignment="Right"/>
-                <NavigationViewItem Content="Klant Toevoegen" Tag="AddCustomerView"/>
-                <NavigationViewItem Content="Bedrijf Toevoegen" Tag="AddCompanyView"/>
-                <NavigationViewItem Content="Bedrijf Overzicht" Tag="CompanyDetailView"/>
-                <NavigationViewItem Content="Offerte Aanmaken" Tag="AddOffersView"/>
+                <NavigationViewItem Content="Klant Overzicht" Tag="FinanceViews.CustomerOverviewView"/>
+                <NavigationViewItem Content="Klant Toevoegen" Tag="SalesViews.AddCustomerView"/>
+                <NavigationViewItem Content="Bedrijf Toevoegen" Tag="SalesViews.AddCompanyView"/>
+                <NavigationViewItem Content="Bedrijf Overzicht" Tag="SalesViews.CompanyDetailView"/>
+                <NavigationViewItem Content="Offerte Aanmaken" Tag="SalesViews.AddOffersView"/>
             </NavigationView.MenuItems>
             <Frame x:Name="SalesFrame"></Frame>
         </NavigationView>
@@ -24,10 +25,10 @@
         <NavigationView Background="#212121" x:Name="FinanceNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
             <NavigationView.MenuItems>
                 <Button Click="LogoutButton_Click" Content="Uitloggen" HorizontalAlignment="Right"/>
-                <NavigationViewItem Content="Overzicht" Tag="CustomerOverviewView"/>
-                <NavigationViewItem Content="Geldzaken" Tag="IncomeStatementView"/>
-                <NavigationViewItem Content="Contract Aanmaken" Tag="AddContractView"/>
-                <NavigationViewItem Content="Contracten" Tag="ContractOverviewView"/>
+                <NavigationViewItem Content="Klant Overzicht" Tag="FinanceViews.CustomerOverviewView"/>
+                <NavigationViewItem Content="Geldzaken" Tag="FinanceViews.IncomeStatementView"/>
+                <NavigationViewItem Content="Contract Aanmaken" Tag="FinanceViews.AddContractView"/>
+                <NavigationViewItem Content="Contracten" Tag="FinanceViews.ContractOverviewView"/>
             </NavigationView.MenuItems>
             <Frame x:Name="FinanceFrame"></Frame>
         </NavigationView>
@@ -35,9 +36,9 @@
         <NavigationView Background="#212121" x:Name="MaintenanceNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
             <NavigationView.MenuItems>
                 <Button Click="LogoutButton_Click" Content="Uitloggen" HorizontalAlignment="Right"/>
-                <NavigationViewItem x:Name="MalfunctionMessagePage" Visibility="Collapsed" Content="Storing meldingen" Tag="MalfunctionMessagePage"/>
-                <NavigationViewItem Content="Calender" Tag="MaintenanceCalendarView"/>
-                <NavigationViewItem x:Name="MaintenancePlannerCalendar" Visibility="Collapsed" Content="Planner Calender" Tag="MaintenancePlannerCalendar"/>
+                <NavigationViewItem x:Name="MalfunctionMessagePage" Visibility="Collapsed" Content="Storing meldingen" Tag="MaintenanceViews.MalfunctionMessagePage"/>
+                <NavigationViewItem Content="Calender" Tag="MaintenanceViews.MaintenanceCalendarView"/>
+                <NavigationViewItem x:Name="MaintenancePlannerCalendar" Visibility="Collapsed" Content="Planner Calender" Tag="MaintenanceViews.MaintenancePlannerCalendar"/>
             </NavigationView.MenuItems>
             <Frame x:Name="MaintenanceFrame"></Frame>
         </NavigationView>
@@ -45,17 +46,9 @@
         <NavigationView Background="#212121" x:Name="PurchaseNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
             <NavigationView.MenuItems>
                 <Button Click="LogoutButton_Click" Content="Uitloggen" HorizontalAlignment="Right"/>
-                <NavigationViewItem Content="Producten" Tag="StockSearchView"/>
+                <NavigationViewItem Content="Producten" Tag="PurchaseViews.StockSearchView"/>
             </NavigationView.MenuItems>
             <Frame x:Name="PurchaseFrame"></Frame>
-        </NavigationView>
-
-        <NavigationView Background="#212121" x:Name="CustomerNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
-            <NavigationView.MenuItems>
-                <Button Click="LogoutButton_Click" Content="Uitloggen" HorizontalAlignment="Right"/>
-                <NavigationViewItem Content="Meld een Storing" Tag="CreateMalfunctionMessageView"/>
-            </NavigationView.MenuItems>
-            <Frame x:Name="UserFrame"></Frame>
         </NavigationView>
     </Grid>
 </Page>

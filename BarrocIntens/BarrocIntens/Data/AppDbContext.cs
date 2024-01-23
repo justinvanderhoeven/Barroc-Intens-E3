@@ -289,7 +289,8 @@ namespace BarrocIntens.Data
                     City = "CompanyCity",
                     CountryCode = "34",
                     BkrCheckedAt = DateTime.Now,
-                    ContactId = 1
+                    ContactName = "Remon Moerkens",
+                    ContactMail = "remon@gmail.com"
                 }
             );
 

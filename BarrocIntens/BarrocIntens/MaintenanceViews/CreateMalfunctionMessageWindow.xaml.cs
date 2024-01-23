@@ -19,17 +19,19 @@ using Windows.Foundation.Collections;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace BarrocIntens.UserViews
+namespace BarrocIntens.MaintenanceViews
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class CreateMalfunctionMessageView : Page
+    public sealed partial class CreateMalfunctionMessageWindow : Window
     {
+        public Company CurrentCompany { get; set; }
         private ObservableCollection<MaintenanceAppointment> MaintenanceAppointments = new ObservableCollection<MaintenanceAppointment>();
-        public CreateMalfunctionMessageView()
+        public CreateMalfunctionMessageWindow(Company company)
         {
             this.InitializeComponent();
+            this.CurrentCompany = company;
         }
 
         private async void OnSubmitClicked(object sender, RoutedEventArgs e)
@@ -69,8 +71,7 @@ namespace BarrocIntens.UserViews
 
                 db.MaintenanceAppointments.Add(new MaintenanceAppointment
                 {
-                    UserId = User.LoggedInUser.Id,
-                    CompanyId = Company.LoggedInCompany.Id,
+                    CompanyId = CurrentCompany.Id,
                     ProductId = productId,
                     Description = problemDescription
                 });
@@ -86,8 +87,8 @@ namespace BarrocIntens.UserViews
                 ContentDialog dialog = new ContentDialog
                 {
                     Title = title,
-                    XamlRoot = this.XamlRoot,
                     CloseButtonText = "OK",
+                    XamlRoot = SubmitButton.XamlRoot,
                     Background = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 33, 33, 33)), // Background color #212121
                     Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 215, 0)), // Foreground color #ffd700
                 };
@@ -95,6 +96,7 @@ namespace BarrocIntens.UserViews
                 dialog.Content = isMalfunction ? content : additionalContent ?? content;
 
                 await dialog.ShowAsync();
+                this.Close();
             }
 
             void CheckInputs(string problemDescription, int productId)

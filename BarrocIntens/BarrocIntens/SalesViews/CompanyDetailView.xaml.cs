@@ -59,10 +59,11 @@ namespace BarrocIntens.SalesViews
 
         private void companyListView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
-            //if (e.OriginalSource is FrameworkElement element && element.DataContext is Company selectedCompany)
-            //{
-            //    this.Frame.Navigate(typeof(EditCompanyView), selectedCompany);            
-            //}
+            if (e.OriginalSource is FrameworkElement element && element.DataContext is Company selectedCompany)
+            {
+                Window window = new EditCompanyWindow(selectedCompany);
+                window.Activate();
+            }
         }
     }
 }

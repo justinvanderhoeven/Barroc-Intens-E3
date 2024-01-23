@@ -10,7 +10,6 @@ namespace BarrocIntens.Data
 {
     public class Company
     {
-        public static Company LoggedInCompany { get; set; }
         public int Id { get; set; }
         public string Name { get; set; }
         public string Phone {  get; set; }
@@ -19,8 +18,8 @@ namespace BarrocIntens.Data
         public string City { get; set; }
         public string CountryCode {  get; set; }
         public DateTime BkrCheckedAt { get; set; }
-        public int? ContactId { get; set; } = null;
-        public User Contact { get; set; }
+        public string? ContactName { get; set; } = null;
+        public string? ContactMail { get; set; } = null;
         public ICollection<User> Users { get; set; }
         public ICollection<Note> Notes { get; set; }
 
