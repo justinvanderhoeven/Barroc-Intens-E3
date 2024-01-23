@@ -264,7 +264,6 @@ namespace BarrocIntens.Data
                     Password = SecureHasher.Hash("Purchase"),
                     DepartmentId = 5,
                 }
-
             );
 
             modelBuilder.Entity<Company>().HasData(
@@ -311,7 +310,7 @@ namespace BarrocIntens.Data
                     EndTime = new DateTime(2024, 08, 01, 01, 23, 0),
                     CompanyId = 1,
                     ProductId = 1,
-                    UserId = null
+                    UserId = 12
                 },
                 new MaintenanceAppointment
                 {
