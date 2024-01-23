@@ -34,7 +34,7 @@ namespace BarrocIntens.PurchaseViews
             }
         }
         
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs m)
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             var searchInput = searchTextBox.Text;
 
@@ -60,6 +60,34 @@ namespace BarrocIntens.PurchaseViews
             var SelectedItem = (Product)p.ClickedItem;
             var window = new StockEditView(SelectedItem.Id);
             window.Activate();
+        }
+
+        //private void TextBox_NumberChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    var searchInput = searchNumberBox.Text;
+
+        //    using var db = new AppDbContext();
+        //    StockSearchingView.ItemsSource = db.Products.Where(p => p.Stock == 0);
+        //}
+
+        private void Ov_Checked(object sender, RoutedEventArgs e)
+        {
+            if (StockCheckBox.IsChecked == true)
+            {
+                using var db = new AppDbContext();
+
+                StockSearchingView.ItemsSource = db.Products.Where(p => p.Stock > 0);
+            }
+        }
+
+        private void Nov_Checked(object sender, RoutedEventArgs e)
+        {
+            if (OutStockCheckBox.IsChecked == true)
+            {
+                using var db = new AppDbContext();
+
+                StockSearchingView.ItemsSource = db.Products.Where(p => p.Stock == 0);
+            }
         }
     }
 }

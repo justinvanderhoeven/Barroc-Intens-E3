@@ -19,6 +19,14 @@
         <StackPanel Grid.Row="0" Padding="15" Background="#ffd700">
             <TextBlock Text="Zoeken:"/>
             <TextBox TextChanged="TextBox_TextChanged" x:Name="searchTextBox"/>
+            <!--<TextBlock Text="Vul een getal in:"/>
+            <TextBox TextChanged="TextBox_NumberChanged" x:Name="searchNumberBox"/>-->
+            <CheckBox x:Name="StockCheckBox" Content="Op Voorraad"
+                Checked="Ov_Checked" />
+
+            <CheckBox x:Name="OutStockCheckBox" Content="Niet op Voorraad"
+                Checked="Nov_Checked" />
+
             <Button x:Name="CreateProductButton" FontFamily="Arial" Margin="0, 30"  Background="White" Content="Voeg nieuwe product toe" Click="CreateProductButton_Click"/>
         </StackPanel>
 
