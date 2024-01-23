@@ -70,5 +70,14 @@ namespace BarrocIntens.MaintenanceViews
 
             await dialog.ShowAsync();
         }
+
+        private void workOrder_Click(object sender, RoutedEventArgs e)
+        {
+            if (e.OriginalSource is FrameworkElement element && element.DataContext is MaintenanceAppointment clickedProduct)
+            {
+                var workOrder = new WorkOrderView(clickedProduct);
+                workOrder.Activate();
+            }
+        }
     }
 }
