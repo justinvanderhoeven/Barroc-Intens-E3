@@ -466,7 +466,7 @@ namespace BarrocIntens.Data
                     Description = "Een toegankelijke en zachte koffie. Hij is afkomstig van de Finca El Limoncillo, een weelderige plantage aan de rand van het regenwoud in de Matagalpa regio in Nicaragua",
                     ImagePath = "",
                     Price = 21,
-                    Stock = 50,
+                    Stock = 0,
                     ProductsCategoryId = 2
                 }
             );
