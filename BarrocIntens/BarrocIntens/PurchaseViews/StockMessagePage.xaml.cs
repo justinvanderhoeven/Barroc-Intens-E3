@@ -31,17 +31,17 @@ namespace BarrocIntens.PurchaseViews
 
             using (var db = new AppDbContext())
             {
-                StockMessageView.ItemsSource = db.Products.ToList();
+                StockMessageView.ItemsSource = db.Products.Where(p => p.Stock == 0);
             }
         }
 
-        //private void myButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    //myButton.Content = "Refresh";
-        //    using (var db = new AppDbContext())
-        //    {
-                
-        //    }
-        //}
+        private void refreshe_Click(object sender, RoutedEventArgs e)
+        {
+            refreshButton.Content = "Refresh";
+            using (var db = new AppDbContext())
+            {
+                StockMessageView.ItemsSource = db.Products.Where(p => p.Stock == 0);
+            }
+        }
     }
 }

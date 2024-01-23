@@ -16,21 +16,24 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Padding="15" Background="#ffd700">
-            <TextBlock Text="Meldingen"/>
+        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Background="#ffd700" VerticalAlignment="Center" Spacing="10">
+            <TextBlock Text="Meldingen" FontSize="40"/>
 
-            <!--<Button Name="refreshButton" Click="refresh_Click">Refresh</Button>-->
-
+            <StackPanel Margin="10 0 0 10" HorizontalAlignment="Center" Orientation="Horizontal" Spacing="10">
+                <Button Name="refreshButton" Click="refreshe_Click">Refresh</Button>
+            </StackPanel>
         </StackPanel>
 
+        <StackPanel>
+            <TextBlock Text="Deze producten zijn op bestel nieuwe alstublieft!" FontSize="18" FontWeight="Bold"/>
+        </StackPanel>
+        
         <ListView x:Name="StockMessageView" Grid.Row="1">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="localData:Product">
                     <StackPanel Orientation="Vertical" Padding="5">
                         <TextBlock Text="{x:Bind Name}"/>
                         <TextBlock Text="{x:Bind Description}"/>
-                        <TextBlock Text="{x:Bind ImagePath}"/>
-                        <TextBlock Text="{x:Bind Price}"/>
                         <TextBlock Text="{x:Bind Stock}"
                         Foreground="DarkGray" />
                         <TextBlock Foreground="Black">

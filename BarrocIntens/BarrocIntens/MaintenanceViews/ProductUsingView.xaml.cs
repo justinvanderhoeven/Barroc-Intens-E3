@@ -26,6 +26,7 @@ namespace BarrocIntens.MaintenanceViews
     public sealed partial class ProductUsingView : Window
     {
         private int currentProductId;
+        private int currentUserId;
         public ProductUsingView(int productId)
         {
             this.InitializeComponent();
@@ -46,8 +47,10 @@ namespace BarrocIntens.MaintenanceViews
         private void UsingProductButton_Click(object sender, RoutedEventArgs p)
         {
             using var db = new AppDbContext();
+
             var product = db.Products
                 .First(p => p.Id == currentProductId);
+
             product.Stock = int.Parse(stockInput.Text);
 
             db.SaveChanges();

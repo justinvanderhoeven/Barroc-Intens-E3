@@ -17,7 +17,7 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel HorizontalAlignment="Center">
                 <TextBlock FontFamily="Big Shoulders Display" FontSize="10" FontWeight="Bold" Foreground="#212121" Text="Probeer het niet aan te passen het lukt toch niet!"/>
-                <TextBlock FontFamily="Big Shoulders Display" FontSize="10" FontWeight="Bold" Foreground="#212121" Text="Gebruik te hoeveelheid dat je nodig heb en laat de rest met rust!"/>
+                <TextBlock FontFamily="Big Shoulders Display" FontSize="10" FontWeight="Bold" Foreground="#212121" Text="Laat de overgebleven hoeveelheid achter!"/>
                 <TextBlock FontFamily="Big Shoulders Display" FontSize="30" FontWeight="Bold" Foreground="#212121" Text="Formulier Gebruik Product"/>
                 <StackPanel Orientation="Vertical" Margin="0,25,0,25">
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="nameInput"

@@ -38,8 +38,6 @@
                     <StackPanel Orientation="Vertical" Padding="5">
                         <TextBlock Text="{x:Bind Name}"/>
                         <TextBlock Text="{x:Bind Description}"/>
-                        <TextBlock Text="{x:Bind ImagePath}"/>
-                        <TextBlock Text="{x:Bind Price}"/>
                         <TextBlock Text="{x:Bind Stock}"
                        Foreground="DarkGray" />
                         <TextBlock Foreground="Black">
