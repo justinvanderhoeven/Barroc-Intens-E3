@@ -33,8 +33,9 @@ namespace BarrocIntens.MaintenanceViews
             {
                 var currentUser = MainPage.CurrentUser;
 
-                var malfunctions = db.MaintenanceAppointments.Include(m => m.Company)
-                .Where(c => c.UserId == currentUser.Id)
+                var malfunctions = db.MaintenanceAppointments
+                .Include(m => m.Company)
+                .Where(c => c.UserId == currentUser.Id && c.Status == 1)
                 .OrderBy(d => d.DateAdded).ToList();
                 MalfunctionListView.ItemsSource = malfunctions;
             }
@@ -70,5 +71,30 @@ namespace BarrocIntens.MaintenanceViews
 
             await dialog.ShowAsync();
         }
+
+        private void workOrder_Click(object sender, RoutedEventArgs e)
+        {
+            if (e.OriginalSource is FrameworkElement element && element.DataContext is MaintenanceAppointment clickedProduct)
+            {
+                var workOrder = new WorkOrderView(clickedProduct);
+                workOrder.Closed += MaintenanceCalenderView;
+                workOrder.Activate();
+            }
+        }
+
+        private void MaintenanceCalenderView(object sender, WindowEventArgs args)
+        {
+            using (var db = new AppDbContext())
+            {
+                var currentUser = MainPage.CurrentUser;
+                // This code will be executed when the button is clicked
+                var malfunctions = db.MaintenanceAppointments
+                 .Include(m => m.Company)
+                 .Where(c => c.UserId == currentUser.Id && c.Status == 1)
+                 .OrderBy(d => d.DateAdded).ToList();
+                MalfunctionListView.ItemsSource = malfunctions;
+            }
+        }
     }
-}
+ }
+

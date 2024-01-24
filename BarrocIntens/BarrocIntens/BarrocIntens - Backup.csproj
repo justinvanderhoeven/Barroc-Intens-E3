@@ -13,26 +13,22 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Assets\Logo6_groot.png" />
-    <None Remove="FinanceViews\CustomerDetailWindow.xaml" />
     <None Remove="FinanceViews\CustomerOverviewView.xaml" />
-    <None Remove="FinanceViews\EditContractWindows.xaml" />
+    <None Remove="FinanceViews\EditContractWindow.xaml" />
     <None Remove="FinanceViews\IncomeStatementView.xaml" />
     <None Remove="LoginPage.xaml" />
     <None Remove="MainPage.xaml" />
     <None Remove="MaintenanceViews\MaintenanceCalendarView.xaml" />
     <None Remove="MaintenanceViews\MaintenancePlannerCalendar.xaml" />
-    <None Remove="MaintenanceViews\ProductStockView.xaml" />
-    <None Remove="MaintenanceViews\ProductUsingView.xaml" />
-    <None Remove="PurchaseViews\StockMessagePage.xaml" />
-    <None Remove="MaintenanceViews\MessageViewMaintenance.xaml" />
+    <None Remove="MaintenanceViews\WorkOrderView.xaml" />
     <None Remove="PurchaseViews\StockSearchView.xaml" />
     <None Remove="PurchaseViews\StockView.xaml" />
     <None Remove="SalesViews\AddCompanyView.xaml" />
     <None Remove="SalesViews\AddContractView.xaml" />
     <None Remove="SalesViews\AddCustomerView.xaml" />
     <None Remove="SalesViews\CompanyDetailView.xaml" />
+    <None Remove="SalesViews\EditCompanyView.xaml" />
     <None Remove="SalesViews\ContractOverviewView.xaml" />
-    <None Remove="SalesViews\EditCompanyWindow.xaml" />
     <None Remove="UserViews\CreateMalfunctionMessageView.xaml" />
   </ItemGroup>
 
@@ -97,26 +93,13 @@
     <Folder Include="CustomerViews\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="SalesViews\EditCompanyWindow.xaml"/>
-    <Page Update="PurchaseViews\StockMessagePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="FinanceViews\CustomerDetailWindow.xaml"/>
-    <Page Update="MaintenanceViews\ProductUsingView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="MaintenanceViews\ProductStockView.xaml"/>
-    <Page Update="MaintenanceViews\MessageViewMaintenance.xaml">
+    <Page Update="MaintenanceViews\WorkOrderView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="UserViews\CreateMalfunctionMessageView.xaml" />
-    <Page Update="FinanceViews\EditContractWindows.xaml">
+    <Page Update="FinanceViews\EditContractWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

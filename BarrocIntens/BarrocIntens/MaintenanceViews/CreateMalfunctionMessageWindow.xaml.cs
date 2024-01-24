@@ -73,7 +73,8 @@ namespace BarrocIntens.MaintenanceViews
                 {
                     CompanyId = CurrentCompany.Id,
                     ProductId = productId,
-                    Description = problemDescription
+                    Description = problemDescription,
+                    Status = 1
                 });
                 db.SaveChanges();
 

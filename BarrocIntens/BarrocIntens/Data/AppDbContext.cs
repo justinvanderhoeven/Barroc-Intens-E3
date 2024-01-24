@@ -25,7 +25,6 @@ namespace BarrocIntens.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductsCategory> ProductsCategories { get; set; }
         public DbSet<User> Users { get; set; }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //Go to the App.config.example file and then follow Instructions
@@ -53,6 +52,11 @@ namespace BarrocIntens.Data
                 .HasMany(c => c.Products)
                 .WithMany(p => p.CustomInvoices)
                 .UsingEntity<CustomInvoiceProduct>();
+
+            modelBuilder.Entity<MaintenanceAppointment>()
+            .HasMany(m => m.MaintenanceAppointmentProducts)
+            .WithOne(p => p.MaintenanceAppointment)
+            .HasForeignKey(p => p.MaintenanceAppointmentId);
 
             modelBuilder.Entity<User>().HasData(
 
@@ -265,7 +269,6 @@ namespace BarrocIntens.Data
                     Password = SecureHasher.Hash("Purchase"),
                     DepartmentId = 5,
                 }
-
             );
 
             modelBuilder.Entity<Company>().HasData(
@@ -346,7 +349,7 @@ namespace BarrocIntens.Data
                     EndTime = new DateTime(2024, 08, 01, 01, 23, 0),
                     CompanyId = 1,
                     ProductId = 1,
-                    UserId = null
+                    Status = 1,
                 },
                 new MaintenanceAppointment
                 {
@@ -357,7 +360,8 @@ namespace BarrocIntens.Data
                     EndTime = new DateTime(2024, 08, 01, 01, 23, 0),
                     CompanyId = 1,
                     ProductId = 1,
-                    UserId = null
+                    Status = 1,
+                    UserId = 12
                 },
                 new MaintenanceAppointment
                 {
@@ -368,7 +372,8 @@ namespace BarrocIntens.Data
                     EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
                     CompanyId = 1,
                     ProductId = 1,
-                    UserId = 8
+                    Status = 1,
+                    UserId = 12
                 },
                 new MaintenanceAppointment
                 {
@@ -378,6 +383,7 @@ namespace BarrocIntens.Data
                     StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
                     EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
                     CompanyId = 1,
+                    Status = 1,
                     ProductId = 1,
                     UserId = null
                 },
@@ -389,6 +395,7 @@ namespace BarrocIntens.Data
                     StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
                     EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
                     CompanyId = 1,
+                    Status = 1,
                     ProductId = 1,
                     UserId = null
                 },
@@ -400,6 +407,43 @@ namespace BarrocIntens.Data
                     StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
                     EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
                     CompanyId = 1,
+                    Status = 1,
+                    ProductId = 1,
+                    UserId = null
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 7,
+                    Description = "Cleaning machine not working again",
+                    DateAdded = new DateTime(2023, 08, 02, 11, 22, 0),
+                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
+                    CompanyId = 1,
+                    Status = 99,
+                    ProductId = 1,
+                    UserId = null
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 8,
+                    Description = "Cleaning machine not working again",
+                    DateAdded = new DateTime(2023, 08, 02, 11, 22, 0),
+                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
+                    CompanyId = 1,
+                    Status = 99,
+                    ProductId = 1,
+                    UserId = null
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 9,
+                    Description = "Cleaning machine not working again",
+                    DateAdded = new DateTime(2023, 08, 02, 11, 22, 0),
+                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
+                    CompanyId = 1,
+                    Status = 99,
                     ProductId = 1,
                     UserId = null
                 }
@@ -466,6 +510,12 @@ namespace BarrocIntens.Data
                     Id = 2,
                     Name = "Koffiebonen",
                     IsEmployeeOnly = 1,
+                },
+                new ProductsCategory
+                {
+                    Id = 3,
+                    Name = "Onderdelen",
+                    IsEmployeeOnly = 1,
                 }
             );
 
@@ -514,6 +564,166 @@ namespace BarrocIntens.Data
                     Price = 21,
                     Stock = 0,
                     ProductsCategoryId = 2
+                },
+                new Product
+                {
+                    Id = 6,
+                    Name = "Rubber (10 mm)",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 7,
+                    Name = "Rubber (14 mm)",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 8,
+                    Name = "Slang",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 9,
+                    Name = "Voeding (elektra)",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 10,
+                    Name = "Ontkalker",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 11,
+                    Name = "Waterfilter",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 12,
+                    Name = "Reservoir sensor",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 13,
+                    Name = "Druppelstop",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 14,
+                    Name = "Electrische pomp",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 15,
+                    Name = "Tandwiel (110mm)",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 16,
+                    Name = "Tandwiel (70mm)",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 17,
+                    Name = "Maalmotor",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 18,
+                    Name = "Zeef",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 19,
+                    Name = "Reinigingstabletten",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 20,
+                    Name = "Reinigingsborsteltjes",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
+                },
+                new Product
+                {
+                    Id = 21,
+                    Name = "Ontkalkingspijp",
+                    Description = "Onderdeel van koffiemachine",
+                    ImagePath = "",
+                    Price = 1,
+                    Stock = 50,
+                    ProductsCategoryId = 3
                 }
             );
 

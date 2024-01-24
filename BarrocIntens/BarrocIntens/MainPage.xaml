@@ -41,6 +41,7 @@
                 <NavigationViewItem Content="Calender" Tag="MaintenanceViews.MaintenanceCalendarView"/>
                 <NavigationViewItem Content="Producten" Tag="MaintenanceViews.ProductStockView"/>
                 <NavigationViewItem x:Name="MaintenancePlannerCalendar" Visibility="Collapsed" Content="Planner Calender" Tag="MaintenanceViews.MaintenancePlannerCalendar"/>
+                <NavigationViewItem x:Name="MessageViewMaintenance" Content="Onderhoudsmeldingen" Tag="MaintenanceViews.MessageViewMaintenance"/>
             </NavigationView.MenuItems>
             <Frame x:Name="MaintenanceFrame"></Frame>
         </NavigationView>
