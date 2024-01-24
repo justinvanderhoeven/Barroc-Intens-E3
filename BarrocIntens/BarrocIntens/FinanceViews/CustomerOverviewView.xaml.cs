@@ -1,5 +1,6 @@
 using BarrocIntens.Data;
 using BarrocIntens.MaintenanceViews;
+using BarrocIntens.SalesViews;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -33,8 +34,7 @@ namespace BarrocIntens.FinanceViews
 
             using var db = new AppDbContext();
 
-            var customers = db.Companies.Where(c => c.ContactMail != null).ToList();
-            customerListView.ItemsSource = customers;
+            customerListView.ItemsSource = db.Companies.Where(c => c.ContactMail != null).ToList();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -68,6 +68,22 @@ namespace BarrocIntens.FinanceViews
             Company company = ((Button)sender).Tag as Company;
             Window window = new CreateMalfunctionMessageWindow(company);
             window.Activate();
+        }
+
+        private void customerListView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            if (e.OriginalSource is FrameworkElement element && element.DataContext is Company selectedCompany)
+            {
+                Window window = new EditCompanyWindow(selectedCompany);
+                window.Closed += EditCompanyWindow_Closed; ;
+                window.Activate();
+            }
+        }
+
+        private void EditCompanyWindow_Closed(object sender, WindowEventArgs args)
+        {
+            using var db = new AppDbContext();
+            customerListView.ItemsSource = db.Companies.Where(c => c.ContactMail != null).ToList();
         }
     }
 }

@@ -56,7 +56,14 @@ namespace BarrocIntens.MaintenanceViews
         {
             var SelectedItem = (Product)p.ClickedItem;
             var window = new ProductUsingView(SelectedItem.Id);
+            window.Closed += ProductUsingWindow_Closed;
             window.Activate();
+        }
+
+        private void ProductUsingWindow_Closed(object sender, WindowEventArgs args)
+        {
+            using var db = new AppDbContext();
+            ProductSearchingView.ItemsSource = db.Products.ToList();
         }
 
         private void Ov_Checked(object sender, RoutedEventArgs e)

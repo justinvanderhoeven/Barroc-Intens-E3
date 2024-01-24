@@ -97,5 +97,19 @@ namespace BarrocIntens.SalesViews
         {
             checkForInput();
         }
+
+        private void CompanySuggestBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            CompanySuggestBox.IsSuggestionListOpen = true;
+        }
+
+        private void CompanySuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            using var db = new AppDbContext();
+            CompanySuggestBox.ItemsSource = db.Companies.
+                Where(c => c.ContactMail == null 
+                && c.ContactName == null
+                && c.Name.Contains(CompanySuggestBox.Text)).ToList();
+        }
     }
 }

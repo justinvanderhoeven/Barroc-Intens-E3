@@ -39,11 +39,9 @@ namespace BarrocIntens.MaintenanceViews
         {
             this.InitializeComponent();
 
-            _currentAppointment = currentAppointment;
 
             using var db = new AppDbContext();
-            db.MaintenanceAppointments
-                .Attach(currentAppointment);
+            _currentAppointment = db.MaintenanceAppointments.FirstOrDefault(m => m.Id == currentAppointment.Id);
 
             allProductsList = db.Products.ToList();
             
@@ -86,7 +84,7 @@ namespace BarrocIntens.MaintenanceViews
         private void AddWorkOrderButton_Click(object sender, RoutedEventArgs e )
         {
             using var db = new AppDbContext();           
-            var currentAppointment = db.MaintenanceAppointments.Find(_currentAppointment.Id);
+            var currentAppointment = db.MaintenanceAppointments.Include(m => m.MaintenanceAppointmentProducts).FirstOrDefault(m => m.Id == _currentAppointment.Id);
             //currentAppointment.MaintenanceAppointmentProducts = addedProducts;
             currentAppointment.Status = 99;
             currentAppointment.EndTime = DateTime.Now;

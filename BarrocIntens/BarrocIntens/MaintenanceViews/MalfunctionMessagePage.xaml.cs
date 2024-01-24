@@ -41,7 +41,7 @@ namespace BarrocIntens.MaintenanceViews
 
         private void myButton_Click(object sender, RoutedEventArgs e)
         {
-            myButton.Content = "Refresh";
+            myButton.Content = "Herlaad";
             using (var db = new AppDbContext())
             {
                 // This code will be executed when the button is clicked

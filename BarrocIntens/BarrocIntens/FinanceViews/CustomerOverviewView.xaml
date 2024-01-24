@@ -36,7 +36,7 @@
         </StackPanel>
 
         <ListView x:Name="customerListView" Grid.Row="1" Grid.Column="1" IsItemClickEnabled="True"
-         AllowFocusOnInteraction="False">
+         AllowFocusOnInteraction="False" IsDoubleTapEnabled="True" DoubleTapped="customerListView_DoubleTapped">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="localModel:Company">
                     <Grid>

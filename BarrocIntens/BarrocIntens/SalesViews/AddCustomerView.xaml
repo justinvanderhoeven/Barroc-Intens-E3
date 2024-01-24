@@ -39,7 +39,11 @@
                          Width="300" HorizontalAlignment="Left"
                          TextChanged="emailInput_TextChanged"/>
 
-                    <AutoSuggestBox Grid.Column="1" Header="Bedrijf:" PlaceholderText="Bedrijf" x:Name="CompanySuggestBox" Margin="0,5" UpdateTextOnSelect="True" SuggestionChosen="CompanySuggestBox_SuggestionChosen">
+                    <AutoSuggestBox Grid.Column="1" Header="Bedrijf:" PlaceholderText="Bedrijf" x:Name="CompanySuggestBox" 
+                                    Margin="0,5" UpdateTextOnSelect="True" 
+                                    SuggestionChosen="CompanySuggestBox_SuggestionChosen"
+                                    GotFocus="CompanySuggestBox_GotFocus"
+                                    TextChanged="CompanySuggestBox_TextChanged">
                         <AutoSuggestBox.ItemTemplate>
                             <DataTemplate x:DataType="Model:Company">
                                 <TextBlock Text="{x:Bind Name}" />

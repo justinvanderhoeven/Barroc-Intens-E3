@@ -153,5 +153,16 @@ namespace BarrocIntens.FinanceViews
         {
             CheckIfButtonIsReady();
         }
+
+        private void CompanySuggestBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            CompanySuggestBox.IsSuggestionListOpen = true;
+        }
+
+        private void CompanySuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            using var db = new AppDbContext();
+            CompanySuggestBox.ItemsSource = db.Companies.Where(c => c.Name.Contains(CompanySuggestBox.Text)).ToList();
+        }
     }
 }

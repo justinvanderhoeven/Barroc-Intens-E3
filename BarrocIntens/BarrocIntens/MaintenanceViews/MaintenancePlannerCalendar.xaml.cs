@@ -38,7 +38,7 @@ namespace BarrocIntens.MaintenanceViews
                     .OrderBy(d => d.DateAdded).ToList();
                 MalfunctionListView.ItemsSource = malfunctionslist;
 
-                UserSuggestBox.ItemsSource = db.Users.ToList();
+                UserSuggestBox.ItemsSource = db.Users.Where(u => u.DepartmentId == 3).ToList();
             }
         }
 
@@ -66,8 +66,8 @@ namespace BarrocIntens.MaintenanceViews
             var dialog = new ContentDialog()
             {
                 Title = clickedCalendarItem.Id,
-                Content = $"Description: {clickedCalendarItem.Description}\nCreated at: {clickedCalendarItem.DateAdded}",
-                CloseButtonText = "Close",
+                Content = $"Beschrijving: {clickedCalendarItem.Description}\nAangemaakt op: {clickedCalendarItem.DateAdded}",
+                CloseButtonText = "Sluit",
                 XamlRoot = this.XamlRoot,
             };
 
@@ -118,8 +118,7 @@ namespace BarrocIntens.MaintenanceViews
 
                         ContentDialog bindCredentialsDialog = new ContentDialog
                         {
-                            Title = "User gekoppeld",
-                            Content = "Continue",
+                            Title = "Gebruiker gekoppeld",
                             CloseButtonText = "Ok",
                             XamlRoot = this.XamlRoot,
                         };
@@ -133,14 +132,25 @@ namespace BarrocIntens.MaintenanceViews
             {
                 ContentDialog wrongCredentialsDialog = new ContentDialog
                 {
-                    Title = "Bind Failed",
-                    Content = "Please check if you filled in a user",
+                    Title = "Geen gebruiker",
+                    Content = "check of je een gebruiker hebt gekozen",
                     CloseButtonText = "Ok",
                     XamlRoot = this.XamlRoot,
                 };
 
                 ContentDialogResult result = await wrongCredentialsDialog.ShowAsync();
             }
+        }
+
+        private void UserSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            using var db = new AppDbContext();
+            UserSuggestBox.ItemsSource = db.Users.Where(u => u.DepartmentId == 3 && u.Name.Contains(UserSuggestBox.Text)).ToList();
+        }
+
+        private void UserSuggestBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            UserSuggestBox.IsSuggestionListOpen = true;
         }
     }
 }

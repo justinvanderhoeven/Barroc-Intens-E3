@@ -75,7 +75,11 @@
             </CalendarView.CalendarViewDayItemStyle>
         </CalendarView>
         <ListView Margin="0 5 0 5" Grid.Row="1">
-			<AutoSuggestBox x:Name="UserSuggestBox" PlaceholderText="Vul in gebruiker en selecteer" Margin="5,10,0,0" UpdateTextOnSelect="True" SuggestionChosen="UserSuggestBox_SuggestionChosen">
+			<AutoSuggestBox x:Name="UserSuggestBox" PlaceholderText="Vul in gebruiker en selecteer" 
+                            Margin="5,10,0,0" UpdateTextOnSelect="True" 
+                            TextChanged="UserSuggestBox_TextChanged" 
+                            SuggestionChosen="UserSuggestBox_SuggestionChosen"
+                            GotFocus="UserSuggestBox_GotFocus">
 				<AutoSuggestBox.ItemTemplate>
 					<DataTemplate x:DataType="localData:User">
 						<TextBlock Text="{x:Bind Name}" />

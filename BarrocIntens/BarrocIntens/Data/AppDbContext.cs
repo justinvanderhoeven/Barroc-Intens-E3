@@ -570,7 +570,6 @@ namespace BarrocIntens.Data
                     Id = 6,
                     Name = "Rubber (10 mm)",
                     Description = "Onderdeel van koffiemachine",
-                    ImagePath = "",
                     Price = 1,
                     Stock = 50,
                     ProductsCategoryId = 3
@@ -580,7 +579,6 @@ namespace BarrocIntens.Data
                     Id = 7,
                     Name = "Rubber (14 mm)",
                     Description = "Onderdeel van koffiemachine",
-                    ImagePath = "",
                     Price = 1,
                     Stock = 50,
                     ProductsCategoryId = 3
@@ -590,7 +588,6 @@ namespace BarrocIntens.Data
                     Id = 8,
                     Name = "Slang",
                     Description = "Onderdeel van koffiemachine",
-                    ImagePath = "",
                     Price = 1,
                     Stock = 50,
                     ProductsCategoryId = 3
@@ -600,7 +597,6 @@ namespace BarrocIntens.Data
                     Id = 9,
                     Name = "Voeding (elektra)",
                     Description = "Onderdeel van koffiemachine",
-                    ImagePath = "",
                     Price = 1,
                     Stock = 50,
                     ProductsCategoryId = 3
@@ -610,7 +606,6 @@ namespace BarrocIntens.Data
                     Id = 10,
                     Name = "Ontkalker",
                     Description = "Onderdeel van koffiemachine",
-                    ImagePath = "",
                     Price = 1,
                     Stock = 50,
                     ProductsCategoryId = 3
@@ -620,7 +615,6 @@ namespace BarrocIntens.Data
                     Id = 11,
                     Name = "Waterfilter",
                     Description = "Onderdeel van koffiemachine",
-                    ImagePath = "",
                     Price = 1,
                     Stock = 50,
                     ProductsCategoryId = 3
@@ -630,7 +624,6 @@ namespace BarrocIntens.Data
                     Id = 12,
                     Name = "Reservoir sensor",
                     Description = "Onderdeel van koffiemachine",
-                    ImagePath = "",
                     Price = 1,
                     Stock = 50,
                     ProductsCategoryId = 3
@@ -640,7 +633,6 @@ namespace BarrocIntens.Data
                     Id = 13,
                     Name = "Druppelstop",
                     Description = "Onderdeel van koffiemachine",
-                    ImagePath = "",
                     Price = 1,
                     Stock = 50,
                     ProductsCategoryId = 3
@@ -650,7 +642,6 @@ namespace BarrocIntens.Data
                     Id = 14,
                     Name = "Electrische pomp",
                     Description = "Onderdeel van koffiemachine",
-                    ImagePath = "",
                     Price = 1,
                     Stock = 50,
                     ProductsCategoryId = 3
@@ -660,7 +651,6 @@ namespace BarrocIntens.Data
                     Id = 15,
                     Name = "Tandwiel (110mm)",
                     Description = "Onderdeel van koffiemachine",
-                    ImagePath = "",
                     Price = 1,
                     Stock = 50,
                     ProductsCategoryId = 3
@@ -670,7 +660,6 @@ namespace BarrocIntens.Data
                     Id = 16,
                     Name = "Tandwiel (70mm)",
                     Description = "Onderdeel van koffiemachine",
-                    ImagePath = "",
                     Price = 1,
                     Stock = 50,
                     ProductsCategoryId = 3
@@ -680,7 +669,6 @@ namespace BarrocIntens.Data
                     Id = 17,
                     Name = "Maalmotor",
                     Description = "Onderdeel van koffiemachine",
-                    ImagePath = "",
                     Price = 1,
                     Stock = 50,
                     ProductsCategoryId = 3
@@ -690,7 +678,6 @@ namespace BarrocIntens.Data
                     Id = 18,
                     Name = "Zeef",
                     Description = "Onderdeel van koffiemachine",
-                    ImagePath = "",
                     Price = 1,
                     Stock = 50,
                     ProductsCategoryId = 3
@@ -700,7 +687,6 @@ namespace BarrocIntens.Data
                     Id = 19,
                     Name = "Reinigingstabletten",
                     Description = "Onderdeel van koffiemachine",
-                    ImagePath = "",
                     Price = 1,
                     Stock = 50,
                     ProductsCategoryId = 3
@@ -710,7 +696,6 @@ namespace BarrocIntens.Data
                     Id = 20,
                     Name = "Reinigingsborsteltjes",
                     Description = "Onderdeel van koffiemachine",
-                    ImagePath = "",
                     Price = 1,
                     Stock = 50,
                     ProductsCategoryId = 3
@@ -720,7 +705,6 @@ namespace BarrocIntens.Data
                     Id = 21,
                     Name = "Ontkalkingspijp",
                     Description = "Onderdeel van koffiemachine",
-                    ImagePath = "",
                     Price = 1,
                     Stock = 50,
                     ProductsCategoryId = 3

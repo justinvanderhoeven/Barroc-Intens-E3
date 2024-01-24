@@ -35,7 +35,10 @@ namespace BarrocIntens.MaintenanceViews
             this.InitializeComponent();
             using var db = new AppDbContext();
 
-            allMessagesList = db.MaintenanceAppointments.Where(m => m.Status == 99).Include(m => m.MaintenanceAppointmentProducts).ToList();
+            allMessagesList = db.MaintenanceAppointments.Where(m => m.Status == 99).
+                Include(m => m.MaintenanceAppointmentProducts).
+                Include(m => m.Company).
+                Include(m => m.Product).ToList();
             allProductsList = db.Products.ToList();
 
             foreach (var message in allMessagesList)

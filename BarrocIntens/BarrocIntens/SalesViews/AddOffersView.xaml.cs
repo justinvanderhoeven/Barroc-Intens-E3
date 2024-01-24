@@ -38,7 +38,7 @@ namespace BarrocIntens.SalesViews
             using (var db = new AppDbContext())
             {
                 products = db.Products.ToList();
-                ProductsCategoryComboBox.ItemsSource = db.ProductsCategories.ToList();
+                ProductsCategoryComboBox.ItemsSource = db.ProductsCategories.Where(pc => pc.Id != 3).ToList();
                 CompanySuggestBox.ItemsSource = db.Companies.ToList();
             }
         }
@@ -203,6 +203,18 @@ namespace BarrocIntens.SalesViews
             }
 
             return baseDirectory;
+        }
+
+        private void CompanySuggestBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            CompanySuggestBox.IsSuggestionListOpen = true;
+        }
+
+        private void CompanySuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            using var db = new AppDbContext();
+            CompanySuggestBox.ItemsSource = db.Companies.
+                Where(c => c.Name.Contains(CompanySuggestBox.Text)).ToList();
         }
     }
 }

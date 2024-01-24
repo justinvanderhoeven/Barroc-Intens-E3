@@ -29,21 +29,34 @@
                     <TextBlock FontFamily="Big Shoulders Display" FontSize="50" Foreground="#212121" Text="Werkbon invullen"/>
                     <StackPanel HorizontalAlignment="Center" Orientation="Vertical" Margin="0,25,0,25">
 
-                        <TextBox FontFamily="Roboto" Margin="0,5" x:Name="nameCompanyInput"
-                     Header="Naam bedrijf:" PlaceholderText="Naam bedrijf" 
-                     Width="300" HorizontalAlignment="Left">
-                        </TextBox>
+                    <StackPanel>
+                        <TextBlock FontFamily="Roboto" Margin="0,5"
+                            Width="300" HorizontalAlignment="Left" FontWeight="Bold" Text="Naam bedrijf:">
+                        </TextBlock>
+                        <TextBlock FontFamily="Roboto" Margin="0,5" x:Name="nameCompanyInput"
+                            Width="300" HorizontalAlignment="Left">
+                        </TextBlock>
+                    </StackPanel>
 
-                        <TextBox FontFamily="Roboto" Margin="0,5" x:Name="nameMechanicInput"
-                     Header="Naam onderhoudsmonteur:" PlaceholderText="Naam onderhoudsmonteur"
+                    <StackPanel>
+                        <TextBlock FontFamily="Roboto" Margin="0,5" FontWeight="Bold"
+                     Text="Naam onderhoudsmonteur"
                      Width="300" HorizontalAlignment="Left"/>
-
-                        <TextBox FontFamily="Roboto" Margin="0,5" x:Name="Description"
-                     Header="Omschrijving:" PlaceholderText="Omschrijving"
+                        <TextBlock FontFamily="Roboto" Margin="0,5" x:Name="nameMechanicInput"
                      Width="300" HorizontalAlignment="Left"/>
+                    </StackPanel>
 
-                        <StackPanel>
-                            <ListView x:Name="productPartsToAddListView" MaxHeight="160" Header="Onderdelen:">
+                    <StackPanel>
+                        <TextBlock FontFamily="Roboto" Margin="0,5" FontWeight="Bold"
+                            Text="Omschrijving"
+                            Width="300" HorizontalAlignment="Left"/>
+                        <TextBlock FontFamily="Roboto" Margin="0,5" x:Name="Description"
+                            Width="300" HorizontalAlignment="Left"/>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <TextBlock Text="Onderdelen:" />
+                        <ListView BorderBrush="Black" BorderThickness="1" x:Name="productPartsToAddListView" MaxHeight="160">
                                 <ListView.ItemTemplate>
                                     <DataTemplate x:DataType="localModel:Product">
                                         <Grid>
@@ -61,7 +74,7 @@
 
                         <StackPanel>
                             <TextBlock Text="Toegevoegde onderdelen:" />
-                            <ListView x:Name="addedProductPartsListView" Height="100">
+                            <ListView BorderBrush="Black" BorderThickness="1" x:Name="addedProductPartsListView" Height="100">
                                 <ListView.ItemTemplate>
                                     <DataTemplate x:DataType="localModel:Product">
                                         <Grid>

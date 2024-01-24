@@ -63,7 +63,7 @@ namespace BarrocIntens.SalesViews
             selectedCompany.Country = CountryTextBox.Text;
             if(_isCustomer)
             {
-                selectedCompany.ContactName = CompanyTextBox.Text;
+                selectedCompany.ContactName = ContactTextBox.Text;
                 selectedCompany.ContactMail = ContactMailTextBox.Text;
             }
 

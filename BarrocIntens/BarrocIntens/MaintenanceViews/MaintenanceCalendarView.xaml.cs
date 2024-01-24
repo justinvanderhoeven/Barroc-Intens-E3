@@ -64,8 +64,8 @@ namespace BarrocIntens.MaintenanceViews
             var dialog = new ContentDialog()
             {
                 Title = clickedCalendarItem.Id,
-                Content = $"Description: {clickedCalendarItem.Description}\nCreated at: {clickedCalendarItem.DateAdded}",
-                CloseButtonText = "Close",
+                Content = $"Beschrijving: {clickedCalendarItem.Description}\nAangemaakt op: {clickedCalendarItem.DateAdded}",
+                CloseButtonText = "Sluit",
                 XamlRoot = this.XamlRoot,
             };
 
