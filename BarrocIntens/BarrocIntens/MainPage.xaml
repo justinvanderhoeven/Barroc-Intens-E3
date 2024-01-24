@@ -26,6 +26,7 @@
             <NavigationView.MenuItems>
                 <Button Click="LogoutButton_Click" Content="Uitloggen" HorizontalAlignment="Right"/>
                 <NavigationViewItem Content="Klant Overzicht" Tag="FinanceViews.CustomerOverviewView"/>
+                <NavigationViewItem Content="Klant Toevoegen" Tag="SalesViews.AddCustomerView"/>
                 <NavigationViewItem Content="Geldzaken" Tag="FinanceViews.IncomeStatementView"/>
                 <NavigationViewItem Content="Contract Aanmaken" Tag="FinanceViews.AddContractView"/>
                 <NavigationViewItem Content="Contracten" Tag="FinanceViews.ContractOverviewView"/>

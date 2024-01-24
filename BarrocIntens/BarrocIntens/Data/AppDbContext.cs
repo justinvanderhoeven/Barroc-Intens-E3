@@ -271,26 +271,67 @@ namespace BarrocIntens.Data
                 new Company
                 {
                     Id = 1,
-                    Name = "TestCompany",
-                    Phone = "1234",
-                    Address = "CompanyStreet",
-                    Zipcode = "23",
-                    City = "CompanyCity",
+                    Name = "Bol.com",
+                    Phone = "030 310 4999",
+                    Address = "Papendorpseweg",
+                    Zipcode = "3528 BJ",
+                    City = "Utrecht",
                     CountryCode = "34",
-                    BkrCheckedAt = DateTime.Now
+                    BkrCheckedAt = DateTime.Now,
+                    ContactName = "Klanten Service",
+                    ContactMail = "klantenservice@bol.com"
                 },
                 new Company
                 {
                     Id = 2,
-                    Name = "TESTIEEEE",
-                    Phone = "1234",
-                    Address = "CompanyStreet",
-                    Zipcode = "23",
-                    City = "CompanyCity",
-                    CountryCode = "34",
+                    Name = "TechHub Solutions",
+                    Phone = "0123 456 789",
+                    Address = "Innovation Avenue",
+                    Zipcode = "1234 AB",
+                    City = "TechCity",
+                    CountryCode = "86",
                     BkrCheckedAt = DateTime.Now,
-                    ContactName = "Remon Moerkens",
-                    ContactMail = "remon@gmail.com"
+                    ContactName = "Tech Support",
+                    ContactMail = "support@techhub.com"
+                },
+                new Company
+                {
+                    Id = 3,
+                    Name = "GreenEco Industries",
+                    Phone = "9876 543 210",
+                    Address = "Sustainable Street",
+                    Zipcode = "5678 CD",
+                    City = "EcoVille",
+                    CountryCode = "44",
+                    BkrCheckedAt = DateTime.Now,
+                    ContactName = "Customer Care",
+                    ContactMail = "info@greeneco.com"
+                },
+                new Company
+                {
+                    Id = 4,
+                    Name = "FashionTrends Boutique",
+                    Phone = "4567 890 123",
+                    Address = "Chic Boulevard",
+                    Zipcode = "7890 EF",
+                    City = "StyleCity",
+                    CountryCode = "33",
+                    BkrCheckedAt = DateTime.Now,
+                    ContactName = "Fashion Advisor",
+                    ContactMail = "info@fashiontrends.com"
+                },
+                new Company
+                {
+                    Id = 5,
+                    Name = "Foodie Delights Catering",
+                    Phone = "6789 012 345",
+                    Address = "Gourmet Lane",
+                    Zipcode = "0123 GH",
+                    City = "Culinary Town",
+                    CountryCode = "49",
+                    BkrCheckedAt = DateTime.Now,
+                    ContactName = "Event Coordinator",
+                    ContactMail = "events@foodiedelights.com"
                 }
             );
 
@@ -298,15 +339,18 @@ namespace BarrocIntens.Data
                 new MaintenanceAppointment
                 {
                     Id = 1,
-                    Description = "Test",
-                    DateAdded = DateTime.Now,
+                    Description = "Water slang kwijt",
+                    DateAdded = new DateTime(2024, 01, 01, 9, 15, 0),
+                    StartTime = new DateTime(2024, 01, 01, 10, 0, 0),
+                    EndTime = new DateTime(2024, 08, 01, 01, 23, 0),
                     CompanyId = 1,
                     ProductId = 1,
+                    UserId = null
                 },
                 new MaintenanceAppointment
                 {
                     Id = 2,
-                    Description = "Broken coffee machine",
+                    Description = "Gebroken koffie machine",
                     DateAdded = new DateTime(2024, 01, 01, 9, 15, 0),
                     StartTime = new DateTime(2024, 01, 01, 10, 0, 0),
                     EndTime = new DateTime(2024, 08, 01, 01, 23, 0),
@@ -317,7 +361,7 @@ namespace BarrocIntens.Data
                 new MaintenanceAppointment
                 {
                     Id = 3,
-                    Description = "Clean inside of coffee machine",
+                    Description = "Koffie machien schoon maken",
                     DateAdded = new DateTime(2023, 08, 02, 13, 23, 0),
                     StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
                     EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
@@ -328,7 +372,7 @@ namespace BarrocIntens.Data
                 new MaintenanceAppointment
                 {
                     Id = 4,
-                    Description = "Button not working",
+                    Description = "Knop werkt niet",
                     DateAdded = new DateTime(2023, 05, 04, 9, 34, 0),
                     StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
                     EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
@@ -339,7 +383,7 @@ namespace BarrocIntens.Data
                 new MaintenanceAppointment
                 {
                     Id = 5,
-                    Description = "Milk spilled on floor",
+                    Description = "Melk container lekt",
                     DateAdded = new DateTime(2023, 07, 09, 13, 2, 0),
                     StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
                     EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
@@ -350,7 +394,7 @@ namespace BarrocIntens.Data
                 new MaintenanceAppointment
                 {
                     Id = 6,
-                    Description = "Cleaning machine not working again",
+                    Description = "Schoonmaak machine werkt niet",
                     DateAdded = new DateTime(2023, 08, 02, 11, 22, 0),
                     StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
                     EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
