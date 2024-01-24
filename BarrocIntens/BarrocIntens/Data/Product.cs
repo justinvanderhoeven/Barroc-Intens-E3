@@ -14,6 +14,8 @@ namespace BarrocIntens.Data
         public string ImagePath { get; set; } = null;
         public decimal Price { get; set; }
         public int Stock {  get; set; }
+        public int? MaintenanceAppointmentId { get; set; } = null;
+        public MaintenanceAppointment MaintenanceAppointment { get; set; }
         public ICollection<CustomInvoice> CustomInvoices { get; set; }
         public ICollection<CustomInvoiceProduct> CustomInvoiceProducts { get; set; }
         public ICollection<Contract> Contracts { get; set; }
