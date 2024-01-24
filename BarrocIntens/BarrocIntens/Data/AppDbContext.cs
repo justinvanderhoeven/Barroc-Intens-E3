@@ -52,6 +52,11 @@ namespace BarrocIntens.Data
                 .WithMany(p => p.CustomInvoices)
                 .UsingEntity<CustomInvoiceProduct>();
 
+            modelBuilder.Entity<MaintenanceAppointment>()
+            .HasMany(m => m.MaintenanceAppointmentProducts)
+            .WithOne(p => p.MaintenanceAppointment)
+            .HasForeignKey(p => p.MaintenanceAppointmentId);
+
             modelBuilder.Entity<User>().HasData(
 
                 // Users for Department 1 (Customer)
@@ -358,6 +363,42 @@ namespace BarrocIntens.Data
                     EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
                     CompanyId = 1,
                     Status = 1,
+                    ProductId = 1,
+                    UserId = null
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 7,
+                    Description = "Cleaning machine not working again",
+                    DateAdded = new DateTime(2023, 08, 02, 11, 22, 0),
+                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
+                    CompanyId = 1,
+                    Status = 99,
+                    ProductId = 1,
+                    UserId = null
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 8,
+                    Description = "Cleaning machine not working again",
+                    DateAdded = new DateTime(2023, 08, 02, 11, 22, 0),
+                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
+                    CompanyId = 1,
+                    Status = 99,
+                    ProductId = 1,
+                    UserId = null
+                },
+                new MaintenanceAppointment
+                {
+                    Id = 9,
+                    Description = "Cleaning machine not working again",
+                    DateAdded = new DateTime(2023, 08, 02, 11, 22, 0),
+                    StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
+                    EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
+                    CompanyId = 1,
+                    Status = 99,
                     ProductId = 1,
                     UserId = null
                 }
