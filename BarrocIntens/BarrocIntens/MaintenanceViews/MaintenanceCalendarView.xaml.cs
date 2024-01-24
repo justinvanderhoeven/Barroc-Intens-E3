@@ -80,5 +80,21 @@ namespace BarrocIntens.MaintenanceViews
                 workOrder.Activate();
             }
         }
+
+        private void refreshButton_Click(object sender, RoutedEventArgs e)
+        {
+            refreshButton.Content = "Refresh";
+            using (var db = new AppDbContext())
+            {
+                var currentUser = MainPage.CurrentUser;
+                // This code will be executed when the button is clicked
+                var malfunctions = db.MaintenanceAppointments
+                 .Include(m => m.Company)
+                 .Where(c => c.UserId == currentUser.Id && c.Status == 1)
+                 .OrderBy(d => d.DateAdded).ToList();
+                MalfunctionListView.ItemsSource = malfunctions;
+            }
+        }
     }
-}
+ }
+

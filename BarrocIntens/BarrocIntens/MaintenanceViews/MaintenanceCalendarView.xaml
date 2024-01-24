@@ -17,6 +17,9 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <StackPanel Margin="0 0 0 10" HorizontalAlignment="Center" Orientation="Horizontal" Spacing="10">
+            <Button Name="refreshButton" Click="refreshButton_Click">Refresh</Button>
+        </StackPanel>
         <ListView MaxWidth="500" Grid.Column="0" x:Name="MalfunctionListView" >
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="localData:MaintenanceAppointment">
