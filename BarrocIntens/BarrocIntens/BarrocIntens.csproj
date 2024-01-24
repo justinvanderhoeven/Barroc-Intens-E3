@@ -20,6 +20,7 @@
     <None Remove="MainPage.xaml" />
     <None Remove="MaintenanceViews\MaintenanceCalendarView.xaml" />
     <None Remove="MaintenanceViews\MaintenancePlannerCalendar.xaml" />
+    <None Remove="MaintenanceViews\WorkOrderView.xaml" />
     <None Remove="PurchaseViews\StockSearchView.xaml" />
     <None Remove="PurchaseViews\StockView.xaml" />
     <None Remove="SalesViews\AddCompanyView.xaml" />
@@ -89,8 +90,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MaintenanceViews\" />
     <Folder Include="CustomerViews\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MaintenanceViews\WorkOrderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="UserViews\CreateMalfunctionMessageView.xaml" />
