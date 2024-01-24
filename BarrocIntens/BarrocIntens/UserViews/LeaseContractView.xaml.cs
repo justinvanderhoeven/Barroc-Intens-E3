@@ -1,4 +1,5 @@
 using BarrocIntens.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -8,6 +9,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -24,16 +26,42 @@ namespace BarrocIntens.UserViews
     /// </summary>
     public sealed partial class LeaseContractView : Page
     {
-            internal ICollection<Contract> Contracts { get; }
+        public Company CurrentCompany { get; set; }
+        public ObservableCollection<Contract> Contracts { get; } = new ObservableCollection<Contract>();
 
-            public LeaseContractView()
+        public LeaseContractView(Company currentCompany)
+        {
+            this.InitializeComponent();
+
+            CurrentCompany = currentCompany;
+
+            using (var db = new AppDbContext())
             {
-                this.InitializeComponent();
-                using (var db = new AppDbContext())
+                // Assuming there's a navigation property in the Company class like Contracts
+                CurrentCompany = db.Companies.Include(c => c.CompanyContracts).FirstOrDefault(c => c.Id == CurrentCompany.Id);
+
+                if (CurrentCompany != null)
                 {
-                    contractListView.ItemsSource = db.Contracts;
+                    Contracts.Clear(); // Clear existing contracts
+
+                    foreach (var contract in CurrentCompany.CompanyContracts)
+                    {
+                        Contracts.Add(contract);
+                    }
+
+                    // Check if controls are not null before setting ItemsSource
+                    if (companyIdListView != null)
+                        companyIdListView.ItemsSource = Contracts;
+
+                    if (dateListView != null)
+                        dateListView.ItemsSource = Contracts;
+
+                    if (productsListView != null)
+                        productsListView.ItemsSource = Contracts;
                 }
             }
+        }
+
     }
 }
 
