@@ -1,3 +1,4 @@
+using BarrocIntens.Data;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -26,6 +27,9 @@ namespace BarrocIntens.MaintenanceViews
         public MessageViewMaintenance()
         {
             this.InitializeComponent();
+            using var db = new AppDbContext();
+
+            var messages = db.MaintenanceAppointments.FirstOrDefault(m => m.Status == 99);
         }
 
         private void navBack_Click(object sender, RoutedEventArgs e)
