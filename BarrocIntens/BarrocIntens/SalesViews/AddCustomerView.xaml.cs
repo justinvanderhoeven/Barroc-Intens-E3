@@ -71,15 +71,15 @@ namespace BarrocIntens.SalesViews
                 db.SaveChanges();
             }
 
-            ContentDialog createdCredentialsDialog = new ContentDialog
-            {
-                Title = "Klant toegevoegd",
-                Content = "Continue",
-                CloseButtonText = "Ok",
-                XamlRoot = this.XamlRoot,
-            };
+            //ContentDialog createdCredentialsDialog = new ContentDialog
+            //{
+            //    Title = "Klant toegevoegd",
+            //    Content = "Continue",
+            //    CloseButtonText = "Ok",
+            //    XamlRoot = this.XamlRoot,
+            //};
 
-            ContentDialogResult result = await createdCredentialsDialog.ShowAsync();
+            //ContentDialogResult result = await createdCredentialsDialog.ShowAsync();
         }
 
         public void checkForInput()
