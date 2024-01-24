@@ -10,63 +10,62 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="5*"/>
-        </Grid.RowDefinitions>
-
-
-        <StackPanel Grid.Column="3" Grid.RowSpan="3" Background="#212121"/>
-        <StackPanel Grid.Column="0" Grid.RowSpan="3" Background="#212121"/>
-
-
-
-        <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
-            <TextBlock Text="Edit company" FontSize="50" FontWeight="Thin"/>
-        </StackPanel>
-
-        <ScrollViewer Grid.Column="1" Grid.Row="1">
-            <StackPanel Grid.Column="1" Grid.Row="1">
-            <TextBlock Text="Name:" Margin="5" />
-            <TextBox x:Name="NameTextBox" Margin="5"/>
-
-            <ComboBox x:Name="CompanyComboBox">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate x:DataType="Model:Company">
-                        <TextBlock Text="{x:Bind Name }" />
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
-
-            <TextBlock Text="Naam:" Grid.Column="1" Margin="5" />
-            <TextBox x:Name="nameBox" PlaceholderText="Voer de naam in"/>
-
-            <TextBlock Text="Stad:" Margin="0,0,0,10" Grid.Column="1" />
-            <TextBox x:Name="cityBox" PlaceholderText="Please enter a rating"/>
-
-            <TextBlock Text="Postcode:" Grid.Column="1" Margin="5" />
-            <TextBox x:Name="zipcodeBox" PlaceholderText="Voer de datum in"/>
-
-            <TextBlock Text="Contact persoon:" Margin="0,0,0,10" Grid.Column="1" />
-            <TextBox x:Name="contactNameBox" PlaceholderText="Please enter a rating"/>
-            
-            <TextBlock Text="Contact E-mail:" Margin="0,0,0,10" Grid.Column="1" />
-            <TextBox x:Name="contactMailBox" PlaceholderText="Please enter a rating"/>
-
-            <TextBlock Text="Laatste BKR check:" Grid.Column="1" Margin="5" />
-            <TextBox x:Name="bkrBox" PlaceholderText="Voer de datum in"/>
-
-            <TextBlock Text="Telefoonnummer:" Margin="0,0,0,10" Grid.Column="1" />
-            <TextBox x:Name="phoneBox" PlaceholderText="Please enter a rating"/>
-
-            <Button Content="Update Game" VerticalAlignment="Bottom" HorizontalAlignment="Center" Name="update" Click="updateCompany_Click" Margin="10" />
-        </StackPanel>
-        </ScrollViewer>
+        <Grid Background="#FFD700">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="6*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Margin="0,0,0,20" Padding="30" Grid.ColumnSpan="2" Background="#212121">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Bedrijf details" FontSize="28" Foreground="White" FontWeight="Bold" />
+                <StackPanel HorizontalAlignment="Right" Grid.Column="1" Spacing="10" Orientation="Horizontal">
+                    <Button x:Name="UpdateCompanyButton" Click="updateCompany_Click"  HorizontalAlignment="Right" Content="Opslaan" />
+                    <Button x:Name="CloseWindowButton" Click="CloseWindowButton_Click" HorizontalAlignment="Right" Content="Terug" />
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1" Margin="20,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Spacing="10">
+                    <TextBlock FontSize="18" Padding="0,6,0,6" Margin="0,0,0,20" Text="Bedrijf:" FontWeight="Bold"/>
+                    <TextBlock FontSize="18" Padding="0,6,0,6" Text="Adres:" FontWeight="Bold"/>
+                    <TextBlock FontSize="18" Padding="0,7,0,6" Text="Postcode:" FontWeight="Bold"/>
+                    <TextBlock FontSize="18" Padding="0,7,0,6" Text="Stad:" FontWeight="Bold"/>
+                    <TextBlock FontSize="18" Padding="0,7,0,6" Text="Land:" FontWeight="Bold"/>
+                </StackPanel>
+                <StackPanel Spacing="10" Grid.Column="1">
+                    <TextBox FontSize="18" Margin="0,0,0,20" x:Name="CompanyTextBox"/>
+                    <TextBox FontSize="18" x:Name="AddressTextBox"/>
+                    <TextBox FontSize="18" x:Name="ZipcodeTextBox"/>
+                    <TextBox FontSize="18" x:Name="CityTextBox"/>
+                    <TextBox FontSize="18" x:Name="CountryTextBox"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1" Margin="20,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Spacing="10" Margin="0,63,0,0">
+                    <TextBlock FontSize="18" Padding="0,7,0,6" Text="Contactpersoon:" FontWeight="Bold"/>
+                    <TextBlock FontSize="18" Padding="0,7,0,6" Text="Contactpersoon mail:" FontWeight="Bold"/>
+                </StackPanel>
+                <StackPanel Spacing="10" Grid.Column="1" Margin="0,63,0,0">
+                    <TextBox FontSize="18" x:Name="ContactTextBox"/>
+                    <TextBox FontSize="18" x:Name="ContactMailTextBox"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

@@ -31,18 +31,22 @@ namespace BarrocIntens.SalesViews
             this.InitializeComponent();
 
             _selectedCompany = selectedCompany;
-
-            nameBox.Text = _selectedCompany.Name;
-            cityBox.Text = _selectedCompany.City.ToString();
-            zipcodeBox.Text = _selectedCompany.Zipcode.ToString();
-            bkrBox.Text = _selectedCompany.BkrCheckedAt.ToString();
-            phoneBox.Text = _selectedCompany.Phone.ToString();
+            CompanyTextBox.Text = _selectedCompany.Name;
+            AddressTextBox.Text = _selectedCompany.Address;
+            ZipcodeTextBox.Text = _selectedCompany.Zipcode;
+            CityTextBox.Text = _selectedCompany.City;
+            CountryTextBox.Text = _selectedCompany.CountryCode;
 
             if (_selectedCompany.ContactMail != null)
             {
                 _isCustomer = true;
-                contactNameBox.Text = _selectedCompany.ContactName;
-                contactMailBox.Text = _selectedCompany.ContactMail;
+                ContactTextBox.Text = _selectedCompany.ContactName;
+                ContactMailTextBox.Text = _selectedCompany.ContactMail;
+            }
+            else
+            {
+                ContactTextBox.IsEnabled = false;
+                ContactMailTextBox.IsEnabled = false;
             }
         }
 
@@ -52,13 +56,23 @@ namespace BarrocIntens.SalesViews
 
             var selectedCompany = db.Companies.Find(_selectedCompany.Id);
 
-            selectedCompany.Name = nameBox.Text;
-            selectedCompany.City = cityBox.Text;
-            selectedCompany.Zipcode = zipcodeBox.Text;
-            selectedCompany.BkrCheckedAt = DateTime.Parse(bkrBox.Text);
-            selectedCompany.Phone = (phoneBox.Text);
+            selectedCompany.Name = CompanyTextBox.Text;
+            selectedCompany.Address = AddressTextBox.Text;
+            selectedCompany.Zipcode = ZipcodeTextBox.Text;
+            selectedCompany.City = CityTextBox.Text;
+            selectedCompany.CountryCode = CountryTextBox.Text;
+            if(_isCustomer)
+            {
+                selectedCompany.ContactName = CompanyTextBox.Text;
+                selectedCompany.ContactMail = ContactMailTextBox.Text;
+            }
 
             db.SaveChanges();
+        }
+
+        private void CloseWindowButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

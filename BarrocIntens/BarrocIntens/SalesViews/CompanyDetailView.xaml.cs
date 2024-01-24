@@ -62,8 +62,15 @@ namespace BarrocIntens.SalesViews
             if (e.OriginalSource is FrameworkElement element && element.DataContext is Company selectedCompany)
             {
                 Window window = new EditCompanyWindow(selectedCompany);
+                window.Closed += EditCompanyWindow_Closed;
                 window.Activate();
             }
+        }
+
+        private void EditCompanyWindow_Closed(object sender, WindowEventArgs args)
+        {
+            using var db = new AppDbContext();
+            companyListView.ItemsSource = db.Companies.ToList();
         }
     }
 }
