@@ -20,5 +20,6 @@ namespace BarrocIntens.Data
         public DateTime DateAdded { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
+        public int Satus { get; set; }
     }
 }
