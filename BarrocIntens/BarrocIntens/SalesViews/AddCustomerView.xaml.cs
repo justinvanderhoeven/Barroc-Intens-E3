@@ -29,7 +29,7 @@ namespace BarrocIntens.SalesViews
         {
             this.InitializeComponent();
             using var db = new AppDbContext();
-            CompanySuggestBox.ItemsSource = db.Companies.Where(c => c.ContactId == null).ToList();
+            CompanySuggestBox.ItemsSource = db.Companies.Where(c => c.ContactMail == null && c.ContactName == null).ToList();
         }
 
         private void CompanySuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
@@ -48,26 +48,13 @@ namespace BarrocIntens.SalesViews
 
         private async void AddCustomerButton_Click(object sender, RoutedEventArgs e)
         {
-            User newCustomer = new User
-            {
-                Name = nameInput.Text,
-                Email = emailInput.Text,
-                Password = "wachtwoord",
-                DepartmentId = 1
-            };
-            using (var db = new AppDbContext())
-            {
-                db.Users.Add(newCustomer);
-                db.SaveChanges();
-                nameInput.Text = string.Empty;
-                emailInput.Text = string.Empty;
-                CompanySuggestBox.Text = string.Empty;
-            }
             using (var db = new AppDbContext())
             {
                 db.Attach(CurrentCompany);
-                User addedUser = db.Users.FirstOrDefault(u => u.Name == newCustomer.Name && u.Email == newCustomer.Email && u.DepartmentId == newCustomer.DepartmentId);
-                CurrentCompany.ContactId = addedUser.Id;
+                CurrentCompany.ContactMail = emailInput.Text;
+                CurrentCompany.ContactName = nameInput.Text;
+                nameInput.Text = null;
+                emailInput.Text = null;
                 db.SaveChanges();
             }
 

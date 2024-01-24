@@ -1,4 +1,5 @@
 using BarrocIntens.Data;
+using BarrocIntens.MaintenanceViews;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -32,7 +33,7 @@ namespace BarrocIntens.FinanceViews
 
             using var db = new AppDbContext();
 
-            var customers = db.Users.Where(u => u.DepartmentId == 1).ToList();
+            var customers = db.Companies.Where(c => c.ContactMail != null).ToList();
             customerListView.ItemsSource = customers;
         }
 
@@ -41,35 +42,32 @@ namespace BarrocIntens.FinanceViews
             var searchInput = searchTextbox.Text;
 
             using var db = new AppDbContext();
-            customerListView.ItemsSource = db.Users.Where(u => u.Name.Contains(searchInput) && u.Department.Id == 1);
+            customerListView.ItemsSource = db.Companies.Where(c => c.Name.Contains(searchInput) && c.ContactMail != null);
         }
 
         private void deleteCustomer_Click(object sender, RoutedEventArgs e)
         {
-            if (customerListView.SelectedItem is User selectedCustomer)
+            if (customerListView.SelectedItem is Company selectedCustomer)
             {
                 using var db = new AppDbContext();
-                var company = db.Companies.FirstOrDefault(c => c.ContactId == selectedCustomer.Id);
+                var company = db.Companies.FirstOrDefault(c => c.Id == selectedCustomer.Id);
                 if (company != null)
                 {
-                    company.ContactId = null;
+                    company.ContactMail = null;
                 }
-                db.Users.Remove(selectedCustomer);
                 db.SaveChanges();
 
 
-                var customers = db.Users.Where(u => u.DepartmentId == 1).ToList();
+                var customers = db.Companies.Where(c => c.ContactMail != null).ToList();
                 customerListView.ItemsSource = customers;
             }
         }
 
-        private void customerListView_ItemClick(object sender, ItemClickEventArgs e)
+        private void CreateMalfunctionButton_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-        private void addCustomer_Click(object sender, RoutedEventArgs e)
-        {
-
+            Company company = ((Button)sender).Tag as Company;
+            Window window = new CreateMalfunctionMessageWindow(company);
+            window.Activate();
         }
     }
 }

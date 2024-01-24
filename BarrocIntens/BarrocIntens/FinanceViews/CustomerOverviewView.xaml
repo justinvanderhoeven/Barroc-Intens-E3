@@ -35,29 +35,31 @@
             </StackPanel>
         </StackPanel>
 
-        <ListView x:Name="customerListView" Grid.Row="1" Grid.Column="1" ItemClick="customerListView_ItemClick" IsItemClickEnabled="True"
+        <ListView x:Name="customerListView" Grid.Row="1" Grid.Column="1" IsItemClickEnabled="True"
          AllowFocusOnInteraction="False">
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="localModel:User">
-                    <StackPanel Orientation="Vertical" Padding="5">
-                        <TextBlock Text="{x:Bind Name}"/>
-                        <TextBlock Text=""/>
+                <DataTemplate x:DataType="localModel:Company">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Vertical" Padding="5">
+                            <TextBlock Text="{x:Bind Name}"/>
+                            <TextBlock Text=""/>
 
-                        <TextBlock Foreground="#212121" FontWeight="Thin">
-      <Run>Naam:</Run>
-          <Run Text="{x:Bind Name}" />
-                        </TextBlock>
+                            <TextBlock Foreground="#212121" FontWeight="Thin">
+                                <Run>Naam:</Run>
+                                <Run Text="{x:Bind ContactName}" />
+                            </TextBlock>
 
-                        <TextBlock Foreground="#212121" FontWeight="Thin">
-      <Run>Email:</Run>
-           <Run Text="{x:Bind Email}" />
-                        </TextBlock>
-
-                        <TextBlock Foreground="#212121" FontWeight="Thin">
-     <Run>AfdelingsNummer:</Run>
-           <Run Text="{x:Bind DepartmentId}" />
-                        </TextBlock>
-                    </StackPanel>
+                            <TextBlock Foreground="#212121" FontWeight="Thin">
+                                <Run>Email:</Run>
+                                <Run Text="{x:Bind ContactMail}" />
+                            </TextBlock>
+                        </StackPanel>
+                        <Button Grid.Column="1" VerticalAlignment="Bottom" Tag="{Binding}" Margin="0,0,0,10" Content="Maak melding"  Click="CreateMalfunctionButton_Click" />
+                    </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

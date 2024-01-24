@@ -39,9 +39,6 @@ namespace BarrocIntens
 
             switch (CurrentUser.DepartmentId)
             {
-                case 1:
-                    CustomerNavView.Visibility = Visibility.Visible;
-                    break;
                 case 2:
                     FinanceNavView.Visibility = Visibility.Visible;
                     break;
@@ -75,8 +72,7 @@ namespace BarrocIntens
 
         private bool NavigateToView(string clickedView)
         {
-            string viewFolder = GetCorrectViews(CurrentUser.DepartmentId);
-            var view = Assembly.GetExecutingAssembly().GetType($"BarrocIntens.{viewFolder}.{clickedView}");
+            var view = Assembly.GetExecutingAssembly().GetType($"BarrocIntens.{clickedView}");
 
             if (string.IsNullOrWhiteSpace(clickedView) || view == null)
                 return false;
@@ -90,9 +86,6 @@ namespace BarrocIntens
         {
             switch (departmentId)
             {
-                case 1:
-                    return UserFrame;
-                    break;
                 case 2:
                     return FinanceFrame;
                     break;
@@ -111,37 +104,10 @@ namespace BarrocIntens
             }
         }
 
-        private string GetCorrectViews (int departmentId)
-        {
-            switch (departmentId)
-            {
-                case 1:
-                    return "UserViews";
-                    break;
-                case 2:
-                    return "FinanceViews";
-                    break;
-                case 3:
-                    return "MaintenanceViews";
-                    break;
-                case 4:
-                    return "SalesViews";
-                    break;
-                case 5:
-                    return "PurchaseViews";
-                    break;
-                case 6:
-                    return "MaintenanceViews";
-                    break;
-            }
-
-            return "Error";
-        }
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
             User.LoggedInUser = null;
-            Company.LoggedInCompany = null;
             Frame.Navigate(typeof(LoginPage));
         }
     }

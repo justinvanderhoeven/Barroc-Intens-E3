@@ -10,7 +10,6 @@ using Microsoft.UI.Xaml.Navigation;
 using System; 
 using BarrocIntens.Data;
 using BarrocIntens.MaintenanceViews;
-using BarrocIntens.UserViews;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -57,8 +56,6 @@ namespace BarrocIntens
                 if (user != null && VerifyPassword(inputPassword, user.Password, email))
                 {
                     User.LoggedInUser = user;
-                    Company company = db.Companies.FirstOrDefault(c => c.ContactId == user.Id);
-                    Company.LoggedInCompany = company;
                     Email.Text = "";
                     Password.Password = "";
                     Frame.Navigate(typeof(MainPage), user);

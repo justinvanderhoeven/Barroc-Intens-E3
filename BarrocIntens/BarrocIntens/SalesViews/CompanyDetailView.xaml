@@ -60,8 +60,8 @@
                         </TextBlock>
 
                         <TextBlock Foreground="#212121" FontWeight="Thin">
-            <Run>Contactpersoon:</Run>
-                  <Run Text="{x:Bind Contact}" />
+            <Run>Contact E-mail:</Run>
+                  <Run Text="{x:Bind ContactMail}" />
                         </TextBlock>
                         <TextBlock Foreground="#212121" FontWeight="Thin">
             <Run>Laatste BKR Check:</Run>
