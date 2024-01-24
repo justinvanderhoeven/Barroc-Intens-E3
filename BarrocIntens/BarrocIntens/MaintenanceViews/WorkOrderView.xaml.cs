@@ -14,6 +14,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel.Appointments;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -30,6 +31,7 @@ namespace BarrocIntens.MaintenanceViews
     public sealed partial class WorkOrderView : Window
     {
         private MaintenanceAppointment _currentAppointment;
+        private ObservableCollection<Product> products = new ObservableCollection<Product>();
         private ObservableCollection<Product> allProducts = new ObservableCollection<Product>();
         public List<Product> allProductsList = new List<Product>();
         public ObservableCollection<Product> addedProducts = new ObservableCollection<Product>();
@@ -52,7 +54,6 @@ namespace BarrocIntens.MaintenanceViews
                     allProducts.Add(product);
                 }
             }
-
             productPartsToAddListView.ItemsSource = allProducts;
             addedProductPartsListView.ItemsSource = addedProducts;
 
@@ -64,38 +65,32 @@ namespace BarrocIntens.MaintenanceViews
         }
         private void addProductPartButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Product product = ((Button)sender).Tag as Product;
+            Product productToRemove = products.FirstOrDefault(p => p.Id == product.Id);
+            if (productToRemove != null)
+            {
+                products.Remove(productToRemove);
+            }
+            addedProducts.Add(product);
         }
         private void removeProductPartButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Product product = ((Button)sender).Tag as Product;
+            Product productToRemove = addedProducts.FirstOrDefault(p => p.Id == product.Id);
+            if (productToRemove != null)
+            {
+                addedProducts.Remove(productToRemove);
+            }
+            products.Add(product);
         }
         private void AddWorkOrderButton_Click(object sender, RoutedEventArgs e )
         {
-            //using var db = new AppDbContext();
-
-            //var currentAppointment = db.MaintenanceAppointments.Find(_currentAppointment.Id);
-
-            //var selectedProductPart = (Product)productPartComboBox.SelectedItem;
-
-            //if( selectedProductPart != null )
-            //{
-            //    //selectedProductPart.MaintenanceAppointments = selectedProductPart.Name;  
-            //}
-            //else
-            //{
-            //    // error message
-            //}
-
-            //db.SaveChanges();
-            //this.Close();
+            using var db = new AppDbContext();           
+            var currentAppointment = db.MaintenanceAppointments.Find(_currentAppointment.Id);
+            currentAppointment.Products = addedProducts;
+            currentAppointment.Status = 99; 
+            db.SaveChanges();
+            this.Close();
         }
-        //public void convertProductsList()
-        //{
-        //    foreach (var product in allProducts)
-        //    {
-        //        allProducts.Add(product);
-        //    }
-        //}
     }
 }
