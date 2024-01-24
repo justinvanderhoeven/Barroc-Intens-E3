@@ -31,8 +31,8 @@
             <TextBox Name="searchTextbox" TextChanged="TextBox_TextChanged"/>
 
             <StackPanel Orientation="Horizontal" Spacing="10">
-                <Button Name="addCompany" Click="addCompany_Click">Add company</Button>
-                <Button Name="deleteCompany" Click="deleteCompany_Click">Delete company</Button>
+                <Button Name="addCompany" Click="addCompany_Click">Voeg bedrijf toe</Button>
+                <Button Name="deleteCompany" Click="deleteCompany_Click">Delete bedrijf</Button>
             </StackPanel>
         </StackPanel>
 

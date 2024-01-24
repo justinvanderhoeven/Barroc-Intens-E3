@@ -12,7 +12,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Background="#ffd700">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -34,7 +34,7 @@
                                     <TextBlock Margin="0 0 0 0" Text="{x:Bind DateAdded}"/>
                                 </StackPanel>
                                 <StackPanel Margin="15 0 0 0" Orientation="Horizontal">
-                                    <Button Margin="0 0 0 15" CommandParameter="{Binding}" Content="Bind User" x:Name="BindUser" Click="BindUser_Click"/>
+                                    <Button Margin="0 0 0 15" CommandParameter="{Binding}" Content="Koppel Gebruiker" x:Name="BindUser" Click="BindUser_Click"/>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
@@ -75,7 +75,7 @@
             </CalendarView.CalendarViewDayItemStyle>
         </CalendarView>
         <ListView Margin="0 5 0 5" Grid.Row="1">
-			<AutoSuggestBox x:Name="UserSuggestBox" PlaceholderText="Fill in user and select" Margin="5,10,0,0" UpdateTextOnSelect="True" SuggestionChosen="UserSuggestBox_SuggestionChosen">
+			<AutoSuggestBox x:Name="UserSuggestBox" PlaceholderText="Vul in gebruiker en selecteer" Margin="5,10,0,0" UpdateTextOnSelect="True" SuggestionChosen="UserSuggestBox_SuggestionChosen">
 				<AutoSuggestBox.ItemTemplate>
 					<DataTemplate x:DataType="localData:User">
 						<TextBlock Text="{x:Bind Name}" />

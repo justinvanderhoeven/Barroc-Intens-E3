@@ -46,7 +46,7 @@ namespace BarrocIntens.SalesViews
             }
         }
 
-        private void AddCustomerButton_Click(object sender, RoutedEventArgs e)
+        private async void AddCustomerButton_Click(object sender, RoutedEventArgs e)
         {
             User newCustomer = new User
             {
