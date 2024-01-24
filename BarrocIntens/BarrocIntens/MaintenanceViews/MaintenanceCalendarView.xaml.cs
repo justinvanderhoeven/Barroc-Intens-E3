@@ -77,13 +77,13 @@ namespace BarrocIntens.MaintenanceViews
             if (e.OriginalSource is FrameworkElement element && element.DataContext is MaintenanceAppointment clickedProduct)
             {
                 var workOrder = new WorkOrderView(clickedProduct);
+                workOrder.Closed += MaintenanceCalenderView;
                 workOrder.Activate();
             }
         }
 
-        private void refreshButton_Click(object sender, RoutedEventArgs e)
+        private void MaintenanceCalenderView(object sender, WindowEventArgs args)
         {
-            refreshButton.Content = "Refresh";
             using (var db = new AppDbContext())
             {
                 var currentUser = MainPage.CurrentUser;
