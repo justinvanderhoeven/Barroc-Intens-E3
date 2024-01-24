@@ -27,5 +27,9 @@ namespace BarrocIntens.MaintenanceViews
         {
             this.InitializeComponent();
         }
+        private void navBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
