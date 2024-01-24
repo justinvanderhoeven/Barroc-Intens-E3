@@ -4,14 +4,14 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:BarrocIntens.UserViews"
-    xmlns:model="using:BarrocIntens.Data"
+    xmlns:Model="using:BarrocIntens.Data"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Tag="LeaseContractView">
 
 
-    <Grid Background="#FFD700">
+    <Grid Background="#FDD716">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
@@ -20,71 +20,56 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Column="3" Grid.RowSpan="3" Background="#212121"/>
-
-        <Grid Grid.Row="0" Grid.Column="1" Margin="20" HorizontalAlignment="Right" VerticalAlignment="Center">
-            <StackPanel>
-                <TextBlock Text="ContractOverzicht" FontSize="40" FontWeight="Thin"/>
-            </StackPanel>
+        <Grid Grid.Column="1" HorizontalAlignment="Center">
+            <TextBlock Text="Contract Overzicht" 
+                       FontSize="40" 
+                       FontWeight="Thin">
+            </TextBlock>
         </Grid>
 
-        <Grid Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="Test"/>
-                <!--<ListView x:Name="companyIdListView">
-                    <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="model:Contract">
-                            <StackPanel>
-                                <TextBlock Text="Bedrijfsnummer:" FontSize="16" Grid.Column="0" Margin="5"/>
-                                <TextBlock Text="{x:Bind CompanyId}" FontSize="16" Grid.Column="1" Margin="5"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>-->
-            </Grid>
+        <Grid Background="#212121" Margin="20">
+            <ListView x:Name="contractListView" ItemsSource="{Binding Contracts}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="Model:Contract">
+                        <Border Background="#ffd700" BorderThickness="1" BorderBrush="#555555" Margin="0,0,0,10" Padding="10">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
 
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <!--<ListView x:Name="dateListView">
-                    <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="model:Contract">
-                            <StackPanel>
-                                <TextBlock Text="Verloopt op:" FontSize="16" Grid.Column="0" Margin="5"/>
-                                <TextBlock Text="{x:Bind ActiveUntil}" FontSize="16" Grid.Column="1" Margin="5"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>-->
-            </Grid>
 
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <!--<ListView x:Name="productsListView">
-                    <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="model:Contract">
-                            <StackPanel>
-                                <TextBlock Text="Producten" FontSize="16" Grid.Column="0" Margin="5"/>
-                                <TextBlock Text="{x:Bind ContractProducts}" FontSize="16" Grid.Column="1" Margin="5"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>-->
-            </Grid>
+                                <TextBlock Grid.Row="0" Foreground="#212121" Text="{x:Bind Id}" Width="50"/>
+                                <TextBlock Grid.Row="1" Foreground="#212121" Text="{x:Bind CompanyId}" Margin="10,0,0,0"/>
+                                <TextBlock Grid.Row="2" Foreground="#212121" Text="{x:Bind ActiveUntil}" Margin="10,0,0,0"/>
+
+                                <ListView Grid.Row="3" Header="Products" Width="200" BorderThickness="1" BorderBrush="#555555" Margin="0,10,0,0">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ItemsControl>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
     </Grid>
 </Page>
