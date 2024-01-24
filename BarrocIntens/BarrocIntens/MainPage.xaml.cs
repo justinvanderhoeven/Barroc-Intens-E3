@@ -1,4 +1,5 @@
 using BarrocIntens.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -77,9 +78,48 @@ namespace BarrocIntens
                 return false;
 
             var contentFrame = GetCorrectNavBar(CurrentUser.DepartmentId);
-            contentFrame.Navigate(view, null, new EntranceNavigationTransitionInfo());
-            return true;
+
+            if (contentFrame == null)
+                return false;
+            
+
+            if (CurrentUser.DepartmentId == 1 && clickedView == "LeaseContractView")
+            {
+                var contracts = GetContractsForUser(CurrentUser); // Implement this method to get contracts for the user
+                contentFrame.Navigate(view, contracts, new EntranceNavigationTransitionInfo());
+                return true;
+            }
+            else
+            {
+                contentFrame.Navigate(view, null, new EntranceNavigationTransitionInfo());
+                return false;
+            }
         }
+
+        private List<Contract> GetContractsForUser(User user)
+        {
+            using (var db = new AppDbContext())
+            {
+                // Assuming that the User has a reference to the Company and Company has a collection of contracts
+                var userWithContracts = db.Users
+                    .Include(u => u.Companies)
+                        .ThenInclude(c => c.CompanyContracts)
+                    .FirstOrDefault(u => u.Id == user.Id);
+
+                if (userWithContracts != null && userWithContracts.Companies != null)
+                {
+                    // Flatten the contracts from multiple companies
+                    var contracts = userWithContracts.Companies
+                        .SelectMany(c => c.CompanyContracts)
+                        .ToList();
+
+                    return contracts;
+                }
+
+                return new List<Contract>(); // Return an empty list if no contracts found
+            }
+        }
+
 
         private Frame GetCorrectNavBar (int departmentId)
         {
