@@ -24,7 +24,6 @@ namespace BarrocIntens.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductsCategory> ProductsCategories { get; set; }
         public DbSet<User> Users { get; set; }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //Go to the App.config.example file and then follow Instructions
@@ -476,7 +475,7 @@ namespace BarrocIntens.Data
                 },
                 new Product
                 {
-                    Id = 5,
+                    Id = 6,
                     Name = "Rubber (10 mm)",
                     Description = "Onderdeel van koffiemachine",
                     ImagePath = "",
@@ -486,7 +485,7 @@ namespace BarrocIntens.Data
                 },
                 new Product
                 {
-                    Id = 6,
+                    Id = 7,
                     Name = "Rubber (14 mm)",
                     Description = "Onderdeel van koffiemachine",
                     ImagePath = "",
@@ -496,7 +495,7 @@ namespace BarrocIntens.Data
                 },
                 new Product
                 {
-                    Id = 7,
+                    Id = 8,
                     Name = "Slang",
                     Description = "Onderdeel van koffiemachine",
                     ImagePath = "",
@@ -506,7 +505,7 @@ namespace BarrocIntens.Data
                 },
                 new Product
                 {
-                    Id = 8,
+                    Id = 9,
                     Name = "Voeding (elektra)",
                     Description = "Onderdeel van koffiemachine",
                     ImagePath = "",
@@ -516,7 +515,7 @@ namespace BarrocIntens.Data
                 },
                 new Product
                 {
-                    Id = 9,
+                    Id = 10,
                     Name = "Ontkalker",
                     Description = "Onderdeel van koffiemachine",
                     ImagePath = "",
@@ -526,7 +525,7 @@ namespace BarrocIntens.Data
                 },
                 new Product
                 {
-                    Id = 10,
+                    Id = 11,
                     Name = "Waterfilter",
                     Description = "Onderdeel van koffiemachine",
                     ImagePath = "",
@@ -536,7 +535,7 @@ namespace BarrocIntens.Data
                 },
                 new Product
                 {
-                    Id = 11,
+                    Id = 12,
                     Name = "Reservoir sensor",
                     Description = "Onderdeel van koffiemachine",
                     ImagePath = "",
@@ -546,7 +545,7 @@ namespace BarrocIntens.Data
                 },
                 new Product
                 {
-                    Id = 12,
+                    Id = 13,
                     Name = "Druppelstop",
                     Description = "Onderdeel van koffiemachine",
                     ImagePath = "",
@@ -556,7 +555,7 @@ namespace BarrocIntens.Data
                 },
                 new Product
                 {
-                    Id = 13,
+                    Id = 14,
                     Name = "Electrische pomp",
                     Description = "Onderdeel van koffiemachine",
                     ImagePath = "",
@@ -566,7 +565,7 @@ namespace BarrocIntens.Data
                 },
                 new Product
                 {
-                    Id = 14,
+                    Id = 15,
                     Name = "Tandwiel (110mm)",
                     Description = "Onderdeel van koffiemachine",
                     ImagePath = "",
@@ -576,7 +575,7 @@ namespace BarrocIntens.Data
                 },
                 new Product
                 {
-                    Id = 15,
+                    Id = 16,
                     Name = "Tandwiel (70mm)",
                     Description = "Onderdeel van koffiemachine",
                     ImagePath = "",
@@ -586,7 +585,7 @@ namespace BarrocIntens.Data
                 },
                 new Product
                 {
-                    Id = 16,
+                    Id = 17,
                     Name = "Maalmotor",
                     Description = "Onderdeel van koffiemachine",
                     ImagePath = "",
@@ -596,7 +595,7 @@ namespace BarrocIntens.Data
                 },
                 new Product
                 {
-                    Id = 17,
+                    Id = 18,
                     Name = "Zeef",
                     Description = "Onderdeel van koffiemachine",
                     ImagePath = "",
@@ -606,7 +605,7 @@ namespace BarrocIntens.Data
                 },
                 new Product
                 {
-                    Id = 18,
+                    Id = 19,
                     Name = "Reinigingstabletten",
                     Description = "Onderdeel van koffiemachine",
                     ImagePath = "",
@@ -616,7 +615,7 @@ namespace BarrocIntens.Data
                 },
                 new Product
                 {
-                    Id = 19,
+                    Id = 20,
                     Name = "Reinigingsborsteltjes",
                     Description = "Onderdeel van koffiemachine",
                     ImagePath = "",
@@ -626,7 +625,7 @@ namespace BarrocIntens.Data
                 },
                 new Product
                 {
-                    Id = 20,
+                    Id = 21,
                     Name = "Ontkalkingspijp",
                     Description = "Onderdeel van koffiemachine",
                     ImagePath = "",
