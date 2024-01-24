@@ -16,7 +16,7 @@ namespace BarrocIntens.Data
         public string Address {  get; set; }
         public string Zipcode { get; set; }
         public string City { get; set; }
-        public string CountryCode {  get; set; }
+        public string Country {  get; set; }
         public DateTime BkrCheckedAt { get; set; }
         public string? ContactName { get; set; } = null;
         public string? ContactMail { get; set; } = null;

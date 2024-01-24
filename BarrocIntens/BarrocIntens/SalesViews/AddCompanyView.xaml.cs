@@ -77,7 +77,7 @@ namespace BarrocIntens.SalesViews
                     Address = addressInput.Text,
                     Zipcode = zipcodeInput.Text,
                     City = cityInput.Text,
-                    CountryCode = countryInput.SelectedValue.ToString(),
+                    Country = countryInput.SelectedItem.ToString(),
                 });
 
                 // Save changes to the database
@@ -89,7 +89,7 @@ namespace BarrocIntens.SalesViews
                 addressInput.Text = string.Empty;
                 zipcodeInput.Text = string.Empty;
                 cityInput.Text = string.Empty;
-                countryInput.SelectedItem = -1;
+                countryInput.SelectedItem = string.Empty;
 
                 ContentDialog createdCredentialsDialog = new ContentDialog
                 {

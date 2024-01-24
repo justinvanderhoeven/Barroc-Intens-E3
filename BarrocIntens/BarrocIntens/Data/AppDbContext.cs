@@ -276,7 +276,7 @@ namespace BarrocIntens.Data
                     Address = "Papendorpseweg",
                     Zipcode = "3528 BJ",
                     City = "Utrecht",
-                    CountryCode = "34",
+                    Country = "Nederland",
                     BkrCheckedAt = DateTime.Now,
                     ContactName = "Klanten Service",
                     ContactMail = "klantenservice@bol.com"
@@ -289,7 +289,7 @@ namespace BarrocIntens.Data
                     Address = "Innovation Avenue",
                     Zipcode = "1234 AB",
                     City = "TechCity",
-                    CountryCode = "86",
+                    Country = "Nederland",
                     BkrCheckedAt = DateTime.Now,
                     ContactName = "Tech Support",
                     ContactMail = "support@techhub.com"
@@ -302,7 +302,7 @@ namespace BarrocIntens.Data
                     Address = "Sustainable Street",
                     Zipcode = "5678 CD",
                     City = "EcoVille",
-                    CountryCode = "44",
+                    Country = "Nederland",
                     BkrCheckedAt = DateTime.Now,
                     ContactName = "Customer Care",
                     ContactMail = "info@greeneco.com"
@@ -315,7 +315,7 @@ namespace BarrocIntens.Data
                     Address = "Chic Boulevard",
                     Zipcode = "7890 EF",
                     City = "StyleCity",
-                    CountryCode = "33",
+                    Country = "Nederland",
                     BkrCheckedAt = DateTime.Now,
                     ContactName = "Fashion Advisor",
                     ContactMail = "info@fashiontrends.com"
@@ -328,7 +328,7 @@ namespace BarrocIntens.Data
                     Address = "Gourmet Lane",
                     Zipcode = "0123 GH",
                     City = "Culinary Town",
-                    CountryCode = "49",
+                    Country = "Nederland",
                     BkrCheckedAt = DateTime.Now,
                     ContactName = "Event Coordinator",
                     ContactMail = "events@foodiedelights.com"
