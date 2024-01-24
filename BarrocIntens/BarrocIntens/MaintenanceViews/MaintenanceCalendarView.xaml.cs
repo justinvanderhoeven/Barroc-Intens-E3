@@ -33,8 +33,9 @@ namespace BarrocIntens.MaintenanceViews
             {
                 var currentUser = MainPage.CurrentUser;
 
-                var malfunctions = db.MaintenanceAppointments.Include(m => m.Company)
-                .Where(c => c.UserId == currentUser.Id)
+                var malfunctions = db.MaintenanceAppointments
+                .Include(m => m.Company)
+                .Where(c => c.UserId == currentUser.Id && c.Status == 1)
                 .OrderBy(d => d.DateAdded).ToList();
                 MalfunctionListView.ItemsSource = malfunctions;
             }
