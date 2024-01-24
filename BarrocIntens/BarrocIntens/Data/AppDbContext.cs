@@ -299,6 +299,7 @@ namespace BarrocIntens.Data
                     DateAdded = DateTime.Now,
                     CompanyId = 1,
                     ProductId = 1,
+                    Status = 1,
                 },
                 new MaintenanceAppointment
                 {
@@ -309,6 +310,7 @@ namespace BarrocIntens.Data
                     EndTime = new DateTime(2024, 08, 01, 01, 23, 0),
                     CompanyId = 1,
                     ProductId = 1,
+                    Status = 1,
                     UserId = 12
                 },
                 new MaintenanceAppointment
@@ -320,7 +322,8 @@ namespace BarrocIntens.Data
                     EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
                     CompanyId = 1,
                     ProductId = 1,
-                    UserId = 8
+                    Status = 1,
+                    UserId = 12
                 },
                 new MaintenanceAppointment
                 {
@@ -330,6 +333,7 @@ namespace BarrocIntens.Data
                     StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
                     EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
                     CompanyId = 1,
+                    Status = 1,
                     ProductId = 1,
                     UserId = null
                 },
@@ -341,6 +345,7 @@ namespace BarrocIntens.Data
                     StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
                     EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
                     CompanyId = 1,
+                    Status = 1,
                     ProductId = 1,
                     UserId = null
                 },
@@ -352,6 +357,7 @@ namespace BarrocIntens.Data
                     StartTime = new DateTime(2023, 08, 02, 13, 23, 0),
                     EndTime = new DateTime(2023, 12, 09, 03, 05, 0),
                     CompanyId = 1,
+                    Status = 1,
                     ProductId = 1,
                     UserId = null
                 }
