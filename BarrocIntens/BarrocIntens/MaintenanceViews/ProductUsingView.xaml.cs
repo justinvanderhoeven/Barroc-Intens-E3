@@ -39,9 +39,6 @@ namespace BarrocIntens.MaintenanceViews
                 .First(p => p.Id == productId);
             nameInput.Text = product.Name;
             descriptionInput.Text = product.Description;
-            stockInput.Text = product.Stock.ToString();
-            productCategoryInput.ItemsSource = db.ProductsCategories;
-            productCategoryInput.SelectedItem = product.ProductsCategory;
         }
 
         private void UsingProductButton_Click(object sender, RoutedEventArgs p)
@@ -51,7 +48,11 @@ namespace BarrocIntens.MaintenanceViews
             var product = db.Products
                 .First(p => p.Id == currentProductId);
 
-            product.Stock = int.Parse(stockInput.Text);
+            product.Stock -= int.Parse(stockInput.Text);
+            if (product.Stock < 0)
+            {
+                product.Stock = 0;
+            }
 
             db.SaveChanges();
             //nameInput.Text = string.Empty;

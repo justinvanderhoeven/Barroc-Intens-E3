@@ -35,7 +35,7 @@ namespace BarrocIntens.PurchaseViews
             }
         }
 
-        private void refreshe_Click(object sender, RoutedEventArgs e)
+        private void refresh_Click(object sender, RoutedEventArgs e)
         {
             refreshButton.Content = "Refresh";
             using (var db = new AppDbContext())

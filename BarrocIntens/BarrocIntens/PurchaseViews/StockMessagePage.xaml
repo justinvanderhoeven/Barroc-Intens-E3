@@ -11,36 +11,53 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Background="#ffd700" VerticalAlignment="Center" Spacing="10">
-            <TextBlock Text="Meldingen" FontSize="40"/>
+        <StackPanel Grid.Column="3" Grid.RowSpan="3" Background="#ffd700"/>
+        <StackPanel Grid.Column="0" Grid.RowSpan="3" Background="#212121"/>
+        <StackPanel Grid.Column="1" Grid.RowSpan="3" Background="#ffd700"/>
 
-            <StackPanel Margin="10 0 0 10" HorizontalAlignment="Center" Orientation="Horizontal" Spacing="10">
-                <Button Name="refreshButton" Click="refreshe_Click">Refresh</Button>
+        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
+            
+
+            
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Spacing="10" Margin="20">
+                <TextBlock Text="Meldingen" FontSize="40"/>
             </StackPanel>
-        </StackPanel>
 
-        <StackPanel>
-            <TextBlock Text="Deze producten zijn op bestel nieuwe alstublieft!" FontSize="18" FontWeight="Bold"/>
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Spacing="10" Margin="20">
+                <TextBlock Text="Deze producten zijn op bestel nieuwe alstublieft!" FontSize="18" FontWeight="Bold"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Spacing="10" Margin="20">
+                <Button Name="refreshButton" Click="refresh_Click">Refresh</Button>
+            </StackPanel>
+            
+            <ListView x:Name="StockMessageView" Grid.Row="1">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="localData:Product">
+                        <StackPanel Orientation="Vertical" Padding="5">
+                            <TextBlock Text="{x:Bind Name}"/>
+                            <TextBlock Text="{x:Bind Description}"/>
+                            <TextBlock Text="{x:Bind Stock}"
+                            Foreground="DarkGray" />
+                            <TextBlock Foreground="Black">
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackPanel>
-        
-        <ListView x:Name="StockMessageView" Grid.Row="1">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="localData:Product">
-                    <StackPanel Orientation="Vertical" Padding="5">
-                        <TextBlock Text="{x:Bind Name}"/>
-                        <TextBlock Text="{x:Bind Description}"/>
-                        <TextBlock Text="{x:Bind Stock}"
-                        Foreground="DarkGray" />
-                        <TextBlock Foreground="Black">
-                        </TextBlock>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
     </Grid>
 </Page>
