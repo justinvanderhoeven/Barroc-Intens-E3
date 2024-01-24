@@ -42,7 +42,6 @@ namespace BarrocIntens.PurchaseViews
             {
                 Name = nameInput.Text,
                 Description = descriptionInput.Text,
-                //ImagePath = imagePathInput.Text,
                 Price = decimal.Parse(priceInput.Text),
                 Stock = int.Parse(stockInput.Text),
                 ProductsCategoryId = selectedCategory.Id,
@@ -51,7 +50,6 @@ namespace BarrocIntens.PurchaseViews
             db.SaveChanges();
             nameInput.Text = string.Empty;
             descriptionInput.Text = string.Empty;
-            //imagePathInput.Text = string.Empty;
             priceInput.Text = string.Empty;
             productCategoryInput.SelectedItem = -1;
         }

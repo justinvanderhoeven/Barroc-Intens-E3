@@ -474,7 +474,6 @@ namespace BarrocIntens.Data
                     Id = 1,
                     Name = "Barroc Intens Italian Light",
                     Description = "Een Koffie machine",
-                    ImagePath = "",
                     Price = 499,
                     Stock = 50,
                     ProductsCategoryId = 1
@@ -484,7 +483,6 @@ namespace BarrocIntens.Data
                     Id = 2,
                     Name = "Barroc Intens Italian",
                     Description = "Een Koffie machine",
-                    ImagePath = "",
                     Price = 499,
                     Stock = 50,
                     ProductsCategoryId = 1
@@ -494,7 +492,6 @@ namespace BarrocIntens.Data
                     Id = 3,
                     Name = "Barroc Intens Italian Deluxe",
                     Description = "Een Koffie machine",
-                    ImagePath = "",
                     Price = 499,
                     Stock = 50,
                     ProductsCategoryId = 1
@@ -504,7 +501,6 @@ namespace BarrocIntens.Data
                     Id = 4,
                     Name = "Barroc Intens Italian Deluxe Special",
                     Description = "Een Koffie machine",
-                    ImagePath = "",
                     Price = 499,
                     Stock = 50,
                     ProductsCategoryId = 1
@@ -513,8 +509,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 5,
                     Name = "Espresso Beneficio",
-                    Description = "Een toegankelijke en zachte koffie. Hij is afkomstig van de Finca El Limoncillo, een weelderige plantage aan de rand van het regenwoud in de Matagalpa regio in Nicaragua",
-                    ImagePath = "",
+                    Description = "Een toegankelijke en zachte koffie. Hij is afkomstig van de Finca El Limoncillo, een weelderige plantage aan de rand van het regenwoud in de Matagalpa regio in Nicaragua"
                     Price = 21,
                     Stock = 0,
                     ProductsCategoryId = 2

@@ -27,10 +27,6 @@
              Header="Beschrijving:" PlaceholderText="Beschrijving"
              Width="300" HorizontalAlignment="Left"/>
 
-                    <TextBox FontFamily="Roboto" Margin="0,5" x:Name="imagePathInput"
-             Header="AfbeeldingPad:" PlaceholderText="AfbeeldingPad"
-             Width="300" HorizontalAlignment="Left"/>
-
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="priceInput"
              Header="Prijs:" PlaceholderText="Prijs"
              Width="300" HorizontalAlignment="Left"/>
