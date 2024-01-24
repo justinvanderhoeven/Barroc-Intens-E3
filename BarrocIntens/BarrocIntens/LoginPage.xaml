@@ -36,9 +36,9 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1">
-            <TextBox HorizontalAlignment="Center" x:Name="Email" Padding="10 5 55 5" Margin="0 20 0 20" PlaceholderText="Email" />
-            <PasswordBox HorizontalAlignment="Center" x:Name="Password" Padding="10 5 60 5" PlaceholderText="Password" />
-            <Button HorizontalAlignment="Center" x:Name="loginButton" Margin="0 20 0 0" Style="{StaticResource ButtonStyle}" PointerEntered="loginButton_PointerEntered" Click="loginButton_Click" Content="Login"/>
+            <TextBox Width="200" HorizontalAlignment="Center" x:Name="Email" Margin="0 50 0 10" PlaceholderText="Email" />
+            <PasswordBox Width="200" HorizontalAlignment="Center" x:Name="Password"  PlaceholderText="Password" />
+            <Button Width="200" HorizontalAlignment="Center" x:Name="loginButton" Margin="0 20 0 0" Style="{StaticResource ButtonStyle}" PointerEntered="loginButton_PointerEntered" Click="loginButton_Click" Content="Login"/>
         </StackPanel>
     </Grid>
 </Page>
