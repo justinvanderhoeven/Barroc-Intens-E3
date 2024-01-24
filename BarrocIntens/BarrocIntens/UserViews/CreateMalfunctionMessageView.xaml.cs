@@ -70,9 +70,10 @@ namespace BarrocIntens.UserViews
                 db.MaintenanceAppointments.Add(new MaintenanceAppointment
                 {
                     UserId = User.LoggedInUser.Id,
-                    CompanyId = Company.LoggedInCompany.Id,
+                    CompanyId = Company.LoggedInCompany.Id, 
                     ProductId = productId,
-                    Description = problemDescription
+                    Description = problemDescription,
+                    Status = 1
                 });
                 db.SaveChanges();
 
