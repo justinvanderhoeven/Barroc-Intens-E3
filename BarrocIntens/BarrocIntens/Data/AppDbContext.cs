@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Windows.Graphics.Display;
 using System.Configuration;
 using Microsoft.WindowsAppSDK.Runtime.Packages;
+using System.Diagnostics;
 
 namespace BarrocIntens.Data
 {
@@ -509,7 +510,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 5,
                     Name = "Espresso Beneficio",
-                    Description = "Een toegankelijke en zachte koffie. Hij is afkomstig van de Finca El Limoncillo, een weelderige plantage aan de rand van het regenwoud in de Matagalpa regio in Nicaragua"
+                    Description = "Een toegankelijke en zachte koffie. Hij is afkomstig van de Finca El Limoncillo, een weelderige plantage aan de rand van het regenwoud in de Matagalpa regio in Nicaragua",
                     Price = 21,
                     Stock = 0,
                     ProductsCategoryId = 2
