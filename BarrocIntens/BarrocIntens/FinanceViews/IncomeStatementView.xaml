@@ -10,6 +10,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <ScrollViewer>
+            <Image Source="../Assets/img/geldzaken.jpg" />
+        </ScrollViewer>
     </Grid>
 </Page>
