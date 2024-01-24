@@ -69,6 +69,7 @@ namespace BarrocIntens.PurchaseViews
                 using var db = new AppDbContext();
 
                 StockSearchingView.ItemsSource = db.Products.Where(p => p.Stock > 0);
+                OutStockCheckBox.IsEnabled = false;
             }
         }
 
@@ -79,12 +80,29 @@ namespace BarrocIntens.PurchaseViews
                 using var db = new AppDbContext();
 
                 StockSearchingView.ItemsSource = db.Products.Where(p => p.Stock == 0);
+                StockCheckBox.IsEnabled = false;
             }
         }
 
         private void refresh_Click(object sender, RoutedEventArgs e)
         {
-            refreshButton.Content = "Refresh";
+            Refresh();
+        }
+
+        private void OutStockCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            StockCheckBox.IsEnabled = true;
+            Refresh();
+        }
+
+        private void StockCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            OutStockCheckBox.IsEnabled = true;
+            Refresh();
+        }
+
+        public void Refresh()
+        {
             using (var db = new AppDbContext())
             {
                 StockSearchingView.ItemsSource = db.Products.ToList();

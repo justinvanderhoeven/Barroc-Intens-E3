@@ -21,10 +21,10 @@
             <TextBox TextChanged="TextBox_TextChanged" x:Name="searchTextBox"/>
    
             <CheckBox x:Name="StockCheckBox" Content="Op Voorraad"
-                Checked="Ov_Checked" />
+                Checked="Ov_Checked"  Unchecked="StockCheckBox_Unchecked"/>
 
             <CheckBox x:Name="OutStockCheckBox" Content="Niet op Voorraad"
-                Checked="Nov_Checked" />
+                Checked="Nov_Checked" Unchecked="OutStockCheckBox_Unchecked"/>
 
             <Button x:Name="CreateProductButton" FontFamily="Arial" Margin="0, 30"  Background="White" Content="Voeg nieuwe product toe" Click="CreateProductButton_Click"/>
 
