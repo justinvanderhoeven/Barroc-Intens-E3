@@ -38,7 +38,7 @@
                 <NavigationViewItem x:Name="MalfunctionMessagePage" Visibility="Collapsed" Content="Storing meldingen" Tag="MalfunctionMessagePage"/>
                 <NavigationViewItem Content="Calender" Tag="MaintenanceCalendarView"/>
                 <NavigationViewItem x:Name="MaintenancePlannerCalendar" Visibility="Collapsed" Content="Planner Calender" Tag="MaintenancePlannerCalendar"/>
-                <NavigationViewItem x:Name="MessageViewMaintenance" Content="Overzicht berichten" Tag="MessageViewMaintenance"/>
+                <NavigationViewItem x:Name="MessageViewMaintenance" Content="Onderhoudsmeldingen" Tag="MessageViewMaintenance"/>
             </NavigationView.MenuItems>
             <Frame x:Name="MaintenanceFrame"></Frame>
         </NavigationView>
