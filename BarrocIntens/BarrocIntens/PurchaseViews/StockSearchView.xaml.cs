@@ -59,7 +59,13 @@ namespace BarrocIntens.PurchaseViews
         {
             var SelectedItem = (Product)p.ClickedItem;
             var window = new StockEditView(SelectedItem.Id);
+            window.Closed += StockEditWindow_Closed;
             window.Activate();
+        }
+
+        private void StockEditWindow_Closed(object sender, WindowEventArgs args)
+        {
+            Refresh();
         }
 
         private void Ov_Checked(object sender, RoutedEventArgs e)
@@ -82,11 +88,6 @@ namespace BarrocIntens.PurchaseViews
                 StockSearchingView.ItemsSource = db.Products.Where(p => p.Stock == 0);
                 StockCheckBox.IsEnabled = false;
             }
-        }
-
-        private void refresh_Click(object sender, RoutedEventArgs e)
-        {
-            Refresh();
         }
 
         private void OutStockCheckBox_Unchecked(object sender, RoutedEventArgs e)

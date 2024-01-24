@@ -35,7 +35,7 @@ namespace BarrocIntens.SalesViews
             AddressTextBox.Text = _selectedCompany.Address;
             ZipcodeTextBox.Text = _selectedCompany.Zipcode;
             CityTextBox.Text = _selectedCompany.City;
-            CountryTextBox.Text = _selectedCompany.CountryCode;
+            CountryTextBox.Text = _selectedCompany.Country;
 
             if (_selectedCompany.ContactMail != null)
             {
@@ -60,7 +60,7 @@ namespace BarrocIntens.SalesViews
             selectedCompany.Address = AddressTextBox.Text;
             selectedCompany.Zipcode = ZipcodeTextBox.Text;
             selectedCompany.City = CityTextBox.Text;
-            selectedCompany.CountryCode = CountryTextBox.Text;
+            selectedCompany.Country = CountryTextBox.Text;
             if(_isCustomer)
             {
                 selectedCompany.ContactName = CompanyTextBox.Text;
