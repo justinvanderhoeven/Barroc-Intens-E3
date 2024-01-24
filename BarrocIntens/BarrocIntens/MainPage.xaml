@@ -39,6 +39,7 @@
                 <Button Click="LogoutButton_Click" Content="Uitloggen" HorizontalAlignment="Right"/>
                 <NavigationViewItem x:Name="MalfunctionMessagePage" Visibility="Collapsed" Content="Storing meldingen" Tag="MaintenanceViews.MalfunctionMessagePage"/>
                 <NavigationViewItem Content="Calender" Tag="MaintenanceViews.MaintenanceCalendarView"/>
+                <NavigationViewItem Content="Producten" Tag="MaintenanceViews.ProductStockView"/>
                 <NavigationViewItem x:Name="MaintenancePlannerCalendar" Visibility="Collapsed" Content="Planner Calender" Tag="MaintenanceViews.MaintenancePlannerCalendar"/>
             </NavigationView.MenuItems>
             <Frame x:Name="MaintenanceFrame"></Frame>
@@ -48,6 +49,7 @@
             <NavigationView.MenuItems>
                 <Button Click="LogoutButton_Click" Content="Uitloggen" HorizontalAlignment="Right"/>
                 <NavigationViewItem Content="Producten" Tag="PurchaseViews.StockSearchView"/>
+                <NavigationViewItem x:Name="StockMessagePage" Content="Meldingen" Tag="PurchaseViews.StockMessagePage" Visibility="Collapsed"/>
             </NavigationView.MenuItems>
             <Frame x:Name="PurchaseFrame"></Frame>
         </NavigationView>
