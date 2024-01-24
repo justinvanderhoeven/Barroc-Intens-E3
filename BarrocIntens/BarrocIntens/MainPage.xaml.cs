@@ -59,7 +59,7 @@ namespace BarrocIntens
                     break;
                 case 7:
                     PurchaseNavView.Visibility = Visibility.Visible;
-                    StockMessagePage.Visibility = Visibility.Visible;
+                    StockMessageView.Visibility = Visibility.Visible;
                     break;
             }
         }
