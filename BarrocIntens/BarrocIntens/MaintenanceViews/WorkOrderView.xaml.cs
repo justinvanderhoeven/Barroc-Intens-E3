@@ -87,9 +87,14 @@ namespace BarrocIntens.MaintenanceViews
         {
             using var db = new AppDbContext();           
             var currentAppointment = db.MaintenanceAppointments.Find(_currentAppointment.Id);
-            currentAppointment.Products = addedProducts;
+            //currentAppointment.MaintenanceAppointmentProducts = addedProducts;
             currentAppointment.Status = 99;
             currentAppointment.EndTime = DateTime.Now;
+
+            foreach ( var product in currentAppointment.MaintenanceAppointmentProducts )
+            {
+                product.MaintenanceAppointmentId = currentAppointment.Id;
+            }
             db.SaveChanges();
             this.Close();
         }
