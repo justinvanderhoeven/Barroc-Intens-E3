@@ -22,6 +22,7 @@ using Windows.Security.Cryptography.Core;
 using Windows.UI.Popups;
 using static System.Net.WebRequestMethods;
 using System.Net;
+using Microsoft.EntityFrameworkCore;
 
 
 // To learn more about WinUI, the WinUI project structure,
@@ -39,26 +40,37 @@ namespace BarrocIntens
             this.InitializeComponent();
         }
 
+        
         //Login Event.
         internal async void loginButton_Click(object sender, RoutedEventArgs e)
         {
+            //Frame.Navigate(typeof(LeaseContractView), currentCompany);
+
+
             //Put input in variable . 
             string email = Email.Text;
             string inputPassword = Password.Password;
 
             using (var db = new AppDbContext())
             {
-                var user = db.Users.FirstOrDefault(e => e.Email == email);
-                //Check if password is correct. 
-                if (user != null && VerifyPassword (inputPassword, user.Password, email))
+                var user = db.Users
+                    .Include(u => u.Companies)
+                    .ThenInclude(c => c.CompanyContracts) // Include contracts associated with companies
+                    .FirstOrDefault(u => u.Email == email);
+
+                //Check if password is correct and the user exists. 
+                if (user != null && VerifyPassword(inputPassword, user.Password, email))
                 {
+                    var contracts = user.Companies
+                       .SelectMany(c => c.CompanyContracts)
+                       .ToList();
                     //MainPage.CurrentUser = user;
                     Frame.Navigate(typeof(MainPage), user);
                 }
                 else
                 {
                     //Removes input from input boxes.
-                    Email.Text = null; 
+                    Email.Text = null;
                     Password.Password = null;
 
                     //Error message
@@ -67,13 +79,15 @@ namespace BarrocIntens
                         Title = "Login Failed",
                         Content = "Please check your credentials.",
                         CloseButtonText = "Ok",
-                        XamlRoot= this.XamlRoot,
+                        XamlRoot = this.XamlRoot,
                     };
 
                     ContentDialogResult result = await wrongCredentialsDialog.ShowAsync();
                 }
             }
         }
+
+
         //Password verifyer uses SecureHasher class. 
         private bool VerifyPassword(string inputPassword, string hashedPassword, string email)
         {
@@ -96,7 +110,7 @@ namespace BarrocIntens
 
         private void loginButton_PointerEntered(object sender, PointerRoutedEventArgs e)
         {
-           // loginButton.Background = new SolidColorBrush(Colors.Gold);
+            //loginButton.Background = new SolidColorBrush(Colors.Gold);
         }
     }
 }
