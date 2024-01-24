@@ -20,15 +20,14 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Column="3" Grid.RowSpan="3" Background="#ffd700">
+        <StackPanel Grid.Column="3" Grid.RowSpan="3" Background="#ffd700"/>
+        <StackPanel Grid.Column="0" Grid.RowSpan="3" Background="#212121">
             <Button Name="navBack" Click="navBack_Click">Terug</Button>
         </StackPanel>
-        <StackPanel Grid.Column="0" Grid.RowSpan="3" Background="#212121"/>
         <StackPanel Grid.Column="1" Grid.RowSpan="3" Background="#ffd700"/>
 
         <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
             <StackPanel Orientation="Horizontal" Spacing="10">
-                
             </StackPanel>
         </StackPanel>
 
@@ -44,7 +43,6 @@
                                 <TextBlock Margin="15 0 10 0" Text="Created at: "/>
                                 <TextBlock Margin="0 0 0 0" Text="{x:Bind DateAdded}"/>
                             </StackPanel>
-                            
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>
