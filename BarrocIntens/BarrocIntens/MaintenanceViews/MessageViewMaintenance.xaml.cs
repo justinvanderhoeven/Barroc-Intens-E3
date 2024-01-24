@@ -1,3 +1,5 @@
+using BarrocIntens.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -7,6 +9,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -23,13 +26,24 @@ namespace BarrocIntens.MaintenanceViews
     /// </summary>
     public sealed partial class MessageViewMaintenance : Page
     {
+        private ObservableCollection<Product> allProducts = new ObservableCollection<Product>();
+        private ObservableCollection<MaintenanceAppointment> allMessages = new ObservableCollection<MaintenanceAppointment>();
+        public List<Product> allProductsList = new List<Product>();
+        public List<MaintenanceAppointment> allMessagesList = new List<MaintenanceAppointment>();
         public MessageViewMaintenance()
         {
             this.InitializeComponent();
-        }
-        private void navBack_Click(object sender, RoutedEventArgs e)
-        {
+            using var db = new AppDbContext();
 
+            allMessagesList = db.MaintenanceAppointments.Where(m => m.Status == 99).Include(m => m.MaintenanceAppointmentProducts).ToList();
+            allProductsList = db.Products.ToList();
+
+            foreach (var message in allMessagesList)
+            {
+                allMessages.Add(message);
+            }
+
+            messageListView.ItemsSource = allMessagesList;
         }
     }
 }
