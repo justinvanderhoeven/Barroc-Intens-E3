@@ -23,6 +23,7 @@
     <None Remove="MaintenanceViews\MaintenancePlannerCalendar.xaml" />
     <None Remove="MaintenanceViews\ProductStockView.xaml" />
     <None Remove="MaintenanceViews\ProductUsingView.xaml" />
+    <None Remove="PurchaseViews\StockAcceptPage.xaml" />
     <None Remove="PurchaseViews\StockMessagePage.xaml" />
     <None Remove="PurchaseViews\StockSearchView.xaml" />
     <None Remove="PurchaseViews\StockView.xaml" />
@@ -76,6 +77,10 @@
     <Page Update="NavBarUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Update="PurchaseViews\StockAcceptPage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="SalesViews\AddCustomerView.xaml">
@@ -96,13 +101,13 @@
     <Folder Include="CustomerViews\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="SalesViews\EditCompanyWindow.xaml"/>
+    <Page Update="SalesViews\EditCompanyWindow.xaml" />
     <Page Update="PurchaseViews\StockMessagePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="FinanceViews\CustomerDetailWindow.xaml"/>
+    <Page Update="FinanceViews\CustomerDetailWindow.xaml" />
     <Page Update="MaintenanceViews\ProductUsingView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

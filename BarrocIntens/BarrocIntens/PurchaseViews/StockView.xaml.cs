@@ -32,21 +32,32 @@ namespace BarrocIntens.PurchaseViews
             using var db = new AppDbContext();
             productCategoryInput.ItemsSource = db.ProductsCategories.ToList();
             productCategoryInput.DisplayMemberPath = "Name";
-        
+
         }
+  
         private void AddProductButton_Click(object sender, RoutedEventArgs e)
         {
             using var db = new AppDbContext();
             var selectedCategory = (ProductsCategory)productCategoryInput.SelectedItem;
+
+            int stockValue = int.Parse(stockInput.Text);
+
+            if (stockValue > 5000)
+            {
+                stockValue = 5000;
+                stockInput.Text = stockValue.ToString();
+            }
+
             db.Products.Add(new Product
+
             {
                 Name = nameInput.Text,
                 Description = descriptionInput.Text,
                 Price = decimal.Parse(priceInput.Text),
                 Stock = int.Parse(stockInput.Text),
                 ProductsCategoryId = selectedCategory.Id,
-            }); 
-
+            });
+                
             db.SaveChanges();
             nameInput.Text = string.Empty;
             descriptionInput.Text = string.Empty;
