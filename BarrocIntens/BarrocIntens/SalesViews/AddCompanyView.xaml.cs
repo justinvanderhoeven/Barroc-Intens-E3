@@ -42,8 +42,6 @@ namespace BarrocIntens.SalesViews
         {
             using var db = new AppDbContext();
 
-
-
             if (string.IsNullOrWhiteSpace(nameInput.Text) ||
                 !IsValidText(nameInput.Text) ||
                 string.IsNullOrWhiteSpace(phoneInput.Text) ||
