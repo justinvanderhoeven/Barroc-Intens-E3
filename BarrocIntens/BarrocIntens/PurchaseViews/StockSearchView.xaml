@@ -11,41 +11,54 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Tag="StockSearchView">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Padding="15" Background="#ffd700">
-            <TextBlock Text="Zoeken:"/>
-            <TextBox TextChanged="TextBox_TextChanged" x:Name="searchTextBox"/>
-   
-            <CheckBox x:Name="StockCheckBox" Content="Op Voorraad"
+        <StackPanel Grid.Column="3" Grid.RowSpan="3" Background="#ffd700"/>
+        <StackPanel Grid.Column="0" Grid.RowSpan="3" Background="#212121"/>
+        <StackPanel Grid.Column="1" Grid.RowSpan="3" Background="#ffd700"/>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <StackPanel Grid.Row="0" Padding="15" Background="#ffd700">
+                <TextBlock Margin="0 0 0 5" Text="Zoeken:"/>
+                <TextBox Margin="0 0 0 20" TextChanged="TextBox_TextChanged" x:Name="searchTextBox"/>
+
+                <CheckBox x:Name="StockCheckBox" Content="Op Voorraad"
                 Checked="Ov_Checked"  Unchecked="StockCheckBox_Unchecked"/>
 
-            <CheckBox x:Name="OutStockCheckBox" Content="Niet op Voorraad"
+                <CheckBox x:Name="OutStockCheckBox" Content="Niet op Voorraad"
                 Checked="Nov_Checked" Unchecked="OutStockCheckBox_Unchecked"/>
 
-            <Button x:Name="CreateProductButton" FontFamily="Arial" Margin="0, 30"  Background="White" Content="Voeg nieuwe product toe" Click="CreateProductButton_Click"/>
+                <Button x:Name="CreateProductButton" FontFamily="Arial" Margin="0 20 0 5" Content="Voeg nieuwe product toe" Click="CreateProductButton_Click"/>
 
-        </StackPanel>
+            </StackPanel>
 
-        <ListView x:Name="StockSearchingView" Grid.Row="1" 
+            <ListView Background="#ffd700" x:Name="StockSearchingView" Grid.Row="1" 
                   IsItemClickEnabled="True"
                     ItemClick="StockSearchView_ItemClick">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="localData:Product">
-                    <StackPanel Orientation="Vertical" Padding="5">
-                        <TextBlock Text="{x:Bind Name}"/>
-                        <TextBlock Text="{x:Bind Description}"/>
-                        <TextBlock Text="{x:Bind Price}"/>
-                        <TextBlock Text="{x:Bind Stock}"
-                           Foreground="DarkGray" />
-                        <TextBlock Foreground="Black">
-                        </TextBlock>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="localData:Product">
+                        <StackPanel Orientation="Vertical" Padding="5">
+                            <TextBlock Text="{x:Bind Name}"/>
+                            <TextBlock Text="{x:Bind Description}"/>
+                            <TextBlock Text="{x:Bind Price}"/>
+                            <TextBlock Text="{x:Bind Stock}"
+                           Foreground="Blue" />
+                            <TextBlock Foreground="#212121">
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
     </Grid>
 </Page>
