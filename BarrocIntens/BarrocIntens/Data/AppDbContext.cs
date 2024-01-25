@@ -21,6 +21,7 @@ namespace BarrocIntens.Data
         public DbSet<Department> Departments { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<MaintenanceAppointment> MaintenanceAppointments { get; set; }
+        public DbSet<MaintenanceAppointmentProduct> MaintenanceAppointmentProducts { get; set; }
         public DbSet<Note> Notes { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductsCategory> ProductsCategories { get; set; }
@@ -54,53 +55,11 @@ namespace BarrocIntens.Data
                 .UsingEntity<CustomInvoiceProduct>();
 
             modelBuilder.Entity<MaintenanceAppointment>()
-            .HasMany(m => m.MaintenanceAppointmentProducts)
-            .WithOne(p => p.MaintenanceAppointment)
-            .HasForeignKey(p => p.MaintenanceAppointmentId);
+                .HasMany(m => m.Products)
+                .WithMany(p => p.MaintenanceAppointments)
+                .UsingEntity<MaintenanceAppointmentProduct>();
 
             modelBuilder.Entity<User>().HasData(
-
-                // Users for Department 1 (Customer)
-                new User
-                {
-                    Id = 1,
-                    Name = "Bob",
-                    Email = "Customer1@gmail.com",
-                    Password = SecureHasher.Hash("Customer1"),
-                    DepartmentId = 1,
-                },
-                new User
-                {
-                    Id = 2,
-                    Name = "Jason",
-                    Email = "Customer2@gmail.com",
-                    Password = SecureHasher.Hash("Customer2"),
-                    DepartmentId = 1,
-                },
-                new User
-                {
-                    Id = 3,
-                    Name = "Mike",
-                    Email = "Customer3@gmail.com",
-                    Password = SecureHasher.Hash("Customer3"),
-                    DepartmentId = 1,
-                },
-                new User
-                {
-                    Id = 4,
-                    Name = "Leonard",
-                    Email = "Customer4@gmail.com",
-                    Password = SecureHasher.Hash("Customer4"),
-                    DepartmentId = 1,
-                },
-                new User
-                {
-                    Id = 5,
-                    Name = "Bart",
-                    Email = "Customer5@gmail.com",
-                    Password = SecureHasher.Hash("Customer5"),
-                    DepartmentId = 1,
-                },
 
                 // Users for Department 2 (Finance)
                 new User
@@ -494,7 +453,7 @@ namespace BarrocIntens.Data
                     Content = "Test",
                     Date = DateTime.Now,
                     CompanyId = 1,
-                    UserId = 1,
+                    UserId = 12,
                 }
             );
 
@@ -516,6 +475,51 @@ namespace BarrocIntens.Data
                     Id = 3,
                     Name = "Onderdelen",
                     IsEmployeeOnly = 1,
+                }
+            );
+
+            modelBuilder.Entity<MaintenanceAppointmentProduct>().HasData(
+                new MaintenanceAppointmentProduct
+                {
+                    Id = 1,
+                    MaintenanceAppointmentId = 7,
+                    ProductId = 12,
+                },
+                new MaintenanceAppointmentProduct
+                {
+                    Id = 2,
+                    MaintenanceAppointmentId = 7,
+                    ProductId = 13,
+                },
+                new MaintenanceAppointmentProduct
+                {
+                    Id = 3,
+                    MaintenanceAppointmentId = 7,
+                    ProductId = 14,
+                },
+                new MaintenanceAppointmentProduct
+                {
+                    Id = 4,
+                    MaintenanceAppointmentId = 8,
+                    ProductId = 12,
+                },
+                new MaintenanceAppointmentProduct
+                {
+                    Id = 5,
+                    MaintenanceAppointmentId = 8,
+                    ProductId = 15,
+                },
+                new MaintenanceAppointmentProduct
+                {
+                    Id = 6,
+                    MaintenanceAppointmentId = 9,
+                    ProductId = 12,
+                },
+                new MaintenanceAppointmentProduct
+                {
+                    Id = 7,
+                    MaintenanceAppointmentId = 9,
+                    ProductId = 17,
                 }
             );
 

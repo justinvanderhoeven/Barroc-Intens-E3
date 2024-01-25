@@ -34,7 +34,7 @@
                     </TextBox>
 
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="phoneInput"
-                     Header="TelefoonNummer:" PlaceholderText="TelefoonNummer"
+                     Header="Telefoon nummer:" PlaceholderText="Telefoon nummer"
                      Width="300" HorizontalAlignment="Left"/>
 
                     <TextBox FontFamily="Roboto" Margin="0,5" x:Name="addressInput"

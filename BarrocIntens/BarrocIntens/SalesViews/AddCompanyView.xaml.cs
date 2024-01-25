@@ -38,16 +38,22 @@ namespace BarrocIntens.SalesViews
             return !string.IsNullOrWhiteSpace(input) && input.All(char.IsLetter);
         }
 
+        private bool IsValidNameAndAddress(string input)
+        {
+            // Check if the input contains only letters
+            return !string.IsNullOrWhiteSpace(input) && input.All(c => char.IsLetter(c) || char.IsWhiteSpace(c) || char.IsDigit(c));
+        }
+
         private async void AddCompanyButton_Click(object sender, RoutedEventArgs e)
         {
             using var db = new AppDbContext();
 
             if (string.IsNullOrWhiteSpace(nameInput.Text) ||
-                !IsValidText(nameInput.Text) ||
+                !IsValidNameAndAddress(nameInput.Text) ||
                 string.IsNullOrWhiteSpace(phoneInput.Text) ||
                 !int.TryParse(phoneInput.Text, out _) ||
                 string.IsNullOrWhiteSpace(addressInput.Text) ||
-                !IsValidText(addressInput.Text) ||
+                !IsValidNameAndAddress(addressInput.Text) ||
                 string.IsNullOrWhiteSpace(zipcodeInput.Text) ||
                 !HasAlphanumeric(zipcodeInput.Text) ||
                 string.IsNullOrWhiteSpace(cityInput.Text) ||

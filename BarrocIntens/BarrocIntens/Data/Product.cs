@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +14,11 @@ namespace BarrocIntens.Data
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int Stock {  get; set; }
-        public int? MaintenanceAppointmentId { get; set; } = null;
-        public MaintenanceAppointment MaintenanceAppointment { get; set; }
+
+        [InverseProperty(nameof(MaintenanceAppointment.Product))]
+        public ICollection<MaintenanceAppointment> ProductMaintenanceAppointments { get; set; }
+        public ICollection<MaintenanceAppointment> MaintenanceAppointments { get; set; }
+        public ICollection<MaintenanceAppointmentProduct> MaintenanceAppointmentProducts { get; set; }
         public ICollection<CustomInvoice> CustomInvoices { get; set; }
         public ICollection<CustomInvoiceProduct> CustomInvoiceProducts { get; set; }
         public ICollection<Contract> Contracts { get; set; }

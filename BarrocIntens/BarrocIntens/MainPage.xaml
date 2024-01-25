@@ -13,8 +13,8 @@
         <NavigationView Background="#212121" x:Name="SalesNavView" Visibility="Collapsed" PaneDisplayMode="Top" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavView_ItemInvoked">
             <NavigationView.MenuItems>
                 <Button Click="LogoutButton_Click" Content="Uitloggen" HorizontalAlignment="Right"/>
-                <NavigationViewItem Content="Klant Overzicht" Tag="SalesViews.CustomerOverviewView"/>
-                <NavigationViewItem Content="Klant Toevoegen" Tag="FinanceViews.AddCustomerView"/>
+                <NavigationViewItem Content="Klant Overzicht" Tag="FinanceViews.CustomerOverviewView"/>
+                <NavigationViewItem Content="Klant Toevoegen" Tag="SalesViews.AddCustomerView"/>
                 <NavigationViewItem Content="Bedrijf Toevoegen" Tag="SalesViews.AddCompanyView"/>
                 <NavigationViewItem Content="Bedrijf Overzicht" Tag="SalesViews.CompanyDetailView"/>
                 <NavigationViewItem Content="Offerte Aanmaken" Tag="SalesViews.AddOffersView"/>

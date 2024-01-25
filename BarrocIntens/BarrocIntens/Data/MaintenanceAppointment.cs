@@ -12,7 +12,8 @@ namespace BarrocIntens.Data
         public int Id { get; set; }
         public int ProductId { get; set; }
         public Product Product { get; set; }
-        public ICollection<Product> MaintenanceAppointmentProducts { get; set; }
+        public ICollection<Product> Products { get; set; }
+        public ICollection<MaintenanceAppointmentProduct> MaintenanceAppointmentProducts { get; set; }
         public int? UserId { get; set; } = null;
         public User User { get; set; }
         public int CompanyId { get; set; }
