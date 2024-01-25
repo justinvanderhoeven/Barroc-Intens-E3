@@ -25,19 +25,15 @@
         <StackPanel Grid.Column="0" Grid.RowSpan="3" Background="#212121"/>
         <StackPanel Grid.Column="1" Grid.RowSpan="3" Background="#ffd700"/>
 
-        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
-            
-
-            
-        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10"/>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Spacing="10" Margin="20">
-                <TextBlock Text="Meldingen" FontSize="40"/>
+                <TextBlock Text="Voorraad meldingen" FontSize="40" FontWeight="Thin"/>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Spacing="10" Margin="20">
-                <TextBlock Text="Deze producten zijn op bestel nieuwe alstublieft!" FontSize="18" FontWeight="Bold"/>
+                <TextBlock Text="Deze producten zijn op, bestel nieuwe alstublieft!" FontSize="18" FontWeight="Normal"/>
             </StackPanel>
             
             <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Spacing="10" Margin="20">

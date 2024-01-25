@@ -50,7 +50,7 @@
             <NavigationView.MenuItems>
                 <Button Click="LogoutButton_Click" Content="Uitloggen" HorizontalAlignment="Right"/>
                 <NavigationViewItem Content="Producten" Tag="PurchaseViews.StockSearchView"/>
-                <NavigationViewItem x:Name="StockMessageView" Content="Meldingen" Tag="PurchaseViews.StockMessagePage" Visibility="Collapsed"/>
+                <NavigationViewItem x:Name="StockMessageView" Content="Voorraad meldingen" Tag="PurchaseViews.StockMessagePage" Visibility="Collapsed"/>
             </NavigationView.MenuItems>
             <Frame x:Name="PurchaseFrame"></Frame>
         </NavigationView>
