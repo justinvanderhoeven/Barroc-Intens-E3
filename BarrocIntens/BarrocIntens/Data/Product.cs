@@ -12,7 +12,9 @@ namespace BarrocIntens.Data
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
-        public int Stock {  get; set; }
+        public int Stock { get; set; }
+        public bool NeedsAccepting { get; set; } = false;
+        public int StockToChangeTo {  get; set; }
         public ICollection<CustomInvoice> CustomInvoices { get; set; }
         public ICollection<CustomInvoiceProduct> CustomInvoiceProducts { get; set; }
         public ICollection<Contract> Contracts { get; set; }

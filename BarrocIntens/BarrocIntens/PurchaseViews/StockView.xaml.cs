@@ -40,31 +40,60 @@ namespace BarrocIntens.PurchaseViews
             using var db = new AppDbContext();
             var selectedCategory = (ProductsCategory)productCategoryInput.SelectedItem;
 
-            int stockValue = int.Parse(stockInput.Text);
-
-            if (stockValue > 5000)
+            Product product;
+            int stock = int.Parse(stockInput.Text);
+            if (stock >= 5000 && IsUserInRole("HeadPurchase"))
             {
-                stockValue = 5000;
-                stockInput.Text = stockValue.ToString();
+                product = new Product
+                {
+                    Name = nameInput.Text,
+                    Description = descriptionInput.Text,
+                    Price = decimal.Parse(priceInput.Text),
+                    Stock = int.Parse(stockInput.Text),
+                    ProductsCategoryId = selectedCategory.Id,
+                };
+            } else if (stock >= 5000 && !IsUserInRole("HeadPurchase"))
+            {
+                product = new Product
+                {
+                    Name = nameInput.Text,
+                    Description = descriptionInput.Text,
+                    Price = decimal.Parse(priceInput.Text),
+                    Stock = 0,
+                    NeedsAccepting = true,
+                    StockToChangeTo = stock,
+                    ProductsCategoryId = selectedCategory.Id,
+                };
+            } else
+            {
+                product = new Product
+                {
+                    Name = nameInput.Text,
+                    Description = descriptionInput.Text,
+                    Price = decimal.Parse(priceInput.Text),
+                    Stock = int.Parse(stockInput.Text),
+                    ProductsCategoryId = selectedCategory.Id,
+                };
             }
 
-            db.Products.Add(new Product
 
-            {
-                Name = nameInput.Text,
-                Description = descriptionInput.Text,
-                Price = decimal.Parse(priceInput.Text),
-                Stock = int.Parse(stockInput.Text),
-                ProductsCategoryId = selectedCategory.Id,
-            });
+                // Save to the database
+                db.Products.Add(product);
                 
-            db.SaveChanges();
+                db.SaveChanges();
+           
+            // Clear input fields after processing
             nameInput.Text = string.Empty;
             descriptionInput.Text = string.Empty;
             priceInput.Text = string.Empty;
             productCategoryInput.SelectedItem = -1;
         }
 
+        private bool IsUserInRole(string roleName)
+        {
+            return User.LoggedInUser.DepartmentId == 7;
+        }
+   
         private void BackToStockButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(StockSearchView));

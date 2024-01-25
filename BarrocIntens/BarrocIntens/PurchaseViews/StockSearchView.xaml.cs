@@ -30,7 +30,7 @@ namespace BarrocIntens.PurchaseViews
 
             using (var db = new AppDbContext())
             {
-                StockSearchingView.ItemsSource = db.Products.ToList();
+                StockSearchingView.ItemsSource = db.Products.Where(p => p.Stock <= 5000);
             }
         }
         

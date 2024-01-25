@@ -14,6 +14,8 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using BarrocIntens.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
+using Windows.UI.Popups;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -31,7 +33,7 @@ namespace BarrocIntens.PurchaseViews
 
             using (var db = new AppDbContext())
             {
-                StockAcceptView.ItemsSource = db.Products.Where(p => p.Stock == 5000);
+                StockAcceptView.ItemsSource = db.Products.Where(p => p.NeedsAccepting);
             }
         }
 
@@ -40,15 +42,24 @@ namespace BarrocIntens.PurchaseViews
             refreshButton.Content = "Refresh";
             using (var db = new AppDbContext())
             {
-                StockAcceptView.ItemsSource = db.Products.Where(p => p.Stock == 5000);
+                StockAcceptView.ItemsSource = db.Products.Where(p => p.NeedsAccepting == true);
             }
         }
 
-        private void StockAcceptView_ItemClick(object sender, ItemClickEventArgs p)
+        private async void StockAcceptView_ItemClick(object sender, ItemClickEventArgs p)
         {
-            var SelectedItem = (Product)p.ClickedItem;
-            var window = new StockEditView(SelectedItem.Id);
-            window.Activate();
+            using (var db = new AppDbContext())
+            {
+                var SelectedItem = (Product)p.ClickedItem;
+                SelectedItem = db.Products.Where(p => p.Id == SelectedItem.Id).FirstOrDefault();
+                SelectedItem.NeedsAccepting = false;
+                SelectedItem.Stock = SelectedItem.StockToChangeTo;
+                SelectedItem.StockToChangeTo = 0;
+                db.SaveChanges();
+                StockAcceptView.ItemsSource = db.Products.Where(p => p.NeedsAccepting == true);
+            }
         }
+        
+
     }
 }

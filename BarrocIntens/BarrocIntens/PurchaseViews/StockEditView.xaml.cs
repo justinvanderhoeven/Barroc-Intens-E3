@@ -50,7 +50,7 @@ namespace BarrocIntens.PurchaseViews
                 .First(p => p.Id == currentProductId);
 
             // Check if the user has the "purchaseadmin" role
-            if (IsUserInRole("purchaseadmin"))
+            if (IsUserInRole("HeadPurchase"))
             {
                 // If the user is a purchaseadmin, allow setting stock above 5000
                 product.Stock = int.Parse(stockInput.Text);
@@ -59,7 +59,15 @@ namespace BarrocIntens.PurchaseViews
             {
                 // If not a purchaseadmin, enforce the stock limit of 5000
                 int requestedStock = int.Parse(stockInput.Text);
-                product.Stock = requestedStock > 5000 ? 5000 : requestedStock;
+                if (requestedStock >= 5000)
+                {
+                    product.StockToChangeTo = requestedStock;
+                    product.NeedsAccepting = true;
+                }
+                else
+                {
+                    product.Stock = requestedStock;
+                }
             }
 
             product.Name = nameInput.Text;
@@ -78,16 +86,7 @@ namespace BarrocIntens.PurchaseViews
 
         private bool IsUserInRole(string roleName)
         {
-            // You need to implement your own logic for checking user roles here.
-            // This is a placeholder, and you might need to replace it with your actual authentication mechanism.
-            // For example, you might use ASP.NET Identity or another authentication system.
-
-            // Replace this with your actual logic to check if the user has the specified role.
-            // For example:
-            // return UserManager.IsUserInRole(currentUserId, roleName);
-
-            // For simplicity, we return true if the role is "purchaseadmin". Replace this with your actual logic.
-            return roleName == "purchaseadmin";
+            return User.LoggedInUser.DepartmentId == 7;
         }
 
         private void DeleteProductButton_Click(object sender, RoutedEventArgs p)
