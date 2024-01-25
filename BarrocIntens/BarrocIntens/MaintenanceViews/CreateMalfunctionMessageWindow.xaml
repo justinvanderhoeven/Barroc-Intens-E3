@@ -8,40 +8,49 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-
-    <Grid>
+    <Grid  Background="#FFD700">
+        
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+        
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        
 
-        <StackPanel Grid.Column="3" Grid.RowSpan="3" Background="#ffd700"/>
-        <StackPanel Grid.Column="0" Grid.RowSpan="3" Background="#212121"/>
-        <StackPanel Grid.Column="1" Grid.RowSpan="3" Background="#ffd700"/>
+        <StackPanel Grid.Column="3" Grid.RowSpan="7" Background="#212121"/>
 
-        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
-            <TextBlock Text="Storingsmelding" FontSize="50"/>
-        </StackPanel>
-
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.Row="1" Grid.Column="1">
-            <ComboBox FontFamily="Roboto" Margin="0,10" Header="Koffiemachine" PlaceholderText="Selecteer Koffiemachine" Width="300" x:Name="coffeeMachineComboBox">
-                <ComboBox.HeaderTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding}" Foreground="#ffd700" />
-                    </DataTemplate>
-                </ComboBox.HeaderTemplate>
-                <x:String>Barroc Intens Italian Light</x:String>
-                <x:String>Barroc Intens Italian</x:String>
-                <x:String>Barroc Intens Italian Deluxe</x:String>
-                <x:String>Barroc Intens Italian Deluxe Special</x:String>
-            </ComboBox>
-            <TextBox x:Name="txtProblemDescription" PlaceholderText="Omschrijf uw Proleem." Margin="0,10,0,0" Width="300" HorizontalAlignment="Center"/>
-                <Button Content="Submit" x:Name="SubmitButton" Click="OnSubmitClicked" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+        <Grid Grid.Row="3" Grid.Column="1" Margin="20" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <StackPanel>
+                <TextBlock Text="Storing melden" FontSize="40" FontWeight="Thin"/>
             </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="4" Grid.Column="1">
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
+                <ComboBox FontFamily="Roboto" Margin="0,10" FontWeight="Bold" Header="Koffiemachine" PlaceholderText="Selecteer Koffiemachine" Width="300" x:Name="coffeeMachineComboBox">
+                    <ComboBox.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}"/>
+                        </DataTemplate>
+                    </ComboBox.HeaderTemplate>
+                    <x:String>Barroc Intens Italian Light</x:String>
+                    <x:String>Barroc Intens Italian</x:String>
+                    <x:String>Barroc Intens Italian Deluxe</x:String>
+                    <x:String>Barroc Intens Italian Deluxe Special</x:String>
+                </ComboBox>
+
+                <TextBox x:Name="txtProblemDescription" PlaceholderText="Omschrijf uw Proleem." Margin="0,10,0,0" Width="300" Height="100" HorizontalAlignment="Center"/>
+                <Button Content="Submit" Click="OnSubmitClicked" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
