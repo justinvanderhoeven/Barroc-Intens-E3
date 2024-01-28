@@ -51,6 +51,7 @@
                 <NavigationViewItem Content="Producten" Tag="PurchaseViews.StockSearchView"/>
                 <NavigationViewItem x:Name="StockMessageView" Content="Meldingen" Tag="PurchaseViews.StockMessagePage" Visibility="Collapsed"/>
                 <NavigationViewItem x:Name="StockAcceptView" Content="Controle Grote bestellingen" Tag="PurchaseViews.StockAcceptPage" Visibility="Collapsed"/>
+                <NavigationViewItem x:Name="StockOrderView" Content="Bestellingen" Tag="PurchaseViews.StockOrderPage" Visibility="Collapsed"/>
             </NavigationView.MenuItems>
             <Frame x:Name="PurchaseFrame"></Frame>
         </NavigationView>

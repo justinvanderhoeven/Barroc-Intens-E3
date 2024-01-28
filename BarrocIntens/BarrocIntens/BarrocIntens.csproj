@@ -25,6 +25,7 @@
     <None Remove="MaintenanceViews\ProductUsingView.xaml" />
     <None Remove="PurchaseViews\StockAcceptPage.xaml" />
     <None Remove="PurchaseViews\StockMessagePage.xaml" />
+    <None Remove="PurchaseViews\StockOrderPage.xaml" />
     <None Remove="PurchaseViews\StockSearchView.xaml" />
     <None Remove="PurchaseViews\StockView.xaml" />
     <None Remove="SalesViews\AddCompanyView.xaml" />
@@ -99,6 +100,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CustomerViews\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="PurchaseViews\StockOrderPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="SalesViews\EditCompanyWindow.xaml" />

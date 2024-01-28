@@ -61,6 +61,7 @@ namespace BarrocIntens
                     PurchaseNavView.Visibility = Visibility.Visible;
                     StockMessageView.Visibility = Visibility.Visible;
                     StockAcceptView.Visibility = Visibility.Visible;
+                    StockOrderView.Visibility = Visibility.Visible;
                     break;
             }
         }

@@ -522,7 +522,7 @@ namespace BarrocIntens.Data
                 {
                     Id = 1,
                     CompanyId = 1,
-                    StartDate = DateOnly.FromDateTime( DateTime.UtcNow ),
+                    StartDate = DateOnly.FromDateTime(DateTime.UtcNow),
                     EndDate = DateOnly.FromDateTime(DateTime.UtcNow),
                 }
             );
@@ -562,8 +562,8 @@ namespace BarrocIntens.Data
                 new Invoice
                 {
                     Id = 1,
-                    Date = DateOnly.FromDateTime( DateTime.UtcNow ),
-                    PaidAt = DateOnly.FromDateTime( DateTime.UtcNow ),
+                    Date = DateOnly.FromDateTime(DateTime.UtcNow),
+                    PaidAt = DateOnly.FromDateTime(DateTime.UtcNow),
                     ContractId = 1,
                 }
             );

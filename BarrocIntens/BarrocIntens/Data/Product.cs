@@ -15,6 +15,7 @@ namespace BarrocIntens.Data
         public int Stock { get; set; }
         public bool NeedsAccepting { get; set; } = false;
         public int StockToChangeTo {  get; set; }
+        public bool IsChecked { get; set; }
         public ICollection<CustomInvoice> CustomInvoices { get; set; }
         public ICollection<CustomInvoiceProduct> CustomInvoiceProducts { get; set; }
         public ICollection<Contract> Contracts { get; set; }

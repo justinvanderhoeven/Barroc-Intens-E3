@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="BarrocIntens.PurchaseViews.StockOrderPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BarrocIntens.PurchaseViews"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:localData="using:BarrocIntens.Data"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="3" Grid.RowSpan="3" Background="#ffd700"/>
+        <StackPanel Grid.Column="0" Grid.RowSpan="3" Background="#212121"/>
+        <StackPanel Grid.Column="1" Grid.RowSpan="3" Background="#ffd700"/>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
+
+        </StackPanel>
+        
+            <StackPanel Grid.Row="1" Grid.Column="1">
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Spacing="10" Margin="20">
+                <TextBlock Text="Bestellingen" FontSize="40"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Spacing="10" Margin="20">
+                <TextBlock Text="Dit zijn alle Bestellingen" FontSize="18" FontWeight="Bold"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Spacing="10" Margin="20">
+                <Button Name="refreshButton" Click="refresh_Click">Refresh</Button>
+            </StackPanel>
+        
+            <ListView x:Name="StockOrderView" Grid.Row="1">
+                <!--IsItemClickEnabled="True"
+                        ItemClick="StockOrderView_ItemClick">-->
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="localData:Product">
+                        <StackPanel Orientation="Vertical" Padding="5">
+                        <TextBlock Text="{x:Bind Id}"/>
+                        <TextBlock Text="{x:Bind Name}"
+                        Foreground="DarkGray" />
+                        <TextBlock Text="{x:Bind Description}"/>
+                        <TextBlock Text="{x:Bind Price}"/>
+                        <TextBlock Text="{x:Bind Stock}"/>
+                        <CheckBox x:Name="AcceptBox" Content="Akkoord" IsChecked="{x:Bind IsChecked}" IsEnabled="{x:Bind NeedsAccepting}" />
+                        <TextBlock Foreground="Black">
+                        </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackPanel>
+        
+    </Grid>
+    </ScrollViewer>
+</Page>
